@@ -1,0 +1,65 @@
+.quadro-mensagem{border: 0.2em solid #00AEEF; border-radius: 1em; margin-top: 1em;}
+.index-mensagem{text-align: justify; font-family: 'Montserrat Alternates', sans-serif;}
+.icone-video-azul{
+    background-image: url(../img/icone-video-azul.png);
+    background-repeat: no-repeat;
+    display: block;
+    margin-top: 1em;
+}
+.botao-saiba-mais{background-color: #00AEEF; color: white; width: 8em; height: 3em; border-radius: 5em !important; margin-bottom: 1em;}
+.imagem-index{width: 30em; height: auto; margin-right: 1em;}
+
+.aulas-destaque-frase{
+    color: #00AEEF;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 1em;
+    padding-bottom: 1.5em;}
+
+.section-aulas-destaque{
+    background-color: #D4EFFC;
+    padding-top: 0.1em;
+}
+
+.icone-video-azul{background-image: url(../img/icone-video-azul.png);}
+
+.aula-imagem-index{ width: 20em; height: auto;}
+
+a{text-decoration: none !important;}
+
+.aula-destaque-titulo{
+    color: #00AEEF;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.5em;
+    margin-bottom: 0;
+}
+
+.aula-data-publicacao{font-family: 'Montserrat Alternates', sans-serif; text-align: center;}
+
+h5 {
+    text-align: center;
+    font-family: 'Montserrat Alternates', sans-serif !important;
+    font-weight: bold !important;
+    font-style: italic;
+    color: #00AEEF !important;
+    margin-bottom: 1em !important; 
+    margin-top: 1em !important; 
+}
+
+.aula-destaque-user{color: #00AEEF !important;}
+
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 96%;               
+    background-color:#00AEEF;
+    height: 1px;
+  }
+
+

@@ -1,0 +1,12 @@
+.container-margin{margin-top: 1em; margin-bottom: 1em;}
+
+.botao-voltar {
+    color: #00AEEF;
+    margin-right: 0.2em;
+}
+
+.icone-voltar{
+    background-image: url(../img/icone-voltar.png);
+    background-repeat: no-repeat;
+    display: block;
+}

@@ -1,0 +1,149 @@
+.quadro-mensagem{border: 0.2em solid #00AEEF; border-radius: 1em; padding-top: 2.5em; padding-left: 1em; padding-right: 1em; margin-bottom: 5em;}
+.mensagem {text-align: justify; font-family: 'Montserrat Alternates', sans-serif; font-size: 1.2em;}
+h1 {
+    text-align: center;
+    font-family: 'Montserrat Alternates', sans-serif !important;
+    font-weight: bold !important;
+    font-style: italic;
+    color: #00AEEF !important;
+    margin-bottom: 1em !important; 
+}
+
+.icone-video-mensagem{
+    background-image: url(../img/icone-video-azul.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.bordar-quadrada{
+    padding-top: 0.7rem;
+    width: 12em;
+    height: 12rem; 
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    border-style: solid;
+    border-color: #00AEEF !important;
+    border-radius: 0.5em;}
+
+.quadro-margem{margin-right: 1em; margin-bottom: 2em;}
+.icone-disciplina{width: 7em; height: auto;}
+.descricao{font-size: 1.3em; color: #00AEEF; font-family: 'Montserrat Alternates', sans-serif;}
+a{text-decoration: none !important;}
+
+/*area-aula-2*/
+
+.icone-adicionar{
+    background-image: url(../img/icone-adicionar.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.botao-buscar{
+    background-color: #00AEEF;
+    color: white;
+    width: 7em;
+    height: 3em;
+    border-radius: 5em !important;
+}
+
+.aulas-destaque-frase{
+    color: #00AEEF;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 1em;
+    padding-bottom: 1.5em;}
+
+.section-aulas-destaque{
+    background-color: #D4EFFC;
+    padding-top: 0.1em;
+}
+
+.icone-video-azul{background-image: url(../img/icone-video-azul.png);}
+
+.aula-imagem-index{ width: 20em;}
+
+.aula-destaque-titulo{
+    color: #00AEEF;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.5em;
+}
+
+.aula-destaque-professor{color: #00AEEF !important;}
+
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 96%;               
+    background-color:#00AEEF;
+    height: 1px;
+  }
+
+.quadro-aula{border: 0.2em solid #00AEEF; border-radius: 1em; padding: 1em; margin-bottom: 5em;}
+.aula-texto {text-align: justify; font-family: 'Montserrat Alternates', sans-serif; font-size: 1.2em;}
+h2 {
+    text-align: center;
+    font-family: 'Montserrat Alternates', sans-serif !important;
+    font-weight: bold !important;
+    font-style: italic;
+    color: #00AEEF !important;
+    margin-bottom: 1em !important; 
+}
+
+h5 {
+    text-align: center;
+    font-family: 'Montserrat Alternates', sans-serif !important;
+    font-weight: bold !important;
+    font-style: italic;
+    color: #00AEEF !important;
+    margin-bottom: 1em !important; 
+}
+
+.nome-userCreator{font-family: 'Montserrat Alternates', sans-serif; text-align: center; margin: 0;}
+
+.aula-data-publicacao{font-family: 'Montserrat Alternates', sans-serif; text-align: center;}
+
+.botao-del-edit{
+    color: white;
+    width: 3em;
+    height: 3em;
+    border-radius: 0.6em !important;
+}
+
+.delet {background-color: #ff4e4e;}
+.edit{background-color: #eeae00;}
+
+
+.icone-video-mensagem{
+    background-image: url(../img/icone-video-azul.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+.aula-imagem-quadro{margin-top: 2em; margin-bottom: 2em;}
+.aula-imagem-principal{width: 30em; display: block; margin-left: auto; margin-right: auto;}
+.aula-imagem-principal-fonte{font-family: 'Montserrat Alternates', sans-serif; font-size: 0.8em; text-align: center; margin: 0; margin-top: 0.5em;}
+
+.aula-video{margin-bottom: 1em;}
+
+.aula-video-botao{
+    width: 7em; height: 3em;
+    color: white;
+    border-radius: 5em !important;
+    background:  #00AEEF url(../img/icone-aula-video.png);
+    background-position: 35px 3.5px;
+    background-repeat: no-repeat;
+    margin-bottom: 1em;
+}
+
+.arquivos-para-baixar {margin-right: 1em;}
+.arquivos-para-baixar img{width: 10em; padding-top: 0.5em;}
+.fa{padding-top: 0.5em;}
+a{text-decoration: none !important;}
+
+.conteudos-referencia-titulo{font-family: 'Montserrat Alternates', sans-serif; font-style: italic; color: #00AEEF; margin: 0;}

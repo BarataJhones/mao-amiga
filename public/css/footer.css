@@ -1,0 +1,56 @@
+img { max-width: 100%; }
+.medium-paragraph { font-size: 17px; line-height: 32px; }
+::-moz-selection { background: #6d9055; color: #fff; text-shadow: none; }
+::selection { background: #6d9055; color: #fff; text-shadow: none; }
+
+/***** Footer *****/
+
+.footer-top { padding: 60px 0; background: white; text-align: left; color: #aaa; }
+.footer-top h3 { padding-bottom: 10px; color: #fff; }
+h3{font-family: color: white; font-family: 'Montserrat Alternates', sans-serif;}
+
+.footer-about img.logo-footer {margin-top: 1em; margin-bottom: 2em; width: 70%;}
+.footer-about p a { border: 0; }
+.footer-about p a:hover, .footer-about p a:focus { border: 0; }
+
+.footer-contact p { word-wrap: break-word; }
+.footer-contact i { padding-right: 10px; font-size: 18px; color: #666; }
+.footer-contact p a { border: 0; }
+.footer-contact p a:hover, .footer-contact p a:focus { border: 0; }
+
+.footer-links a { color: #aaa; border: 0; }
+.footer-links a:hover, .footer-links a:focus { color: #fff; }
+
+.footer-bottom { padding: 15px 0 17px 0; background: #00AEEF; text-align: left; color: #aaa; }
+
+.footer-social { padding-top: 3px; text-align: right; }
+.footer-social a { margin-left: 20px; color: #777; border: 0; }
+.footer-social a:hover, .footer-social a:focus { color: #79a05f; border: 0; }
+.footer-social i { font-size: 24px; vertical-align: middle; }
+
+.footer-copyright { padding-top: 5px; color: white;}
+.footer-copyright a { color: #fff; border: 0; }
+.footer-copyright a:hover, .footer-copyright a:focus { color: #aaa; border: 0;}
+
+
+
+
+.quadro-icone-footer{width: 6.5em; height: 5rem; text-align: center;}
+.icone-footer span{color: #00AEEF;}
+.quadro-icone-footer div{
+    background-repeat: no-repeat;
+    display: block;
+    width: 57%; height: 2.8rem;
+    margin: 0em 0em 0em 2.2em;}
+
+.quadro-icone-footer .icone-professor{
+	margin: 0em 0em 0em 2em;}
+
+.icone-footer{margin-right: 3em;}
+
+.icone-inicio-footer{ background-image: url(../img/icone-inicio-footer.png);}
+.icone-sobre-footer{ background-image: url(../img/icone-sobre-footer.png);}
+.icone-aluno-footer{ background-image: url(../img/icone-aluno-footer.png);}
+.icone-login-footer{ background-image: url(../img/icone-login-footer.png);}
+
+.icone-professor-footer{ background-image: url(../img/icone-professor-footer.png);}

@@ -1,0 +1,30 @@
+.quadro-mensagem{border: 0.2em solid #00AEEF; border-radius: 1em; padding-top: 2.5em; padding-left: 1em; padding-right: 1em; margin-bottom: 5em;}
+.mensagem {text-align: justify; font-family: 'Montserrat Alternates', sans-serif; font-size: 1.2em;}
+h1 {
+    text-align: center;
+    font-family: 'Montserrat Alternates', sans-serif !important;
+    font-weight: bold !important;
+    font-style: italic;
+    color: #00AEEF !important;
+    margin-bottom: 1em !important; 
+}
+
+.icone-video-mensagem{
+    background-image: url(../img/icone-video-azul.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.botao-entrar{
+    background-color: #00AEEF;
+    color: white;
+    width: 7em;
+    height: 3em;
+    border-radius: 5em !important;
+}
+
+.cadastrar{
+    color: #00AEEF;
+    text-decoration: none !important;
+    font-size: 1.5em;
+}

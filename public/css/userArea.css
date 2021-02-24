@@ -1,0 +1,61 @@
+.quadro-mensagem{
+    border: 0.2em solid #00AEEF;
+    border-radius: 1em;
+    padding-top: 2.5em; padding-left: 1em; padding-right: 1em;
+    margin-bottom: 5em;
+}
+
+.mensagem {text-align: justify; font-family: 'Montserrat Alternates', sans-serif; font-size: 1.2em;}
+h1 {
+    text-align: center;
+    font-family: 'Montserrat Alternates', sans-serif !important;
+    font-weight: bold !important;
+    font-style: italic;
+    color: #00AEEF !important;
+    margin-bottom: 1em !important; 
+}
+
+h5 {
+    font-family: 'Montserrat Alternates', sans-serif !important;
+    font-weight: bold !important;
+    font-style: italic;
+    color: #00AEEF !important;
+    margin-bottom: 1em !important; 
+}
+.fa-plus-circle{float: right !important; color: #00AEEF; margin-bottom: 0.5em;}
+
+.icone-video-mensagem{
+    background-image: url(../img/icone-video-azul.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.bordar-quadrada{
+    padding-top: 0.7rem;
+    width: 12em;
+    height: 12rem; 
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    border-style: solid;
+    border-color: #00AEEF !important;
+    border-radius: 0.5em;}
+
+.quadro-margem{margin-right: 1em; margin-bottom: 2em;}
+
+.table{font-family: 'Montserrat Alternates', sans-serif !important;}
+
+.list-aula-img{width: 8em;}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: #ebf5fa;}
+
+.botao-del-edit{
+    color: white;
+    width: 3em;
+    height: 3em;
+    border-radius: 0.5em !important;
+}
+
+.delet {background-color: #ff4e4e;}
+.edit{background-color: #eeae00;}
