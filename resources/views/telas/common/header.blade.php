@@ -83,7 +83,7 @@
     <div class="container" style="margin-top: 2em">
         <div class="row justify-content-center">
             <div class="col-10 col-xl-10 col-lg-9 col-md-8 col-sm-10 col-xs-7">
-                <p class="header-frase">O portal acessível entre o professor e o aluno surdo</p>
+                <p class="header-frase">O portal de aprendizado acessível para surdos</p>
             </div>
 
             <a class="video-popup" href="video/o-portal-acessivel.mp4">

@@ -32,9 +32,9 @@
             <div class="col-10 col-xl-6 col-lg-6 col-sm-11">
                 <div class="quadro-mensagem">
                     <p class="index-mensagem" style="padding: 1em;">
-                        O Portal Mão Amiga é um site em que professores podem compartilhar conteúdos escritos e em forma de vídeo, transcritos em Língua Brasileira de Sinais
-                        (LIBRAS), permitindo o aprendizado por todos os seus alunos. Os discentes poderão acompanhar o conteúdo escrito ao mesmo tempo em que veem o vídeo em
-                        LIBRAS, além de poderem baixar qualquer conteúdo disponibilizado pelos professores.
+                        O Portal Mão Amiga é um site em que os usuários podem compartilhar conteúdos escritos e em forma de vídeo, transcritos em Língua Brasileira de Sinais
+                        (LIBRAS), permitindo o aprendizado para surdos. Os usuários poderão acompanhar o conteúdo escrito ao mesmo tempo em que veem o vídeo em
+                        LIBRAS, além de poderem baixar qualquer conteúdo disponibilizado criadores do conteúdo.
                     </p>
 
                     <a href="sobre.php">

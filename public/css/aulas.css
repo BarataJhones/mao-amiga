@@ -135,7 +135,7 @@ h5 {
     width: 7em; height: 3em;
     color: white;
     border-radius: 5em !important;
-    background:  #00AEEF url(../img/icone-aula-video.png);
+    background:  #00AEEF;
     background-position: 35px 3.5px;
     background-repeat: no-repeat;
     margin-bottom: 1em;
