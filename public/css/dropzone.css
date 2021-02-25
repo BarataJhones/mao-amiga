@@ -174,8 +174,10 @@
   box-sizing: border-box; }
 
 .dropzone {
+  font-family: 'Montserrat Alternates', sans-serif !important;
   min-height: 150px;
-  border: 2px solid #00AEEF;
+  border: 3px solid #00AEEF;
+  border-radius: 10px;
   background: white;
   padding: 20px 20px; }
   .dropzone.dz-clickable {

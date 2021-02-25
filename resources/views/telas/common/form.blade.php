@@ -94,13 +94,10 @@
                 <canvas id="video-canvas"></canvas>
             </div> <br>
 
-
-            <!--<label>Conteúdo para baixar:</label>
-                    <form action="/file-upload" class="dropzone">
-                        <div class="fallback">
-                            <input name="file" type="file" multiple />
-                        </div>
-                        <br>-->
+            <label>Conteúdo para baixar:</label>
+            <div id="myId" class="fallback dropzone">
+                <input name="file" type="file" multiple hidden/>
+            </div> <br>
 
             <div class="text-center">
                 <button class="btn botao-del-edit save fas fa-check" type="submit"></button>
@@ -112,4 +109,18 @@
         </div>
 
     </section>
+
+    <script src="{{asset('js/dropzone.js')}}"></script>
+
+    <!-- Dropzone -->
+    <script>
+        var myDropzone = new Dropzone("div#myId", {
+            url: "/file/post"
+            });
+            $("div#myId").dropzone({
+            url: "/file/post"
+            });
+    </script>
+    <!-- -->
+
 @endsection

@@ -39,7 +39,8 @@
                 <div class="row justify-content-center">
                     <div class="col-8 col-xl-5 col-lg-6 col-md-8 col-sm-10 col-xs-7">
 
-                        <h1>@yield('boxTitle')</h1> <!-- Título da caixa principal das páginas -->
+                        <!-- Título da caixa principal das páginas -->
+                        <h1>@yield('boxTitle')</h1> 
 
                     </div>
 
@@ -49,8 +50,8 @@
 
                     <p class="mensagem justify-content-center" style="padding: 1em;">
 
-                        @yield('boxContent')
                         <!-- Conteúdo da caixa principal das páginas -->
+                        @yield('boxContent')   
 
                     </p>
                 </div>
@@ -58,18 +59,17 @@
         </div>
     </section>
 
+    <!-- Conteúdo das páginas -->
     <section class="container container-margin">
 
         @yield('content')
-        <!-- Conteúdo das páginas -->
-
+        
     </section>
+    <!--  -->
 
     <script src="{{asset('js/area-professor.js')}}"></script>
 </body>
 
 @include ('telas.common.footer')
-
-<script src="{{asset('js/dropzone.js')}}"></script>
 
 </html>
