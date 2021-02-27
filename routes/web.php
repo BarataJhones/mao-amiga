@@ -18,13 +18,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::middleware(['auth'])->group(function (){
+    Route::get('/user', [AulasController::class, 'userAulasList'])->name('aula.userList');
+    Route::get('/cadastro-aulas', [AulasController::class, 'cadastraAula'])->name('aula.cadastra');
+});
+
 Route::put('/aula/{id}', [AulasController::class, 'update'])->name('aula.update');
 Route::get('/aula/edit-aula/{id}', [AulasController::class, 'edit'])->name('aula.edit');
 Route::delete('/aula/{id}', [AulasController::class, 'destroy'])->name('aula.destroy');
 Route::get('/aula/{id}', [AulasController::class, 'viewAula'])->name('aula.viewAula');
 Route::post('/cadastro-aulas', [AulasController::class, 'store'])->name('aulas.store');
-Route::get('/cadastro-aulas', [AulasController::class, 'cadastraAula'])->name('aula.cadastra');
-Route::get('/user', [AulasController::class, 'userAulasList'])->name('aula.userList');
 Route::get('/index', [AulasController::class, 'listaAulasIndex'])->name('aula.listaIndex');
 
 Route::get('/dashboard', function () {
