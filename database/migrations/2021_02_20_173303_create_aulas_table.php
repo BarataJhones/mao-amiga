@@ -23,6 +23,7 @@ class CreateAulasTable extends Migration
             $table->string('userCreator');
             $table->string('image');
             $table->string('aulaVideo');
+            $table->string('aulaFiles')->nullable();
             $table->string('imageFont')->nullable();
             $table->text('references')->nullable();
             

@@ -15,8 +15,8 @@
     Na sessão <span style="font-weight: bold; color: #00AEEF">Meus dados</span> você pode visualizar seus dados cadastrais e
     <span style="font-weight: bold; color: #eeae00">edita-los <i class="fas fa-pencil-alt"></i></span>. <br><br>
 
-    Na sessão <span style="font-weight: bold; color: #00AEEF">Minhas aulas</span> você pode visualizar as aulas criadas por
-    você,
+    Na sessão <span style="font-weight: bold; color: #00AEEF">Minhas aulas</span> você pode visualizar as suas aulas criadas,
+    <span style="font-weight: bold; color: #00AEEF">criar novas aulas <i class="fas fa-plus-circle"></i></span>,
     <span style="font-weight: bold; color: #eeae00">edita-las <i class="fas fa-pencil-alt"></i></span> ou
     <span style="font-weight: bold; color: #ff4e4e">deleta-las <i class="fa fa-trash"></i></span>.<br><br>
 
@@ -43,7 +43,7 @@
 
         <div class="aula-video collapse" id="listExpand">
 
-            <div>
+            <div class="botaoAdd">
                 <a href="{{ route('aula.cadastra') }}">
                     <i class="fas fa-plus-circle fa-3x"></i>
                 </a>

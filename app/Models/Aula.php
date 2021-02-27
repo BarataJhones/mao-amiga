@@ -11,5 +11,5 @@ class Aula extends Model
 
     protected $table ='aulas';
 
-    protected $fillable = ['title', 'content', 'grade', 'discipline', 'userCreator', 'image', 'aulaVideo', 'imageFont', 'references'];
+    protected $fillable = ['title', 'content', 'grade', 'discipline', 'userCreator', 'image', 'aulaVideo', 'aulaFiles', 'imageFont', 'references'];
 }

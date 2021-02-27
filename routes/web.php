@@ -26,3 +26,9 @@ Route::post('/cadastro-aulas', [AulasController::class, 'store'])->name('aulas.s
 Route::get('/cadastro-aulas', [AulasController::class, 'cadastraAula'])->name('aula.cadastra');
 Route::get('/user', [AulasController::class, 'userAulasList'])->name('aula.userList');
 Route::get('/index', [AulasController::class, 'listaAulasIndex'])->name('aula.listaIndex');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

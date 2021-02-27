@@ -95,9 +95,11 @@
             </div> <br>
 
             <label>Conteúdo para baixar:</label>
-            <div id="myId" class="fallback dropzone">
-                <input name="file" type="file" multiple hidden/>
-            </div> <br>
+            
+            <div class="custom-file">
+                <input type="file" name="aulaFiles" class="custom-file-input" id="chooseFile" multiple>
+                <label class="custom-file-label" for="chooseFile">Select file</label>
+            </div> <br> <br>
 
             <div class="text-center">
                 <button class="btn botao-del-edit save fas fa-check" type="submit"></button>
@@ -109,18 +111,5 @@
         </div>
 
     </section>
-
-    <script src="{{asset('js/dropzone.js')}}"></script>
-
-    <!-- Dropzone -->
-    <script>
-        var myDropzone = new Dropzone("div#myId", {
-            url: "/file/post"
-            });
-            $("div#myId").dropzone({
-            url: "/file/post"
-            });
-    </script>
-    <!-- -->
 
 @endsection

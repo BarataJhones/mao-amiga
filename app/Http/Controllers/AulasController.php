@@ -38,7 +38,7 @@ class AulasController extends Controller
 
         if($request->image->isValid()){
 
-            $image = $request->image->store('aulas');
+            $image = $request->image->store('aulasData.image');
             $data ['image'] = $image;
 
         }
@@ -50,15 +50,22 @@ class AulasController extends Controller
             ]);
 
             
-            $video = $request->aulaVideo->store('aulas');
+            $video = $request->aulaVideo->store('aulasData.video');
             $data ['aulaVideo'] = $video;
+
+        }
+
+        if($request->aulaFiles->isValid()){
+
+            $files = $request->aulaFiles->store('aulasData.files');
+            $data ['aulaFiles'] = $files;
 
         }
 
         Aula::create($data); //Model Aula
 
         return redirect()
-        ->route('aula.listaIndex')
+        ->route('aula.userList')
         ->with('message', 'Aula criada com sucesso');
 
     }

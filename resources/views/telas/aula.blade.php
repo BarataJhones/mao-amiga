@@ -68,7 +68,11 @@
 
                 <p class="conteudos-referencia-titulo" style="margin-top: 1em;">Referências:</p>
                 <p class="referencias">{{ $aula->references }}</p>
+
                 <p class="conteudos-referencia-titulo" style="margin-bottom: 1em;">Imagens e conteúdos para baixar:</p>
+                <div>
+                   
+                </div>
 
                 <!--<a class="arquivos-para-baixar" href="arquivos-para-baixar/biologia1.jpg" download>
                     <img src="arquivos-para-baixar/biologia1.jpg">
