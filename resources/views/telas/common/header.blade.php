@@ -64,7 +64,11 @@
                     @if ((Auth::id()!=0))
                         <a style="font-size: 1.5em" href="#" class="nav-link dropdown-toggle" id="navbarDropdown"
                             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Bem vindo, {{ Auth::user()->name }}
+                            Bem vindo,
+                            <?php 
+                                list($primeiroNome) = explode(' ', Auth::user()->name); 
+                                echo $primeiroNome
+                            ?> 
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <form method="POST" action="{{ route('logout') }}">

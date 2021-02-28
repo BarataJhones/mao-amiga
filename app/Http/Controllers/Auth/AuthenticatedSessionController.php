@@ -32,7 +32,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect('index'); //return redirect()->intended(RouteServiceProvider::HOME);
+        return redirect('index') //return redirect()->intended(RouteServiceProvider::HOME);
+        ->with('message', 'Sessão iniciada');
     }
 
     /**
@@ -49,6 +50,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('index');
+        return redirect('index')
+        ->with('message', 'Sessão finalizada');
     }
 }

@@ -10985,6 +10985,7 @@ select {
 
 .block {
   display: block;
+  border-color: #00AEEF;
 }
 
 .inline-block {
@@ -184448,4 +184449,14 @@ select {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
   }
+}
+.form-select{
+  border-color: #00AEEF;
+}
+.form-control{
+  border-color: #00AEEF;
+}
+
+.form-check-input{
+  border-color: #00AEEF;
 }

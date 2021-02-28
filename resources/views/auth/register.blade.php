@@ -4,6 +4,15 @@
             <a href="/">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
             </a>
+            <div class="text-center"
+                style="font-family: 'Montserrat Alternates', sans-serif;
+                    font-size: 1em;
+                    font-weight: bold;
+                    font-style: italic;
+                    color: #00AEEF">
+                Cadastro
+            </div>
+
         </x-slot>
 
         <!-- Validation Errors -->
@@ -126,11 +135,11 @@
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
+                    {{ __('Já é cadastrado? Clique aqui') }}
                 </a>
 
-                <x-button class="ml-4">
-                    {{ __('Register') }}
+                <x-button class="ml-4" style="background-color: #00AEEF">
+                    {{ __('Cadastrar') }}
                 </x-button>
             </div>
         </form>
