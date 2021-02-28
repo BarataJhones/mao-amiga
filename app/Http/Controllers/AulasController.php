@@ -8,6 +8,7 @@ use App\Models\Aula;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class AulasController extends Controller
 {
@@ -57,9 +58,11 @@ class AulasController extends Controller
 
         }
 
-        if($request->aulaFiles->isValid()){
+        if($request->aulaFiles !=null ){
+            
+            $nameFile = $request->aulaFiles->getClientOriginalName(). '.' .$request->aulaFiles->getClientOriginalExtension();
 
-            $files = $request->aulaFiles->store('aulasData.files');
+            $files = $request->aulaFiles->storeAs('aulasData.files', $nameFile);
             $data ['aulaFiles'] = $files;
 
         }
@@ -101,6 +104,9 @@ class AulasController extends Controller
 
             if (Storage::exists($aula->aulaVideo)) 
                 Storage::delete($aula->aulaVideo);
+
+            if (Storage::exists($aula->aulaFiles)) 
+                Storage::delete($aula->aulaFiles);
 
         $aula->delete();
 
