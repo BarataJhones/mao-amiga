@@ -49,12 +49,6 @@
                 <textarea name="content" class="form-control" rows="15" id="content">@yield('valueContent')</textarea>
             </div>
 
-            <div class="form-group">
-                <label for="comment">Usuário (TEMPORÁRIO PARA TESTE):</label>
-                <input type="text" name="userCreator" class="form-control" rows="1" id="userCreator"
-                    @yield('valueUserCreator')>
-            </div>
-
             <label>Imagem principal da aula:</label>
             <div class="col-md-6">
                 <div class="form-group">

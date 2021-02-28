@@ -1,29 +1,15 @@
-.navbar-brand img{width: 15em; height: auto;}
-.nav-link{font-family: 'Montserrat Alternates', sans-serif; font-size: 1.5em;}
-.background{background-color: #00AEEF; background-image: url("../img/header-background.jpg"); background-repeat: no-repeat;}
-.navbar-dark .navbar-toggler{border-color: white !important; background-color: #c8eefd !important; margin-top: 1em;}
+.bs-example {
+    padding-top: 1em;
+    background-color: #00AEEF
+}
 
-.borda{width: 6.5em; height: 5rem; text-align: center;}
-.borda div{
-    background-repeat: no-repeat;
-    display: block;
-    width: 57%; height: 2.8rem;
-    margin: 0em 0em 0em 0.9em;}
+.headerText a {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 2em;
+    color: white !important
+}
 
-    .borda .icone-professor{
-        margin: 0em 0em 0em 2em;}
-
-.icone{margin-right: 3em;}
-.icone-inicio{ background-image: url(../img/icone-inicio.png);}
-.icone-sobre{ background-image: url(../img/icone-sobre.png);}
-.icone-aluno{ background-image: url(../img/icone-aluno.png);}
-.icone-login{ background-image: url(../img/icone-login.png);}
-
-.icone-professor{ background-image: url(../img/icone-professor.png);}
-
-.nav-link{color: white;}
-
-.header-frase{
+.header-frase {
     color: white;
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: bold;
@@ -31,7 +17,20 @@
     font-size: 2em;
     text-align: center;
     margin-top: 1em;
-    padding-bottom: 1.5em;}
+    padding-bottom: 1.5em;
+}
+
+.icone-video {
+    background-image: url(../img/icone-video-branco.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.logoMaoAmiga {
+    width: 11em;
+    height: auto;
+    margin-right: 2em
+}
 
 .icone-video{
     background-image: url(../img/icone-video-branco.png);

@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+
+Route::get('/', [AulasController::class, 'listaAulasIndex'])->name('aula.listaIndex');
 
 Route::middleware(['auth'])->group(function (){
     Route::get('/user', [AulasController::class, 'userAulasList'])->name('aula.userList');

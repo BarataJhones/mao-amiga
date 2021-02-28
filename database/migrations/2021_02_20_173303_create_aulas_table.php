@@ -15,12 +15,12 @@ class CreateAulasTable extends Migration
     {
         Schema::create('aulas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('userId')->constrained();
             $table->string('title', 250);
             $table->timestamps();
             $table->string('discipline');
             $table->string('grade');
             $table->text('content');
-            $table->string('userCreator');
             $table->string('image');
             $table->string('aulaVideo');
             $table->string('aulaFiles')->nullable();

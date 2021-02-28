@@ -81,7 +81,7 @@
                     <a href="{{ route('aula.viewAula', $aula->id) }}">
                         <p class="aula-destaque-titulo text-center">{{$aula->title}}</p>
                     </a>
-                    <p class="text-center"> Por <span class="aula-destaque-user">{{$aula->userCreator}}</span></p>
+                    <p class="text-center"> Por <span class="aula-destaque-user">{{$aula->user->name}}</span></p>
                     <p class="aula-data-publicacao" id="timestamp">Postada em {{ $aula->created_at->format('d/m/Y') }}</p>
                     
                     <div class="content">

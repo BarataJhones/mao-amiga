@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUpdateAula;
 use App\Models\Aula;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -36,6 +37,7 @@ class AulasController extends Controller
 
         $data = $request->all();
 
+        //Jogando os arquivos em suas respectivas pastas//
         if($request->image->isValid()){
 
             $image = $request->image->store('aulasData.image');
@@ -61,6 +63,13 @@ class AulasController extends Controller
             $data ['aulaFiles'] = $files;
 
         }
+        //
+
+        //Pegar id do usuário
+        $user = auth()->user();
+        $data ['userId'] = $user->id;
+
+        //dd($request);
 
         Aula::create($data); //Model Aula
 
@@ -77,7 +86,9 @@ class AulasController extends Controller
             return redirect()->route('aula.listaIndex');
         }
 
-        return view('telas.aula', compact('aula'));
+        $userCreator = User::where('id', $aula->userId)->first()->toArray();
+
+        return view('telas.aula', compact('aula', 'userCreator'));
     }
 
     public function destroy($id)

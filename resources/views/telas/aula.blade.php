@@ -4,7 +4,7 @@
     {{asset('css/aulas.css')}}
 @endsection
 
-@section('pageTitle'){{$aula->title}} por {{$aula->userCreator}}@endsection
+@section('pageTitle'){{$aula->title}} por {{ $userCreator['name'] }}@endsection
 @section('boxTitle')Aula @endsection
 @section('boxVideo')                @endsection
 
@@ -36,7 +36,7 @@
 
                 <h2>{{$aula->title}}</h2>
                 <h5>Ensino {{$aula->grade}} - {{$aula->discipline}}</h5>
-                <p class="nome-userCreator">Por <span style="color: #00AEEF">{{ $aula->userCreator }}</span></p>
+                <p class="nome-userCreator">Por {{ $userCreator['name'] }}<span style="color: #00AEEF"></span></p>
                 <p class="aula-data-publicacao" id="timestamp">Postada em {{ $aula->created_at->format('d/m/Y') }}</p>
             </div>
 
@@ -81,23 +81,24 @@
 
         </div>
 
-        <div class="text-center justify-content-center row" style="margin-bottom: 3em;">
+        @if ($aula->userId == Auth::id())
+            <div class="text-center justify-content-center row" style="margin-bottom: 3em;">
 
-            <div class="col-2">
-                <a href="{{ route('aula.edit', $aula->id) }}">
-                    <button type="submit" class="btn botao-del-edit edit fas fa-pencil-alt fa-lg"></button>
-                </a>
+                <div class="col-2">
+                    <a href="{{ route('aula.edit', $aula->id) }}">
+                        <button type="submit" class="btn botao-del-edit edit fas fa-pencil-alt fa-lg"></button>
+                    </a>
+                </div>
+
+                <div class="col-2">
+                    <form action="{{ route('aula.destroy', $aula->id) }}" method="post">
+                        @csrf
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn botao-del-edit delet fas fa-trash fa-lg"></button>
+                    </form>
+                </div>
             </div>
-
-            <div class="col-2">
-                <form action="{{ route('aula.destroy', $aula->id) }}" method="post">
-                    @csrf
-                    <input type="hidden" name="_method" value="DELETE">
-                    <button type="submit" class="btn botao-del-edit delet fas fa-trash fa-lg"></button>
-                </form>
-            </div>
-
-        </div>
+        @endif  
 
     </section>
 @endsection

@@ -21,6 +21,5 @@
 @section('valueTitle') value="{{ $aula->title }}" @endsection
 @section('valueDiscipline') value="{{ $aula->discipline }}" @endsection
 @section('valueContent'){{ $aula->content }}@endsection
-@section('valueUserCreator') value="{{ $aula->userCreator }}" @endsection
 @section('valueImageFont') value="{{ $aula->imageFont }}" @endsection
 @section('valueReferences'){{ $aula->references }}@endsection

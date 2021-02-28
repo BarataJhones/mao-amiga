@@ -62,29 +62,31 @@
                 </thead>
                 <tbody>
                     @foreach($aulas as $aula)
-                    <tr>
-                        <th scope="row">{{$aula->id}}</th>
-                        <td>
-                            <a href="{{ route('aula.viewAula', $aula->id) }}">
-                                <img class="list-aula-img" src="{{ url("storage/{$aula->image}") }}" alt="">
-                            </a>
-                        </td>
-                        <td>{{$aula->title}}</td>
-                        <td>{{$aula->created_at->format('d/m/Y')}}</td>
-                        <td>
-                            <a href="{{ route('aula.edit', $aula->id) }}">
-                                <button type="submit" class="btn botao-del-edit edit fas fa-pencil-alt"></button>
-                            </a>
-                        </td>
-
-                        <td>
-                            <form action="{{ route('aula.destroy', $aula->id) }}" method="post">
-                                @csrf
-                                <input type="hidden" name="_method" value="DELETE">
-                                <button type="submit" class="btn botao-del-edit delet fas fa-trash"></button>
-                            </form>
-                        </td>
-                    </tr>
+                        @if ($aula->userId == Auth::id())
+                            <tr>
+                                <th scope="row">{{$aula->id}}</th>
+                                <td>
+                                    <a href="{{ route('aula.viewAula', $aula->id) }}">
+                                        <img class="list-aula-img" src="{{ url("storage/{$aula->image}") }}" alt="">
+                                    </a>
+                                </td>
+                                <td>{{$aula->title}}</td>
+                                <td>{{$aula->created_at->format('d/m/Y')}}</td>
+                                <td>
+                                    <a href="{{ route('aula.edit', $aula->id) }}">
+                                        <button type="submit" class="btn botao-del-edit edit fas fa-pencil-alt"></button>
+                                    </a>
+                                </td>
+                        
+                                <td>
+                                    <form action="{{ route('aula.destroy', $aula->id) }}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn botao-del-edit delet fas fa-trash"></button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endif  
                     @endforeach
                 </tbody>
             </table>

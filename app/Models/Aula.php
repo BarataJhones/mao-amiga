@@ -9,7 +9,23 @@ class Aula extends Model
 {
     use HasFactory;
 
-    protected $table ='aulas';
+    protected $table = 'aulas';
 
-    protected $fillable = ['title', 'content', 'grade', 'discipline', 'userCreator', 'image', 'aulaVideo', 'aulaFiles', 'imageFont', 'references'];
+    protected $fillable = [
+        'title',
+        'userId',
+        'content',
+        'grade',
+        'discipline',
+        'image',
+        'aulaVideo',
+        'aulaFiles',
+        'imageFont',
+        'references'
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User :: class, 'userId');
+    }
 }

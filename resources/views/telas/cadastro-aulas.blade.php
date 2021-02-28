@@ -29,6 +29,5 @@
 @section('valueTitle') value="{{ old('title') }}" @endsection
 @section('valueDiscipline') value="{{ old('discipline') }}" @endsection
 @section('valueContent'){{ old('content') }}@endsection
-@section('valueUserCreator') value="{{ old('userCreator') }}" @endsection
 @section('valueImageFont') value="{{ old('imageFont') }}" @endsection
 @section('valueReferences'){{ old('references') }}@endsection
