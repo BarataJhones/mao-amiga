@@ -26,7 +26,7 @@
         <div class="row justify-content-center">
 
             <div class="col-10 col-xl-5 col-lg-5 col-sm-8 embed-responsive embed-responsive-16by9">
-                <video src="video/aulas/teste.mp4" type="video/mp4" autoplay loop controls muted></video>
+                <video src="video/teste.mp4" type="video/mp4" autoplay loop controls muted></video>
             </div>
 
             <div class="col-10 col-xl-6 col-lg-6 col-sm-11">
@@ -37,7 +37,7 @@
                         LIBRAS, além de poderem baixar qualquer conteúdo disponibilizado criadores do conteúdo.
                     </p>
 
-                    <a href="sobre.php">
+                    <a href="#">
                         <div class="text-center">
                             <button class="btn botao-saiba-mais" type="button">Saiba mais</button>
                         </div>

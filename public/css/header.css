@@ -20,11 +20,12 @@
     padding-bottom: 1.5em;
 }
 
-.icone-video {
-    background-image: url(../img/icone-video-branco.png);
-    background-repeat: no-repeat;
-    display: block;
-}
+.navbar-toggler{background-color: white !important;}
+
+/*Customização do botão navibar mobile*/
+.custom-toggler.navbar-toggler { border-color: #00AEEF !important;}
+.fa-bars{color: #00AEEF;}
+/**/
 
 .logoMaoAmiga {
     width: 11em;

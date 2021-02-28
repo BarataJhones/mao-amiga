@@ -48,8 +48,8 @@
             <a href="video/portal-mao-amiga.mp4" class="navbar-brand video-popup">
                 <img class="logoMaoAmiga" src="{{asset('img/logo.png')}}" height="28" alt="CoolBrand">
             </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
+            <button type="button" class="navbar-toggler custom-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <i class="fas fa-bars"></i>
             </button>
 
             <div class="collapse navbar-collapse headerText" id="navbarCollapse">

@@ -10,7 +10,7 @@
 
 @section('boxContent' )
     Caro usuário(a), está é a sessão de aula. Você pode acompanhar a aula de forma escrita ou em vídeo. Ao clicar no ícone
-    da <span style="color: #00AEEF">câmera</span> <i class="fas fa-video" style="color: #00AEEF"></i>,o vídeo em LIBRAS da
+    da <span style="color: #00AEEF">câmera</span> <i class="fas fa-video" style="color: #00AEEF"></i>, o vídeo em LIBRAS da
     aula aparecerá com intérprete explicando o conteúdo. Há também imagens para visualização e, se disponibilizado,
     apostilas ou atividades para serem baixadas e as referências usadas no conteúdo. <br>
     Se você for o criador desta aula, você poderá

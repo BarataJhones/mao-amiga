@@ -37,6 +37,12 @@ class AulasController extends Controller
     {
 
         $data = $request->all();
+        
+        //Pegar id do usuário
+        $user = auth()->user();
+        $data ['userId'] = $user->id;
+
+        //dd($data ['userId']);
 
         //Jogando os arquivos em suas respectivas pastas//
         if($request->image->isValid()){
@@ -60,19 +66,12 @@ class AulasController extends Controller
 
         if($request->aulaFiles !=null ){
             
-            $nameFile = $request->aulaFiles->getClientOriginalName(). '.' .$request->aulaFiles->getClientOriginalExtension();
-
+            $nameFile = 'User'. '.'. $data ['userId']. '.Aula.'. $request['title']. '.' .$request->aulaFiles->getClientOriginalName(). '.' .$request->aulaFiles->getClientOriginalExtension();
+            
             $files = $request->aulaFiles->storeAs('aulasData.files', $nameFile);
             $data ['aulaFiles'] = $files;
 
         }
-        //
-
-        //Pegar id do usuário
-        $user = auth()->user();
-        $data ['userId'] = $user->id;
-
-        //dd($request);
 
         Aula::create($data); //Model Aula
 
