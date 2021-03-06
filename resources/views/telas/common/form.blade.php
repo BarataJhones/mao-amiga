@@ -90,20 +90,28 @@
 
             <label>Conteúdo para baixar:</label>
             
-            <div class="custom-file">
+            <!-- <div class="custom-file">
                 <input type="file" name="aulaFiles" class="custom-file-input" id="chooseFile" multiple>
                 <label class="custom-file-label" for="chooseFile">Select file</label>
-            </div> <br> <br>
+            </div> <br> <br> -->
 
-            <div class="text-center">
-                <button class="btn botao-del-edit save fas fa-check" type="submit"></button>
+            
+            <div class="form-group">
+                <input type="file" class="form-control-file" name="aulaFiles" id="aulaFiles" style="margin-bottom: 3em;" multiple>
             </div>
+
+            <div class="text-center justify-content-center row" style="margin-bottom: 3em;">
+                <div class="text-center col-2">
+                    <button class="btn botao-del-edit save fas fa-check" type="submit"></button>
+                </div>
+            
+                <div class="text-center col-2">
+                    <button type="button" class="btn botao-del-edit cancel fas fa-times" onclick="goBack()"></button>
+                </div>
+            </div>
+            
         </form> <br>
-
-        <div class="text-center">
-            <button type="submit" class="btn botao-del-edit cancel fas fa-times" onclick="goBack()"></button>
-        </div>
-
+        
     </section>
 
 @endsection

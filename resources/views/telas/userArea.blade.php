@@ -45,7 +45,7 @@
 
             <div class="botaoAdd">
                 <a href="{{ route('aula.cadastra') }}">
-                    <i class="fas fa-plus-circle fa-3x"></i>
+                    <i class="fas fa-plus-circle fa-3x" style="font-weight: bold; color: #00AEEF"></i>
                 </a>
             </div>
 
