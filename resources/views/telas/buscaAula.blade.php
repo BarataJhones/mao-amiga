@@ -13,6 +13,32 @@
 @endsection
 
 @section('content')
+
+    <!-- Botão Subir ao topo -->
+    <a id="subirTopo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <div style="">
+        <form action="{{ route ('aula.search') }}" method="post">
+            @csrf
+            <div class="input-group mb-3" >
+                <input type="text" name="search" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search" style="color:#00AEEF"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    @if (session('message'))
+        <div>
+            <h5>
+                {{ session('message') }}
+            </h5>
+        </div>
+    @endif
+    
     <section class="container container-margin index-mensagem section-aulas-destaque">
     
         <div class="row justify-content-center" style="padding: 1em;">
@@ -36,8 +62,41 @@
 
             @endforeach
 
+            <hr>
+
+            @if (isset($filters))
+                {{ $aulas->appends($filters)->links() }}
+                
+            @else
+            {{ $aulas->links() }}
+                
+            @endif
+            
         </div>
     
     </section>
+
+    <!-- Script do botão Subir ao topo -->
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+            
+            jQuery("#subirTopo").hide();
+            
+            jQuery('a#subirTopo').click(function () {
+                    jQuery('body,html').animate({
+                    scrollTop: 0
+                    }, 800);
+                    return false;
+            });
+            
+            jQuery(window).scroll(function () {
+                    if (jQuery(this).scrollTop() > 1000) {
+                        jQuery('#subirTopo').fadeIn();
+                    } else {
+                        jQuery('#subirTopo').fadeOut();
+                    }
+                });
+            });
+    </script>
 
 @endsection

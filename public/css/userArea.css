@@ -25,7 +25,11 @@
 
 .table{font-family: 'Montserrat Alternates', sans-serif !important;}
 
-.list-aula-img{width: 8em;}
+.list-aula-img{
+    width: 10em;
+    height: 6em;
+    object-fit: cover;
+}
 
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
     background-color: #ebf5fa;}

@@ -47,3 +47,6 @@ hr {
     background-color:#00AEEF;
     height: 1px;
   }
+
+  .page-item{margin:5px !important;}
+  .page-item.active .page-link{background-color: #00AEEF !important}

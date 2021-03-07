@@ -26,7 +26,11 @@
 
 .icone-video-azul{background-image: url(../img/icone-video-azul.png);}
 
-.aula-imagem-index{ width: 20em; height: auto;}
+.aula-imagem-index{
+    width: 20em;
+    height: 13em;
+    object-fit: cover;
+}
 
 a{text-decoration: none !important;}
 

@@ -56,7 +56,7 @@
                 <div class="navbar-nav">
                     <a href="{{ route('aula.listaIndex') }}" class="nav-item nav-link active"><i class="fas fa-home"></i> Início</a>
                     <a href="#" class="nav-item nav-link"><i class="fas fa-info-circle"></i> Sobre</a>
-                    <a href="#" class="nav-item nav-link"><i class="fas fa-video"></i> Aulas</a>
+                    <a href="{{ route('aula.searchList') }}" class="nav-item nav-link"><i class="fas fa-video"></i> Aulas</a>
                     <a href="{{ route('aula.userList') }}" class="nav-item nav-link"><i class="fas fa-user"></i> Área do usuário</a>
                 </div>
 

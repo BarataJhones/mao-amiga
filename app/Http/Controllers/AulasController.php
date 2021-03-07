@@ -34,7 +34,7 @@ class AulasController extends Controller
 
     public function searchList()
     {
-        $aulas = Aula::orderBy('created_at', 'DESC')->paginate(); //Configurar paginação se precisar/Ordem invertida
+        $aulas = Aula::orderBy('created_at', 'DESC')->paginate(9); //Configurar paginação se precisar/Ordem invertida
 
         return view('telas.buscaAula', compact('aulas'));
     }
@@ -189,5 +189,19 @@ class AulasController extends Controller
         return redirect()
                 ->route('aula.userList')
                 ->with('message', 'Histórico deletado com sucesso.');
+    }
+
+    public function search(Request $request)
+    {
+        $filters = $request->all();
+
+        $aulas = Aula::where('title', 'LIKE', "%{$request->search}%")
+                        ->orWhere('content', 'LIKE', "%{$request->search}%")
+                        ->orWhere('grade', 'LIKE', "%{$request->search}%")
+                        ->orWhere('discipline', 'LIKE', "%{$request->search}%")
+                        ->paginate(2);
+
+        return view('telas.buscaAula', compact('aulas', 'filters'))
+                ->with('message', 'Resultado da busca:');
     }
 }
