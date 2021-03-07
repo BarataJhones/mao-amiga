@@ -81,6 +81,10 @@
 
         </div>
 
+        <div style="margin-bottom: 3em; font-size: 1.2em">
+            <i class="fas fa-eye" style="color:#00AEEF"></i> {{$aula->viewCount}} Visualizações
+        </div>
+        
         @if ($aula->userId == Auth::id())
             <div class="text-center justify-content-center row" style="margin-bottom: 3em;">
 

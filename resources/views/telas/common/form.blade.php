@@ -97,7 +97,7 @@
 
             
             <div class="form-group">
-                <input type="file" class="form-control-file" name="aulaFiles" id="aulaFiles" style="margin-bottom: 3em;" multiple>
+                <input type="file" class="form-control-file" name="imageFile[]" id="aulaFiles" style="margin-bottom: 3em;" multiple>
             </div>
 
             <div class="text-center justify-content-center row" style="margin-bottom: 3em;">

@@ -25,6 +25,7 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/cadastro-aulas', [AulasController::class, 'cadastraAula'])->name('aula.cadastra');
 });
 
+//Route::delete('/user', [AulasController::class, 'clearHistoric'])->name('aula.clearHistoric');
 Route::put('/aula/{id}', [AulasController::class, 'update'])->name('aula.update');
 Route::get('/aula/edit-aula/{id}', [AulasController::class, 'edit'])->name('aula.edit');
 Route::delete('/aula/{id}', [AulasController::class, 'destroy'])->name('aula.destroy');

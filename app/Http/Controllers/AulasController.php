@@ -6,16 +6,19 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUpdateAula;
 use App\Models\Aula;
 use App\Models\User;
+use App\Models\Aula_User;
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class AulasController extends Controller
 {
 
     public function listaAulasIndex()
     {
-        $aulas = Aula::latest('id')->paginate(3); //Configurar paginação se precisar/Ordem invertida
+        $aulas = Aula::orderBy('viewCount', 'DESC')->paginate(3); //Configurar paginação se precisar/Ordem invertida
 
         return view('telas.index', compact('aulas'));
     }
@@ -24,7 +27,9 @@ class AulasController extends Controller
     {
         $aulas = Aula::paginate();
 
-        return view('telas.userArea', compact('aulas'));
+        $historicos = Aula_User::latest('dateTime')->paginate();
+        
+        return view('telas.userArea', compact('aulas', 'historicos'));
     }
 
     public function cadastraAula()
@@ -41,8 +46,6 @@ class AulasController extends Controller
         //Pegar id do usuário
         $user = auth()->user();
         $data ['userId'] = $user->id;
-
-        //dd($data ['userId']);
 
         //Jogando os arquivos em suas respectivas pastas//
         if($request->image->isValid()){
@@ -88,8 +91,19 @@ class AulasController extends Controller
             return redirect()->route('aula.listaIndex');
         }
 
+        $aula->viewCount++;
+        $aula->save();
+
         $userCreator = User::where('id', $aula->userId)->first()->toArray();
 
+        //Colocar aula no histórico do usuário
+        if((Auth::id()!=null)){
+            $user = auth()->user();
+            $user->aulaAsHistoric()->attach($id);
+            $historic = Aula::findOrFail($id);
+
+        }
+        
         return view('telas.aula', compact('aula', 'userCreator'));
     }
 

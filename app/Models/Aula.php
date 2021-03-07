@@ -28,4 +28,8 @@ class Aula extends Model
     {
         return $this->belongsTo(User :: class, 'userId');
     }
+
+    public function users(){
+        return $this->belongsToMany('App\Models\User');
+    }
 }

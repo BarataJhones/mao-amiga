@@ -58,7 +58,7 @@
         <div class="container" style="margin-top: 2em">
             <div class="row justify-content-center">
                 <div class="col-4 col-xl-4 col-lg-5 col-md-7 col-sm-10 col-xs-7">
-                    <p class="aulas-destaque-frase">Últimas aulas</p>
+                    <p class="aulas-destaque-frase">Aulas em destaque</p>
                 </div>
 
                 <a class="video-popup" href="video/o-portal-acessivel.mp4">
@@ -82,11 +82,14 @@
                         <p class="aula-destaque-titulo text-center">{{$aula->title}}</p>
                     </a>
                     <p class="text-center"> Por <span class="aula-destaque-user">{{$aula->user->name}}</span></p>
-                    <p class="aula-data-publicacao" id="timestamp">Postada em {{ $aula->created_at->format('d/m/Y') }}</p>
+                    <p class="aula-data-publicacao" id="timestamp">
+                        <i class="fas fa-eye" style="color:#00AEEF"></i> {{$aula->viewCount}} Visualizações<br> 
+                        Postada em {{ $aula->created_at->format('d/m/Y') }}
+                    </p>
                     
                     <div class="content">
 
-                        <?php echo mb_strimwidth("{$aula->content}", 0, 200, "..."); ?>
+                        <?php echo mb_strimwidth("{$aula->content}", 0, 150, "..."); ?>
                     </div>
                 </div>
 

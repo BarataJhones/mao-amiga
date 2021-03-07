@@ -15,7 +15,7 @@ class CreateAulasTable extends Migration
     {
         Schema::create('aulas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('userId')->constrained();
+            $table->foreignId('userId')->constrained('users');
             $table->string('title', 250);
             $table->timestamps();
             $table->string('discipline');
@@ -26,6 +26,7 @@ class CreateAulasTable extends Migration
             $table->string('aulaFiles')->nullable();
             $table->string('imageFont')->nullable();
             $table->text('references')->nullable();
+            $table->integer('viewCount')->default(0);
             
         });
     }

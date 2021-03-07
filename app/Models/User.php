@@ -49,4 +49,8 @@ class User extends Authenticatable
     public function events() {
         return $this->hasMany('App\Models\Aula');
     }
+
+    public function aulaAsHistoric(){
+        return $this->belongsToMany('App\Models\Aula');
+    }
 }
