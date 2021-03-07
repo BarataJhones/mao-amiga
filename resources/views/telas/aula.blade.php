@@ -5,7 +5,7 @@
 @endsection
 
 @section('pageTitle'){{$aula->title}} por {{ $userCreator['name'] }}@endsection
-@section('boxTitle')Aula @endsection
+@section('boxTitle')Assistir aula @endsection
 @section('boxVideo')                @endsection
 
 @section('boxContent' )
@@ -21,6 +21,12 @@
 @endsection
 
 @section('content')
+
+    <!-- Botão Subir ao topo -->
+    <a id="subirTopo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
     <section class="container container-margin">
         <div class="quadro-aula">
 
@@ -105,4 +111,28 @@
         @endif  
 
     </section>
+
+<!-- Script do botão Subir ao topo -->
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+    
+    jQuery("#subirTopo").hide();
+    
+    jQuery('a#subirTopo').click(function () {
+             jQuery('body,html').animate({
+               scrollTop: 0
+             }, 800);
+            return false;
+       });
+    
+    jQuery(window).scroll(function () {
+             if (jQuery(this).scrollTop() > 1000) {
+                jQuery('#subirTopo').fadeIn();
+             } else {
+                jQuery('#subirTopo').fadeOut();
+             }
+         });
+    });
+</script>
+
 @endsection

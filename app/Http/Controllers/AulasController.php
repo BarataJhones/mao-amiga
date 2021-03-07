@@ -25,11 +25,18 @@ class AulasController extends Controller
 
     public function userAulasList()
     {
-        $aulas = Aula::paginate();
+        $aulas = Aula::orderBy('created_at', 'DESC')->paginate();
 
         $historicos = Aula_User::latest('dateTime')->paginate();
         
         return view('telas.userArea', compact('aulas', 'historicos'));
+    }
+
+    public function searchList()
+    {
+        $aulas = Aula::orderBy('created_at', 'DESC')->paginate(); //Configurar paginação se precisar/Ordem invertida
+
+        return view('telas.buscaAula', compact('aulas'));
     }
 
     public function cadastraAula()
@@ -172,5 +179,15 @@ class AulasController extends Controller
         return redirect()
                 ->route('aula.viewAula', $aula->id)
                 ->with('message', 'Aula editada com sucesso.');
+    }
+
+    public function clearHistoric()
+    {
+        $aula = Aula_User::where('user_id', Auth::id());
+        $aula->delete();
+
+        return redirect()
+                ->route('aula.userList')
+                ->with('message', 'Histórico deletado com sucesso.');
     }
 }

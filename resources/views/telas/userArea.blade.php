@@ -25,6 +25,12 @@ Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-hist
 @endsection
 
 @section('content')
+
+<!-- Botão Subir ao topo -->
+<a id="subirTopo">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
 <section class="container container-margin" style="margin-bottom: 3em">
 
     @if (session('message'))
@@ -65,7 +71,7 @@ Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-hist
                 @foreach($aulas as $aula)
                     @if ($aula->userId == Auth::id())
                         <tr>
-                            <td>{{Carbon\Carbon::parse($aula->created_at)->format('d/m/Y - H:m:s')}}</td>
+                            <td>{{Carbon\Carbon::parse($aula->created_at)->format('d/m/Y')}}</td>
                             <td>
                                 <a href="{{ route('aula.viewAula', $aula->id) }}">
                                     <img class="list-aula-img" src="{{ url("storage/{$aula->image}") }}" alt="">
@@ -104,9 +110,12 @@ Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-hist
     <div class="aula-video collapse" id="listExpand2">
 
         <div class="botaoAdd">
-            <a href="">
-                <i class="fas fa-trash fa-3x" style="font-weight: bold; color: #ff4e4e"></i>
-            </a>
+
+            <form action="{{ route('aula.clearHistoric') }}" method="post">
+                @csrf
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn botao-del-edit delet fas fa-trash"></button>
+            </form>
         </div>
 
         <table class="table table-hover table-striped" style="margin-top: 1em;">
@@ -139,4 +148,28 @@ Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-hist
     </div>
 
 </section>
+
+<!-- Script do botão Subir ao topo -->
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+    
+    jQuery("#subirTopo").hide();
+    
+    jQuery('a#subirTopo').click(function () {
+             jQuery('body,html').animate({
+               scrollTop: 0
+             }, 800);
+            return false;
+       });
+    
+    jQuery(window).scroll(function () {
+             if (jQuery(this).scrollTop() > 1000) {
+                jQuery('#subirTopo').fadeIn();
+             } else {
+                jQuery('#subirTopo').fadeOut();
+             }
+         });
+    });
+</script>
+
 @endsection

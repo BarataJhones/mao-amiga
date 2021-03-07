@@ -73,7 +73,7 @@
 
                 <a href="{{ route('aula.viewAula', $aula->id) }}" class="my-auto">
                     <div class="my-auto">
-                        <img class="aula-imagem-index" src="{{ url("storage/{$aula->image}") }}" alt="Representação artística da evolução do ser humano.">
+                        <img class="aula-imagem-index" src="{{ url("storage/{$aula->image}") }}" alt="">
                     </div>
                 </a>
 
