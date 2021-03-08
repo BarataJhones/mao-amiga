@@ -27,7 +27,7 @@ class AulasController extends Controller
     {
         $aulas = Aula::orderBy('created_at', 'DESC')->paginate();
 
-        $historicos = Aula_User::latest('dateTime')->paginate();
+        $historicos = Aula_User::latest('dateTime')->paginate(5);
         
         return view('telas.userArea', compact('aulas', 'historicos'));
     }
@@ -195,11 +195,15 @@ class AulasController extends Controller
     {
         $filters = $request->all();
 
+        $name = 0;
+
         $aulas = Aula::where('title', 'LIKE', "%{$request->search}%")
                         ->orWhere('content', 'LIKE', "%{$request->search}%")
                         ->orWhere('grade', 'LIKE', "%{$request->search}%")
                         ->orWhere('discipline', 'LIKE', "%{$request->search}%")
-                        ->paginate(2);
+                        ->orWhereHas('user', function($q) use($request){
+                            $q->where('name', 'LIKE', "%{$request->search}%");
+                        })->paginate(9);
 
         return view('telas.buscaAula', compact('aulas', 'filters'))
                 ->with('message', 'Resultado da busca:');

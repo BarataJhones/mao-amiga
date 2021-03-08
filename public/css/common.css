@@ -53,6 +53,7 @@ h5 {
     font-weight: bold;
     position: fixed;
     opacity: .8;
+    z-index: 2;
     }
     
     #subirTopo:hover {

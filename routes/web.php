@@ -26,15 +26,12 @@ Route::middleware(['auth'])->group(function (){
 });
 
 Route::any('/search/result', [AulasController::class, 'search'])->name('aula.search');
-
 Route::delete('/user', [AulasController::class, 'clearHistoric'])->name('aula.clearHistoric');
 Route::put('/aula/{id}', [AulasController::class, 'update'])->name('aula.update');
 Route::get('/aula/edit-aula/{id}', [AulasController::class, 'edit'])->name('aula.edit');
 Route::delete('/aula/{id}', [AulasController::class, 'destroy'])->name('aula.destroy');
 Route::get('/aula/{id}', [AulasController::class, 'viewAula'])->name('aula.viewAula');
-
 Route::get('/search', [AulasController::class, 'searchList'])->name('aula.searchList');
-
 Route::post('/cadastro-aulas', [AulasController::class, 'store'])->name('aulas.store');
 Route::get('/index', [AulasController::class, 'listaAulasIndex'])->name('aula.listaIndex');
 

@@ -96,6 +96,9 @@ Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-hist
                 @endforeach
             </tbody>
         </table>
+
+        {{ $aulas->links() }}
+
     </div>
 
     <!-- Histórico -->
@@ -145,6 +148,9 @@ Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-hist
                 @endforeach
             </tbody>
         </table>
+
+        {{ $historicos->links() }}
+
     </div>
 
 </section>

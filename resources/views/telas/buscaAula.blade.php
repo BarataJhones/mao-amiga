@@ -9,7 +9,11 @@
 @section('boxVideo')                @endsection
 
 @section('boxContent' )
-    Nesta área você pode visualizar todas as aulas, ou buscar por alguma específica.
+    Nesta área você pode visualizar todas as aulas criadas, ou buscar por alguma específica.
+    Para visualizar os detalhes da aula, basta clicar nasua imagem ou título.
+    Para realizar uma busca por alguma aula específica, basta escrever alguma palavra-chave no campo abaixo, e então clicar no botão
+    <i class="fas fa-search" style="color:#00AEEF"></i>. <br>
+    Você pode usar o título da aula, o criador da aula, a disciplina, a área de ensino ou alguma parte do conteúdo da aula como palavra-chave.
 @endsection
 
 @section('content')
@@ -19,17 +23,17 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <div style="">
+    <section class="searchBar" >
         <form action="{{ route ('aula.search') }}" method="post">
             @csrf
-            <div class="input-group mb-3" >
+            <div class="input-group mb-3">
                 <input type="text" name="search" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="basic-addon2">
                 <div class="input-group-append">
                   <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search" style="color:#00AEEF"></i></button>
                 </div>
             </div>
         </form>
-    </div>
+    </section>
 
     @if (session('message'))
         <div>
@@ -39,7 +43,7 @@
         </div>
     @endif
     
-    <section class="container container-margin index-mensagem section-aulas-destaque">
+    <section class="container container-margin index-mensagem section-aulas-destaque" >
     
         <div class="row justify-content-center" style="padding: 1em;">
     

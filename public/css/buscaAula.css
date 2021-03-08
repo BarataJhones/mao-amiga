@@ -5,7 +5,7 @@
 
 .icone-video-azul{background-image: url(../img/icone-video-azul.png);}
 
-.quadro-geral{margin-bottom: 2em;}
+.quadro-geral{margin-bottom: 2em; position: relative !important; z-index: 0;}
 
 .aula-imagem-index{
     width: 20em;
@@ -23,6 +23,16 @@ a{text-decoration: none !important;}
     font-style: italic;
     font-size: 1em;
     margin-bottom: 0;
+}
+
+.searchBar{
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 1 !important;
+    top: 0;
+    padding: 1em;
+    align-content: center;
+    background-color: white;
 }
 
 .aula-data-publicacao{font-family: 'Montserrat Alternates', sans-serif; text-align: center;}
