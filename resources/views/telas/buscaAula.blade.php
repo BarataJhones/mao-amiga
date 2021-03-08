@@ -23,10 +23,10 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <section class="searchBar" >
+    <section class="searchBar">
         <form action="{{ route ('aula.search') }}" method="post">
             @csrf
-            <div class="input-group mb-3">
+            <div class="input-group mb-3" >
                 <input type="text" name="search" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="basic-addon2">
                 <div class="input-group-append">
                   <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search" style="color:#00AEEF"></i></button>
@@ -43,7 +43,7 @@
         </div>
     @endif
     
-    <section class="container container-margin index-mensagem section-aulas-destaque" >
+    <section class="container container-margin index-mensagem section-aulas-destaque">
     
         <div class="row justify-content-center" style="padding: 1em;">
     

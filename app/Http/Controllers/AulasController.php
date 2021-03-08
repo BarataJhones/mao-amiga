@@ -195,8 +195,6 @@ class AulasController extends Controller
     {
         $filters = $request->all();
 
-        $name = 0;
-
         $aulas = Aula::where('title', 'LIKE', "%{$request->search}%")
                         ->orWhere('content', 'LIKE', "%{$request->search}%")
                         ->orWhere('grade', 'LIKE', "%{$request->search}%")
