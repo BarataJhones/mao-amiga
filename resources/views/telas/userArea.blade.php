@@ -4,8 +4,8 @@
 {{asset('css/userArea.css')}}
 @endsection
 
-@section('pageTitle')Tela do usuário @endsection
-@section('boxTitle')Tela do usuário @endsection
+@section('pageTitle')Área do usuário @endsection
+@section('boxTitle')Área do usuário @endsection
 @section('boxVideo') @endsection
 
 @section('boxContent' )
@@ -69,9 +69,9 @@ Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-hist
             </thead>
             <tbody>
                 @foreach($aulas as $aula)
-                    @if ($aula->userId == Auth::id())
+
                         <tr>
-                            <td>{{Carbon\Carbon::parse($aula->created_at)->format('d/m/Y')}}</td>
+                            <td>{{Carbon\Carbon::parse($aula->created_at)->format('d/m/Y - H:i:s')}}</td>
                             <td>
                                 <a href="{{ route('aula.viewAula', $aula->id) }}">
                                     <img class="list-aula-img" src="{{ url("storage/{$aula->image}") }}" alt="">
@@ -92,7 +92,7 @@ Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-hist
                                 </form>
                             </td>
                         </tr>
-                    @endif
+
                 @endforeach
             </tbody>
         </table>
@@ -132,9 +132,9 @@ Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-hist
             </thead>
             <tbody>
                 @foreach($historicos as $historico)
-                    @if ($historico->user_id == Auth::id())
+                    
                         <tr>
-                            <td>{{Carbon\Carbon::parse($historico->dateTime)->format('d/m/Y - H:m:s')}}</td>
+                            <td>{{Carbon\Carbon::parse($historico->dateTime)->format('d/m/Y - H:i:s')}}</td>
                             <td>
                                 <a href="{{ route('aula.viewAula', $historico->aula->id) }}">
                                     <img class="list-aula-img" src="{{ url("storage/{$historico->aula->image}") }}" alt="">
@@ -144,7 +144,7 @@ Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-hist
                             <td>{{$historico->aula->user->name}}</td>
                             </td>
                         </tr>
-                    @endif
+                    
                 @endforeach
             </tbody>
         </table>

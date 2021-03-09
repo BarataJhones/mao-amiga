@@ -68,9 +68,7 @@
         </div>
 
         @foreach($aulas as $aula)
-
             <div class="row justify-content-center" style="padding: 1em;">
-
                 <a href="{{ route('aula.viewAula', $aula->id) }}" class="my-auto">
                     <div class="my-auto">
                         <img class="aula-imagem-index" src="{{ url("storage/{$aula->image}") }}" alt="">
@@ -98,7 +96,6 @@
                 </div>
                 <hr>
             </div>
-
         @endforeach
 
     </section>

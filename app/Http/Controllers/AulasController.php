@@ -25,9 +25,12 @@ class AulasController extends Controller
 
     public function userAulasList()
     {
-        $aulas = Aula::orderBy('created_at', 'DESC')->paginate();
 
-        $historicos = Aula_User::latest('dateTime')->paginate(5);
+        $user = auth()->user();
+
+        $aulas = Aula::where('userId', $user->id)->latest('created_at')->paginate(10);
+        
+        $historicos = Aula_User::where('user_id', $user->id)->latest('dateTime')->paginate(10);
         
         return view('telas.userArea', compact('aulas', 'historicos'));
     }
