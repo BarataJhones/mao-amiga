@@ -19,7 +19,6 @@ class Aula extends Model
         'discipline',
         'image',
         'aulaVideo',
-        'aulaFiles',
         'imageFont',
         'references'
     ];
@@ -27,6 +26,10 @@ class Aula extends Model
     public function user()
     {
         return $this->belongsTo(User :: class, 'userId');
+    }
+
+    public function events() {
+        return $this->hasMany('App\Models\Aula');
     }
 
     public function users(){

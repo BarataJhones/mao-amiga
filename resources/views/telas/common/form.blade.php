@@ -97,16 +97,20 @@
 
             
             <div class="form-group">
-                <input type="file" class="form-control-file" name="imageFile[]" id="aulaFiles" style="margin-bottom: 3em;" multiple>
+                <input type="file" class="form-control-file" name="file[]" multiple style="margin-bottom: 3em;">
             </div>
 
             <div class="text-center justify-content-center row" style="margin-bottom: 3em;">
                 <div class="text-center col-2">
-                    <button class="btn botao-del-edit save fas fa-check" type="submit"></button>
+                    <button class="btn botao-del-edit save" type="submit">
+                        <i class="fas fa-check"></i>
+                    </button>
                 </div>
             
                 <div class="text-center col-2">
-                    <button type="button" class="btn botao-del-edit cancel fas fa-times" onclick="goBack()"></button>
+                    <button type="button" class="btn botao-del-edit cancel" onclick="goBack()">
+                        <i class="fas fa-times"></i>
+                    </button>
                 </div>
             </div>
             

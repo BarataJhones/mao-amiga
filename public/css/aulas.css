@@ -147,3 +147,10 @@ h5 {
 a{text-decoration: none !important;}
 
 .conteudos-referencia-titulo{font-family: 'Montserrat Alternates', sans-serif; font-style: italic; color: #00AEEF; margin: 0;}
+
+.conteudo-pra-baixar{font-size: 1.2em;}
+.visualizações{
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-style: italic;
+    font-size: 1.2em;
+}

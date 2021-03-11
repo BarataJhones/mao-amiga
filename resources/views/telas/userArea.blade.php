@@ -81,14 +81,18 @@ Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-hist
                             
                             <td>
                                 <a href="{{ route('aula.edit', $aula->id) }}">
-                                    <button type="submit" class="btn botao-del-edit edit fas fa-pencil-alt"></button>
+                                    <button type="submit" class="btn botao-del-edit edit">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </button>
                                 </a>
                             </td>
                             <td>
                                 <form action="{{ route('aula.destroy', $aula->id) }}" method="post">
                                     @csrf
                                     <input type="hidden" name="_method" value="DELETE">
-                                    <button type="submit" class="btn botao-del-edit delet fas fa-trash"></button>
+                                    <button type="submit" class="btn botao-del-edit delet">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
                                 </form>
                             </td>
                         </tr>
@@ -117,7 +121,9 @@ Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-hist
             <form action="{{ route('aula.clearHistoric') }}" method="post">
                 @csrf
                 <input type="hidden" name="_method" value="DELETE">
-                <button type="submit" class="btn botao-del-edit delet fas fa-trash"></button>
+                <button type="submit" class="btn botao-del-edit delet">
+                    <i class="fas fa-trash"></i>
+                </button>
             </form>
         </div>
 

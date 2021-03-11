@@ -30,6 +30,7 @@ Route::delete('/user', [AulasController::class, 'clearHistoric'])->name('aula.cl
 Route::put('/aula/{id}', [AulasController::class, 'update'])->name('aula.update');
 Route::get('/aula/edit-aula/{id}', [AulasController::class, 'edit'])->name('aula.edit');
 Route::delete('/aula/{id}', [AulasController::class, 'destroy'])->name('aula.destroy');
+Route::get('/aula/download/{id}', [AulasController::class, 'fileDownload'])->name('aula.fileDownload');
 Route::get('/aula/{id}', [AulasController::class, 'viewAula'])->name('aula.viewAula');
 Route::get('/search', [AulasController::class, 'searchList'])->name('aula.searchList');
 Route::post('/cadastro-aulas', [AulasController::class, 'store'])->name('aulas.store');

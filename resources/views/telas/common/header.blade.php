@@ -12,6 +12,7 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/fontawesome.js')}}"></script>
     <script src="{{asset('js/fontawesome.min.js')}}"></script>
+    <script src="{{asset('js/all.js')}}"></script>
     <!-- Magnific Popup core JS file -->
     <script src="{{asset('magnific-popup/jquery.magnific-popup.js')}}"></script>
     <!-- Magnific Popup effect-->
@@ -31,6 +32,7 @@
     
     <link rel="stylesheet" href="{{asset('css/header.css')}}">
     <link rel="stylesheet" href="{{asset('bootstrap/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/fontawesome.css')}}">
     <link rel="stylesheet" href="{{asset('css/fontawesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('https://use.fontawesome.com/releases/v5.0.6/css/all.css')}}">
 

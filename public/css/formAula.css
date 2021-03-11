@@ -54,10 +54,9 @@ label{text-align: justify; font-family: 'Montserrat Alternates', sans-serif;}
 
 .botao-del-edit{
     color: white;
-    width: 2.7em;
-    height: 2.7em;
+    width: 3em;
+    height: 3em;
     border-radius: 0.6em !important;
-    font-size: 1.5em !important;
 }
 
 .cancel {background-color: #ff4e4e;}

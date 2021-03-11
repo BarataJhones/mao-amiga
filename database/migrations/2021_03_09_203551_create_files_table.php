@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAulaUserTable extends Migration
+class CreateFilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateAulaUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('aula_user', function (Blueprint $table) {
+        Schema::create('files', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('aula_id')->constrained('aulas')->onDelete('cascade');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->timestamp('dateTime');
+            $table->string('filePath')->nullable();
+            $table->string('title')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -27,6 +29,6 @@ class CreateAulaUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('aula_user');
+        Schema::dropIfExists('files');
     }
 }

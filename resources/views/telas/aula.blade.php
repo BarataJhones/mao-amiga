@@ -70,24 +70,24 @@
                     e não corresponde ao que está escrito na aula.</p>
             </div>
 
-            <div class="conteudo-pra-baixar-referencias">
-
+            <div>
                 <p class="conteudos-referencia-titulo" style="margin-top: 1em;">Referências:</p>
                 <p class="referencias">{{ $aula->references }}</p>
 
                 <p class="conteudos-referencia-titulo" style="margin-bottom: 1em;">Imagens e conteúdos para baixar:</p>
                 <div>
-                   <a href="">link</a>
+                    @foreach ($files as $file)
+                        <a href="{{ route('aula.fileDownload', $file->id) }}" class="conteudo-pra-baixar">
+                            <i class="fas fa-file-download"></i>
+                            {{ $file->title }}
+                        </a> <br>
+                   @endforeach
                 </div>
-
-                <!--<a class="arquivos-para-baixar" href="arquivos-para-baixar/biologia1.jpg" download>
-                    <img src="arquivos-para-baixar/biologia1.jpg">
-                </a>-->
             </div>
 
         </div>
 
-        <div style="margin-bottom: 3em; font-size: 1.2em">
+        <div style="margin-bottom: 3em; font-size: 1.2em" class="visualizações">
             <i class="fas fa-eye" style="color:#00AEEF"></i> {{$aula->viewCount}} Visualizações
         </div>
         
@@ -96,7 +96,9 @@
 
                 <div class="col-2">
                     <a href="{{ route('aula.edit', $aula->id) }}">
-                        <button type="submit" class="btn botao-del-edit edit fas fa-pencil-alt fa-lg"></button>
+                        <button type="submit" class="btn botao-del-edit edit">
+                            <i class="fas fa-pencil-alt"></i>
+                        </button>
                     </a>
                 </div>
 
@@ -104,7 +106,9 @@
                     <form action="{{ route('aula.destroy', $aula->id) }}" method="post">
                         @csrf
                         <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit" class="btn botao-del-edit delet fas fa-trash fa-lg"></button>
+                        <button type="submit" class="btn botao-del-edit delet">
+                            <i class="fas fa-trash"></i>
+                        </button>
                     </form>
                 </div>
             </div>
