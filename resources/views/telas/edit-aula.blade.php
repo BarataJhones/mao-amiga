@@ -9,6 +9,7 @@
     Após a edição, você pode
     <span style="font-weight: bold; color: #00AEEF">confirmar <i class="fas fa-check"></i></span> ou
     <span style="font-weight: bold; color: #ff4e4e">cancelar <i class="fas fa-times"></i></span> as edições.
+    Os campos com um * são obrigatórios. O seu nome de usuário e a data de publicação serão cadastrados automaticamente.
 @endsection
 
 @section('formDetails')action="{{ route('aula.update', $aula->id) }}" method="post" enctype="multipart/form-data"@endsection

@@ -5,8 +5,8 @@
 @section('boxVideo')                @endsection
 
 @section('boxContent' )
-    Nesta área você poderá cadastrar uma nova aula. Preencha os campos de acordo com o que é pedido. O seu nome de usuário e a data de publicação serão cadastrados automaticamente,
-    e a fonte da imagem principal, os conteúdos para baixar e as referências são opcionais.
+    Nesta área você poderá cadastrar uma nova aula. Preencha os campos de acordo com o que é pedido. 
+    Os campos com um * são obrigatórios. O seu nome de usuário e a data de publicação serão cadastrados automaticamente.
     Para que o usuário surdo consiga captar o conteúdo, é de extrema importância que o video esteja fiel ao conteúdo escrito. Além disso, lembre-se de seguir essa ordem ao gravar
     o vídeo: <br>
     <span style="color: #00AEEF; font-weight: bold;">

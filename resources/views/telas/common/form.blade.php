@@ -25,31 +25,31 @@
             @yield('csrfMethod')
 
             <div class="form-group">
-                <label for="comment">Título da aula:</label>
+                <label for="comment">Título da aula*</label>
                 <input type="text" name="title" class="form-control" rows="1" id="title" @yield('valueTitle')>
             </div>
 
-            <label for="comment">Área de Ensino:</label> <br>
+            <label for="comment">Área de Ensino*</label> <br>
             <select name="grade" class="form-select" aria-label="Default select example" id="grade">
                 <option value="Infantil">Infantil</option>
                 <option value="Fundamental">Fundamental</option>
                 <option value="Médio">Médio</option>
                 <option value="Superior">Superior</option>
                 <option selected value="Livre">Livre</option>
-            </select>
+            </select><br><br>
 
             <div class="form-group">
-                <label for="comment">Disciplina:</label>
+                <label for="comment">Disciplina*</label>
                 <input type="text" name="discipline" class="form-control" rows="1" id="discipline"
                     @yield('valueDiscipline')>
             </div>
 
             <div class="form-group">
-                <label for="comment">Conteúdo da aula:</label>
+                <label for="comment">Conteúdo da aula*</label>
                 <textarea name="content" class="form-control" rows="15" id="content">@yield('valueContent')</textarea>
             </div>
 
-            <label>Imagem principal da aula:</label>
+            <label>Imagem principal da aula*</label>
             <div class="col-md-6">
                 <div class="form-group">
                     <div class="input-group">
@@ -66,17 +66,17 @@
             </div>
 
             <div class="form-group">
-                <label for="comment">Fonte da imagem principal da aula:</label>
+                <label for="comment">Fonte da imagem principal da aula</label>
                 <input type="text" name="imageFont" class="form-control" rows="1" id="imageFont" @yield('valueImageFont')>
             </div>
 
             <div class="form-group">
-                <label for="comment">Referências:</label>
+                <label for="comment">Referências</label>
                 <textarea type="text" name="references" class="form-control" rows="5"
                     id="references">@yield('valueReferences')</textarea>
             </div>
 
-            <label>Subir vídeo:</label>
+            <label>Subir vídeo*</label>
             <div id="video-demo-container">
                 <button class="btn" type="button" id="upload-button">
                     <i class="fas fa-upload fa-3x"></i>
@@ -88,7 +88,7 @@
                 <canvas id="video-canvas"></canvas>
             </div> <br>
 
-            <label>Conteúdo para baixar:</label>
+            <label>Conteúdo para baixar</label>
             
             <!-- <div class="custom-file">
                 <input type="file" name="aulaFiles" class="custom-file-input" id="chooseFile" multiple>

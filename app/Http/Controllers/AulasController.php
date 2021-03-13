@@ -143,10 +143,10 @@ class AulasController extends Controller
         if (Storage::exists($aula->aulaVideo))
             Storage::delete($aula->aulaVideo);
 
-        if (!$files = File::where('aula_id', $aula->id)) {
-            if ($id = $files->aula_id) {
-                $files->delete();
-            }
+        $files = File::where('aula_id',  $aula->id)->get();
+
+        foreach ($files as $file) {
+            Storage::delete([$file->filePath]);
         }
 
         $aula->delete();
@@ -159,47 +159,85 @@ class AulasController extends Controller
     public function edit($id)
     {
 
-        if (!$aula = Aula::find($id)){
+        $user = auth()->user();
+
+        //dd($user->id);
+
+        if (!$aula = Aula::find($id)) {
+            return redirect()->back();
+        }
+
+        if ($user->id != $aula->userId) {
             return redirect()->back();
         }
 
         return view('telas.edit-aula', compact('aula'));
     }
 
-    public function update(StoreUpdateAula $request, $id)
+    public function update(StoreUpdateAula $request, $id, StoreUpdateFile $request_file)
     {
 
-        if (!$aula = Aula::find($id)){
+        if (!$aula = Aula::find($id)) {
             return redirect()->back();
         }
 
         $data = $request->all();
 
-        if($request->image->isValid()){
-            if (Storage::exists($aula->image)) 
+        if ($request->image->isValid()) {
+            if (Storage::exists($aula->image))
                 Storage::delete($aula->image);
-            
 
-            $image = $request->image->store('aulas');
-            $data ['image'] = $image;
 
+            $image = $request->image->store('aulasData.image');
+            $data['image'] = $image;
         }
 
-        if($request->aulaVideo->isValid()){
-            if (Storage::exists($aula->aulaVideo)) 
+        if ($request->aulaVideo->isValid()) {
+            if (Storage::exists($aula->aulaVideo))
                 Storage::delete($aula->aulaVideo);
-            
 
-            $video = $request->aulaVideo->store('aulas');
-            $data ['aulaVideo'] = $video;
 
+            $video = $request->aulaVideo->store('aulasData.video');
+            $data['aulaVideo'] = $video;
+        }
+
+        //Upload dos arquivos
+        $request_file->validate([
+            'file' => 'nullable',
+        ]);
+
+        $aula_id = $id;
+
+        $filesDel = File::where('aula_id',  $id)->get();
+
+        foreach ($filesDel as $file) {
+            Storage::delete([$file->filePath]);
+        }
+
+        File::where('aula_id',  $id)->truncate();
+
+        if ($request_file->hasfile('file')) {
+
+            $files = $request_file->file('file');
+
+            foreach ($files as $file) {
+                $fileName = $file->getClientOriginalName();
+
+                $filePath = $file->store('aulasData.files');
+
+                File::create([
+                    'title' => $fileName,
+                    'filePath' => $filePath,
+                    'aula_id' => $aula_id
+                ]);
+            }
         }
 
         $aula->update($data);
 
         return redirect()
-                ->route('aula.viewAula', $aula->id)
-                ->with('message', 'Aula editada com sucesso.');
+            ->route('aula.viewAula', $aula->id)
+            ->with('message', 'Aula editada com sucesso.');
     }
 
     public function clearHistoric()
