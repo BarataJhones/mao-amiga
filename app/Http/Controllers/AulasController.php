@@ -214,7 +214,7 @@ class AulasController extends Controller
             Storage::delete([$file->filePath]);
         }
 
-        File::where('aula_id',  $id)->truncate();
+        File::where('aula_id',  $id)->delete();
 
         if ($request_file->hasfile('file')) {
 
