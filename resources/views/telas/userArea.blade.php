@@ -52,14 +52,11 @@ Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-hist
     <div class="collapse data" id="listExpand3">
 
         <div class="botaoAdd">
-
-            <form action="" method="">
-                @csrf
-                <input type="hidden" name="_method" value="DELETE">
+            <a href="{{ route('user.edit') }}">
                 <button type="submit" class="btn botao-del-edit edit">
                     <i class="fas fa-pencil-alt"></i>
                 </button>
-            </form>
+            </a>
         </div>
 
         <table class="table table-hover table-striped" style="margin-top: 1em;">
@@ -145,7 +142,7 @@ Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-hist
 
         <div class="botaoAdd">
             <a href="{{ route('aula.cadastra') }}">
-                <i class="fas fa-plus-circle fa-3x" style="font-weight: bold;"></i>
+                <i class="fas fa-plus-circle fa-3x" style="font-weight: bold; color: #00AEEF"></i>
             </a>
         </div>
 

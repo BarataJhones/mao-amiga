@@ -16,6 +16,11 @@ Route::get('/register', [RegisteredUserController::class, 'create'])
                 ->middleware('guest')
                 ->name('register');
 
+Route::get('/user/editar-user', [RegisteredUserController::class, 'editUser'])->name('user.edit')
+->middleware('auth');
+
+Route::post('/user/updated', [RegisteredUserController::class, 'userUpdate'])->name('user.update');
+
 Route::post('/register', [RegisteredUserController::class, 'store'])
                 ->middleware('guest');
 

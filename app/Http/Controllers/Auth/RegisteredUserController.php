@@ -22,6 +22,14 @@ class RegisteredUserController extends Controller
         return view('auth.register');
     }
 
+    public function editUser()
+    {
+
+        $user = auth()->user();
+
+        return view('auth.user-edit', compact('user'));
+    }
+
     /**
      * Handle an incoming registration request.
      *
@@ -58,5 +66,21 @@ class RegisteredUserController extends Controller
 
         return redirect('index')
         ->with('message', 'Usuário cadastrado com sucesso.');
+    }
+
+    public function userUpdate(Request $request)
+    {
+
+        if (!$user = auth()->user()) {
+            return redirect()->back();
+        }
+
+        $data = $request->all();
+
+        $user->update($data);
+
+        return redirect()
+            ->route('aula.userList')
+            ->with('message', 'Dados editados com sucesso');
     }
 }
