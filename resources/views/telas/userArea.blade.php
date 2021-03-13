@@ -12,7 +12,7 @@
 Nesta área você pode visualizar seus dados cadastrais, suas aulas criadas e seus histório de visualização de aulas.
 Ao clicar na seta para baixo, a área clicada irá expandir e mostrar o conteúdo relacionado. <br><br>
 
-Na sessão <span style="font-weight: bold; color: #00AEEF">Meus dados</span> você pode visualizar seus dados cadastrais e
+Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-user"></i> Meus dados</span> você pode visualizar seus dados cadastrais e
 <span style="font-weight: bold; color: #eeae00">edita-los <i class="fas fa-pencil-alt"></i></span>. <br><br>
 
 Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-video"></i> Minhas aulas</span> você pode visualizar as suas aulas criadas,
@@ -41,19 +41,111 @@ Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-hist
     </div>
     @endif
 
+    <!-- Dados -->
+    <div data-toggle="collapse" data-target="#listExpand3" aria-expanded="false" aria-controls="listExpand3">
+        <h5>
+            <i class="fas fa-user"></i>
+            Meus dados
+            <i class="fas fa-chevron-circle-down fa-lg"></i></h5>
+    </div>
+
+    <div class="collapse data" id="listExpand3">
+
+        <div class="botaoAdd">
+
+            <form action="" method="">
+                @csrf
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn botao-del-edit edit">
+                    <i class="fas fa-pencil-alt"></i>
+                </button>
+            </form>
+        </div>
+
+        <table class="table table-hover table-striped" style="margin-top: 1em;">
+            <tbody>
+
+                <tr>
+                    <th scope="row">Nome</th>
+                    <td>
+                        @php
+                             echo $user->name;
+                        @endphp
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">Email</th>
+                    <td>
+                        @php
+                             echo $user->email;
+                        @endphp
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">Nascimento</th>
+                    <td>
+                        @php
+                             echo Carbon\Carbon::parse($user->birthday)->format('d/m/Y');
+                        @endphp
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">Sexo</th>
+                    <td>
+                        @php
+                             echo $user->gender;
+                        @endphp
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">Surdez</th>
+                    <td>
+                        @php
+                             echo $user->deaf;
+                        @endphp
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">Instituição que frequenta</th>
+                    <td>
+                        @php
+                             echo $user->institution;
+                        @endphp
+                    </td>
+                </tr>
+
+                <tr>
+                    <th scope="row">Área de ensino atual</th>
+                    <td>
+                        @php
+                             echo $user->grade;
+                        @endphp
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
     <!-- Aulas -->
     <div data-toggle="collapse" data-target="#listExpand" aria-expanded="false" aria-controls="listExpand">
         <h5>
             <i class="fas fa-video"></i>
             Minhas aulas
-            <i class="fas fa-chevron-circle-down fa-lg"></i></h5>
+            <i class="fas fa-chevron-circle-down fa-lg" style="margin-top: 2em"></i></h5>
     </div>
 
-    <div class="aula-video collapse" id="listExpand">
+    <div class="collapse" id="listExpand">
 
         <div class="botaoAdd">
             <a href="{{ route('aula.cadastra') }}">
-                <i class="fas fa-plus-circle fa-3x" style="font-weight: bold; color: #00AEEF"></i>
+                <i class="fas fa-plus-circle fa-3x" style="font-weight: bold;"></i>
             </a>
         </div>
 
@@ -114,7 +206,7 @@ Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-hist
         </h5>
     </div>
 
-    <div class="aula-video collapse" id="listExpand2">
+    <div class="collapse" id="listExpand2">
 
         <div class="botaoAdd">
 

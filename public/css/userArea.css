@@ -4,24 +4,7 @@
     margin-bottom: 0.5em;
 }
 
-.icone-video-mensagem{
-    background-image: url(../img/icone-video-azul.png);
-    background-repeat: no-repeat;
-    display: block;
-}
-
-.bordar-quadrada{
-    padding-top: 0.7rem;
-    width: 12em;
-    height: 12rem; 
-    font-weight: bold;
-    font-size: 1.2rem;
-    text-align: center;
-    border-style: solid;
-    border-color: #00AEEF !important;
-    border-radius: 0.5em;}
-
-.quadro-margem{margin-right: 1em; margin-bottom: 2em;}
+.data{font-family: 'Montserrat Alternates', sans-serif !important;}
 
 .table{font-family: 'Montserrat Alternates', sans-serif !important;}
 

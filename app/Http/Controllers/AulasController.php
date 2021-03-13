@@ -34,7 +34,7 @@ class AulasController extends Controller
         
         $historicos = Aula_User::where('user_id', $user->id)->latest('dateTime')->paginate(10);
         
-        return view('telas.userArea', compact('aulas', 'historicos'));
+        return view('telas.userArea', compact('aulas', 'historicos', 'user'));
     }
 
     public function searchList()
