@@ -9,6 +9,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class RegisteredUserController extends Controller
 {
@@ -76,6 +77,22 @@ class RegisteredUserController extends Controller
         }
 
         $data = $request->all();
+
+        $this->validate($request, [
+            'avatar' => 'nullable|image',
+        ]);
+
+        if ($request->hasFile('avatar')) {
+            
+            if ($user->avatar !="user.png"){
+                if (Storage::exists($user->avatar))
+                    Storage::delete($user->avatar);
+            }
+
+            $avatar = $request->avatar->store('user.avatar');
+            $data['avatar'] = $avatar;
+            
+        }
 
         $user->update($data);
 

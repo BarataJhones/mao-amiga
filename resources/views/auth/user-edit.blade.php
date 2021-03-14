@@ -1,3 +1,24 @@
+<link class="jsbin" href="{{asset('js/jquery-ui.css')}}" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="{{asset('js/jquery.min.js')}}"></script>
+<script class="jsbin" src="{{asset('js/jquery-ui.min.js')}}"></script>
+
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#change')
+                    .attr('src', e.target.result)
+                    .width(128)
+                    .height(128);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -21,8 +42,18 @@
         <form method="POST" action="{{ route('user.update') }}" enctype="multipart/form-data">
             @csrf
 
+            <!-- Image -->
+            <div >
+                <x-label for="name" :value="__('Avatar')" />
+
+                <img src="{{ url("storage/$user->avatar") }}" id="change" class="avatar">
+
+                <x-input id="avatar" class="block mt-1 w-full" type="file" name="avatar"  class="avatarInput" onchange="readURL(this);" />
+                
+            </div>
+
             <!-- Name -->
-            <div>
+            <div class="mt-4">
                 <x-label for="name" :value="__('Nome')" />
 
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" value="{{ $user->name }}" required autofocus />

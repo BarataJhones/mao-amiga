@@ -24,7 +24,8 @@ class User extends Authenticatable
         'gender',
         'deaf',
         'institution',
-        'grade'
+        'grade',
+        'avatar'
     ];
 
     /**

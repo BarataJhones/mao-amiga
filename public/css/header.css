@@ -22,6 +22,16 @@
 
 .navbar-toggler{background-color: white !important;}
 
+.userAvatar{
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dropdown-menu a{ color: #00AEEF !important;}
+.dropdown-item{font-size: 1em !important;}
+
 /*Customização do botão navibar mobile*/
 .custom-toggler.navbar-toggler { border-color: #00AEEF !important;}
 .fa-bars{color: #00AEEF;}

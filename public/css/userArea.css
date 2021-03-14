@@ -3,6 +3,12 @@
     color: #00AEEF;
     margin-bottom: 0.5em;
 }
+.avatar{
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
 .data{font-family: 'Montserrat Alternates', sans-serif !important;}
 

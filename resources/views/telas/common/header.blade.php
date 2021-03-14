@@ -61,32 +61,43 @@
                     <a href="{{ route('aula.searchList') }}" class="nav-item nav-link"><i class="fas fa-video"></i> Aulas</a>
                     <a href="{{ route('aula.userList') }}" class="nav-item nav-link"><i class="fas fa-user"></i> Área do usuário</a>
                 </div>
-
-                <div class="navbar-nav ml-auto dropdown">
+            
+                <div class="navbar-nav ml-auto dropdown" style="font-size: 1em">
                     @if ((Auth::id()!=0))
-                        <a style="font-size: 1.5em" href="#" class="nav-link dropdown-toggle" id="navbarDropdown"
-                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Bem vindo,
+                        <a style="font-size: 1.2em" href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
                             <?php 
                                 list($primeiroNome) = explode(' ', Auth::user()->name); 
-                                echo $primeiroNome
-                            ?> 
+                                $avatar = Auth::user()->avatar;
+                            ?>
+                
+                            <img src="{{ url("storage/$avatar") }}" class="userAvatar">
+                            Bem vindo, @php echo $primeiroNome; @endphp
+                
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                            <a class="dropdown-item"
+                                href="{{ route('aula.userList') }}">
+                                <i class="fas fa-user"></i> Área do usuário
+                            </a>
+                
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-                                <a style="color: #00AEEF !important; font-size: 1.2em;" class="dropdown-item"
-                                    :href="route('logout')" onclick="event.preventDefault();this.closest('form').submit();">
-                                    Sair
+                                <a class="dropdown-item" :href="route('logout')"
+                                    onclick="event.preventDefault();this.closest('form').submit();">
+                                    <i class="fas fa-power-off"></i> Sair
                                 </a>
                             </form>
                         </div>
                     @else
-                        <a href="{{ route('aula.userList') }}" class="nav-item nav-link"><i class="fas fa-sign-in-alt"></i>
-                            Login</a>
+                        <a href="{{ route('aula.userList') }}" class="nav-item nav-link" style="font-size: 1.5em">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </a>
                     @endif
                 </div>
-
+            
             </div>
         </nav>
 

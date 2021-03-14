@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('deaf');
             $table->string('institution')->nullable();
             $table->string('grade')->nullable();
+            $table->string('avatar')->default('user.png');
             $table->rememberToken();
             $table->timestamps();
         });
