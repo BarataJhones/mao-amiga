@@ -160,7 +160,7 @@ a{text-decoration: none !important;}
     font-style: italic;
     font-size: 1.2em;
 }
-.commentSession{background-color: #f4faff;}
+.commentSession{background-color: #f4faff; padding: 1em;}
 .botaoComment{
 
     background-color: #00AEEF !important;

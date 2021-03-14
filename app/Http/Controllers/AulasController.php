@@ -131,10 +131,10 @@ class AulasController extends Controller
         $files = File::where('aula_id',  $aula->id)->get();
 
         $comments = Comment::where('commentable_id',  $aula->id)
-                            ->orderBy('created_at', 'DESC')->paginate();
+                            ->orderBy('created_at', 'DESC')->paginate(10);
 
         $replies = Comment::where('commentable_id',  $aula->id)
-                            ->orderBy('created_at')->paginate();
+                            ->orderBy('created_at')->get();
         
         return view('telas.aula', compact('aula', 'userCreator', 'files', 'comments', 'replies'));
     }

@@ -27,16 +27,16 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
+    @if (session('message'))
+    <div>
+        <h5>
+            {{ session('message') }}
+        </h5>
+    </div>
+    @endif
+
     <section class="container container-margin">
         <div class="quadro-aula">
-
-            @if (session('message'))
-            <div>
-                <h5>
-                    {{ session('message') }}
-                </h5>
-            </div>
-            @endif
 
             <div class="informacoes-aula">
 
@@ -145,7 +145,7 @@
                 </div>
             @endif
         
-            <div class="card-body">
+            <div class="scrolling-pagination">
                 @foreach($comments as $comment)
                     @if ($comment->parent_id == 0)
                         @include('posts.comments')
@@ -157,13 +157,10 @@
                         @endif
                     @endforeach
                 @endforeach
-                
+                {{ $comments->links() }}
             </div>
-        
+            
         </div>
-
-        {{ $comments->links() }}
-        
 
     </section>
 
@@ -189,5 +186,10 @@
          });
     });
 </script>
+
+<!-- Scripts scroll infinito -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.min.js"></script>
+
+<script type="text/javascript" src="{{asset('js/scrolling-pagination.js')}}"></script>
 
 @endsection

@@ -24,7 +24,8 @@ class CommentController extends Controller
 
         $aula->comments()->save($comment);
 
-        return back();
+        return back()
+                ->with('message', 'Comentário postado');
     }
 
     public function replyStore(Request $request)
@@ -43,6 +44,7 @@ class CommentController extends Controller
 
         $aula->comments()->save($reply);
 
-        return back();
+        return back()
+                ->with('message', 'Resposta postada');
     }
 }
