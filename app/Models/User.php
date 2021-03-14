@@ -54,4 +54,10 @@ class User extends Authenticatable
     public function aulaAsHistoric(){
         return $this->belongsToMany('App\Models\Aula');
     }
+
+    public function posts() {
+  
+        return $this->hasMany(Post::class);
+     
+    }
 }

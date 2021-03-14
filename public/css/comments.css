@@ -1,0 +1,23 @@
+.userAvatarComment{
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.commentUser{margin-left: 1em; color: #00AEEF;}
+.commentContent{
+    margin-left: 4.3em;
+    
+}
+
+.replyButton{
+    font-size: 1em;
+    margin-bottom: 1em;
+    color: #00AEEF;
+    margin-left: 4.3em 
+}
+.replyForm{margin-left: 4.3em !important;}
+.replies{
+    margin-left: 4.3em;
+}

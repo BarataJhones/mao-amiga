@@ -146,11 +146,28 @@ h5 {
 .fa{padding-top: 0.5em;}
 a{text-decoration: none !important;}
 
-.conteudos-referencia-titulo{font-family: 'Montserrat Alternates', sans-serif; font-style: italic; color: #00AEEF; margin: 0;}
+.conteudos-referencia-titulo{
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-style: italic;
+    color: #00AEEF; margin: 0;
+}
+
+.listaFiles{margin-bottom: 3em;}
 
 .conteudo-pra-baixar{font-size: 1.2em;}
 .visualizações{
     font-family: 'Montserrat Alternates', sans-serif;
     font-style: italic;
     font-size: 1.2em;
+}
+.commentSession{background-color: #f4faff;}
+.botaoComment{
+
+    background-color: #00AEEF !important;
+    color: white;
+}
+
+.facaLogin{font-family: 'Montserrat Alternates', sans-serif;
+    font-style: italic;
+    text-align: center;
 }

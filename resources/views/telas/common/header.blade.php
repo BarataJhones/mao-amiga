@@ -63,7 +63,7 @@
                 </div>
             
                 <div class="navbar-nav ml-auto dropdown" style="font-size: 1em">
-                    @if ((Auth::id()!=0))
+                    @if ((Auth::id()!=null))
                         <a style="font-size: 1.2em" href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 

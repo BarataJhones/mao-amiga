@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AulasController;
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,8 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/cadastro-aulas', [AulasController::class, 'cadastraAula'])->name('aula.cadastra');
     Route::get('/aula/edit-aula/{id}', [AulasController::class, 'edit'])->name('aula.edit');
 });
+Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.add');
+Route::post('/reply/store', [CommentController::class, 'replyStore'])->name('reply.add');
 
 Route::any('/search/result', [AulasController::class, 'search'])->name('aula.search');
 Route::delete('/user', [AulasController::class, 'clearHistoric'])->name('aula.clearHistoric');

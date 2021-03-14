@@ -35,4 +35,9 @@ class Aula extends Model
     public function users(){
         return $this->belongsToMany('App\Models\User');
     }
+
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable')->whereNull('parent_id');
+    }
 }

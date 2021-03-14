@@ -8,6 +8,7 @@ use App\Http\Requests\StoreUpdateFile;
 use App\Models\Aula;
 use App\Models\User;
 use App\Models\File;
+use App\Models\Comment;
 use App\Models\Aula_User;
 use Auth;
 use Illuminate\Http\Request;
@@ -128,8 +129,14 @@ class AulasController extends Controller
         }
 
         $files = File::where('aula_id',  $aula->id)->get();
+
+        $comments = Comment::where('commentable_id',  $aula->id)
+                            ->orderBy('created_at', 'DESC')->paginate();
+
+        $replies = Comment::where('commentable_id',  $aula->id)
+                            ->orderBy('created_at')->paginate();
         
-        return view('telas.aula', compact('aula', 'userCreator', 'files'));
+        return view('telas.aula', compact('aula', 'userCreator', 'files', 'comments', 'replies'));
     }
 
     public function destroy($id)

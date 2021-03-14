@@ -75,7 +75,7 @@
                 <p class="referencias">{{ $aula->references }}</p>
 
                 <p class="conteudos-referencia-titulo" style="margin-bottom: 1em;">Imagens e conteúdos para baixar:</p>
-                <div>
+                <div class="listaFiles">
                     @foreach ($files as $file)
                         <a href="{{ route('aula.fileDownload', $file->id) }}" class="conteudo-pra-baixar">
                             <i class="fas fa-file-download"></i>
@@ -85,34 +85,85 @@
                 </div>
             </div>
 
+            @if ($aula->userId == Auth::id())
+                <div class="text-center justify-content-center row" style="margin-bottom: 3em;">
+                
+                    <div class="col-2">
+                        <a href="{{ route('aula.edit', $aula->id) }}">
+                            <button type="submit" class="btn botao-del-edit edit">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                        </a>
+                    </div>
+                
+                    <div class="col-2">
+                        <form action="{{ route('aula.destroy', $aula->id) }}" method="post">
+                            @csrf
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn botao-del-edit delet">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            @endif
+
         </div>
 
         <div style="margin-bottom: 3em; font-size: 1.2em" class="visualizações">
             <i class="fas fa-eye" style="color:#00AEEF"></i> {{$aula->viewCount}} Visualizações
-        </div>
-        
-        @if ($aula->userId == Auth::id())
-            <div class="text-center justify-content-center row" style="margin-bottom: 3em;">
+        </div> 
 
-                <div class="col-2">
-                    <a href="{{ route('aula.edit', $aula->id) }}">
-                        <button type="submit" class="btn botao-del-edit edit">
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                    </a>
-                </div>
-
-                <div class="col-2">
-                    <form action="{{ route('aula.destroy', $aula->id) }}" method="post">
+        <!-- Comentários -->
+        <div class="commentSession">
+            @if ((Auth::id()!=null))
+                <div class="card-body">
+                    <h5>Comentários</h5>
+                    <form method="post" action="{{ route('comment.add') }}">
                         @csrf
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit" class="btn botao-del-edit delet">
-                            <i class="fas fa-trash"></i>
-                        </button>
+                        <div class="form-group">
+                            <textarea type="text" name="comment" class="form-control" cols="1" rows="5"
+                                placeholder="Entre na conversa..." required></textarea>
+                            <input type="hidden" name="aula_id" value="{{ $aula->id }}"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" class="btn btn-sm btn-outline-danger py-0" />
+                            <button type="submit" class="btn botaoComment">Comentar
+                        </div>
                     </form>
                 </div>
+            @else
+                <div class="facaLogin">
+                    <h5>Faça login para participar da conversa</h5>
+                    <a href="{{ route('aula.userList') }}" class="nav-item nav-link" style="font-size: 1.5em">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </a>
+
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                        {{ __('Não tem cadastrado? Clique aqui') }}
+                    </a>
+                </div>
+            @endif
+        
+            <div class="card-body">
+                @foreach($comments as $comment)
+                    @if ($comment->parent_id == 0)
+                        @include('posts.comments')
+                    @endif
+            
+                    @foreach($replies as $replie)
+                        @if ($replie->parent_id == $comment->id)
+                            @include('posts.replies')
+                        @endif
+                    @endforeach
+                @endforeach
+                
             </div>
-        @endif  
+        
+        </div>
+
+        {{ $comments->links() }}
+        
 
     </section>
 
