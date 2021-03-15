@@ -119,18 +119,36 @@
             @if ((Auth::id()!=null))
                 <div class="card-body">
                     <h5>Comentários</h5>
+                    <p style="color: #00AEEF">
+                        @php
+                            $qntComments = count($replies);
+                            echo "<i class='fa fa-comments'></i>  $qntComments comentários";
+                        @endphp
+                    </p>
+
                     <form method="post" action="{{ route('comment.add') }}">
                         @csrf
-                        <div class="form-group">
-                            <textarea type="text" name="comment" class="form-control" cols="1" rows="5"
-                                placeholder="Entre na conversa..." required></textarea>
-                            <input type="hidden" name="aula_id" value="{{ $aula->id }}"/>
+                    
+                        <div class="form-group row">
+                            <?php  $avatar = Auth::user()->avatar; ?>
+
+                            <div class="col-1">
+                                <img src="{{ url("storage/$avatar") }}" class="userAvatarComment">
+                            </div>
+                    
+                            <div class="col">
+                                <textarea type="text" name="comment" class="form-control" cols="1" rows="5"
+                                    placeholder="Entre na conversa..." required></textarea>
+                                <input type="hidden" name="aula_id" value="{{ $aula->id }}" /> <br>
+                                <div class="form-group">
+                                    <input type="hidden" class="btn btn-sm btn-outline-danger py-0" />
+                                    <button type="submit" class="btn botaoComment">Comentar
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input type="hidden" class="btn btn-sm btn-outline-danger py-0" />
-                            <button type="submit" class="btn botaoComment">Comentar
-                        </div>
+                    
                     </form>
+
                 </div>
             @else
                 <div class="facaLogin">

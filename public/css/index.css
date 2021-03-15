@@ -39,11 +39,9 @@ a{text-decoration: none !important;}
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: bold;
     font-style: italic;
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin-bottom: 0;
 }
-
-.aula-data-publicacao{font-family: 'Montserrat Alternates', sans-serif; text-align: center;}
 
 h5 {
     text-align: center;
@@ -55,7 +53,17 @@ h5 {
     margin-top: 1em !important; 
 }
 
-.aula-destaque-user{color: #00AEEF !important;}
+.aula-destaque-user{
+    color: #00AEEF !important;
+    font-weight: bold;
+}
+
+.content{
+    font-size: 0.9em;
+    margin-bottom: 2em;
+}
+
+.userDateView{font-size: 0.8em;}
 
 hr {
     border: 0;

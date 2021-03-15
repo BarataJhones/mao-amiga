@@ -23,7 +23,9 @@ class AulasController extends Controller
     {
         $aulas = Aula::orderBy('viewCount', 'DESC')->paginate(3); //Configurar paginação se precisar/Ordem invertida
 
-        return view('telas.index', compact('aulas'));
+        $replies = Comment::get();
+
+        return view('telas.index', compact('aulas', 'replies'));
     }
 
     public function userAulasList()
@@ -131,7 +133,7 @@ class AulasController extends Controller
         $files = File::where('aula_id',  $aula->id)->get();
 
         $comments = Comment::where('commentable_id',  $aula->id)
-                            ->orderBy('created_at', 'DESC')->paginate(10);
+                            ->orderBy('created_at', 'DESC')->paginate();
 
         $replies = Comment::where('commentable_id',  $aula->id)
                             ->orderBy('created_at')->get();

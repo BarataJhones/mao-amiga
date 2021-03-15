@@ -167,7 +167,7 @@ Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-hist
                                     <img class="list-aula-img" src="{{ url("storage/{$aula->image}") }}" alt="">
                                 </a>
                             </td>
-                            <td>{{$aula->title}}</td>
+                            <td><?php echo mb_strimwidth("{$aula->title}", 0, 40, "..."); ?></td>
                             
                             <td>
                                 <a href="{{ route('aula.edit', $aula->id) }}">
@@ -236,7 +236,7 @@ Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-hist
                                     <img class="list-aula-img" src="{{ url("storage/{$historico->aula->image}") }}" alt="">
                                 </a>
                             </td>
-                            <td>{{$historico->aula->title}}</td>
+                            <td><?php echo mb_strimwidth("{$historico->aula->title}", 0, 40, "..."); ?></td>
                             <td>{{$historico->aula->user->name}}</td>
                             </td>
                         </tr>

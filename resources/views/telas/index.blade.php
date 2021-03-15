@@ -77,18 +77,37 @@
 
                 <div class="col my-auto">
                     <a href="{{ route('aula.viewAula', $aula->id) }}">
-                        <p class="aula-destaque-titulo text-center">{{$aula->title}}</p>
-                    </a>
-                    <p class="text-center"> Por <span class="aula-destaque-user">{{$aula->user->name}}</span></p>
-                    <p class="aula-data-publicacao" id="timestamp">
-                        <i class="fas fa-eye" style="color:#00AEEF"></i> {{$aula->viewCount}} Visualizações<br> 
-                        Postada em {{ $aula->created_at->format('d/m/Y') }}
-                    </p>
-                    
-                    <div class="content">
+                        <p class="aula-destaque-titulo">
+                            <?php echo mb_strimwidth("{$aula->title}", 0, 60, "..."); ?>
+                        </p>
+                    </a> <br>
 
+                    <div class="content">
                         <?php echo mb_strimwidth("{$aula->content}", 0, 150, "..."); ?>
                     </div>
+
+                   <div class="userDateView row">
+                        <div class="col-8">
+                            Por <span class="aula-destaque-user">{{$aula->user->name}}</span>,
+                            {{ $aula->created_at->diffForHumans() }}
+                        </div>
+                    
+                        <div class="col-4 text-right">
+                            <span class=""><i class="fas fa-eye" style="color:#00AEEF"></i> {{$aula->viewCount}}
+                                <i class="fa fa-comments" style="color:#00AEEF"></i> 
+
+                                @php $qntComments = 0; @endphp
+
+                                @foreach ($replies as $replie)
+                                    @if ($replie->commentable_id == $aula->id)
+                                        @php $qntComments++ @endphp
+                                    @endif
+                                @endforeach
+                                {{ $qntComments }}                            
+                            </span>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div class="col-10 col-xl-4 col-lg-4 col-md 5 col-sm-8 embed-responsive embed-responsive-16by9 my-auto">

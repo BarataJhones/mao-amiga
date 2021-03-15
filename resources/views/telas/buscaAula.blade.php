@@ -53,7 +53,7 @@
                     <a href="{{ route('aula.viewAula', $aula->id) }}" class="my-auto">
                         <img class="aula-imagem-index" src="{{ url("storage/{$aula->image}") }}" alt="">
         
-                        <p class="aula-destaque-titulo text-center">{{$aula->title}}</p>
+                        <p class="aula-destaque-titulo text-center"><?php echo mb_strimwidth("{$aula->title}", 0, 35, "..."); ?></p> 
                     </a>
         
                     <p class="text-center"> Por <span class="aula-destaque-user">{{$aula->user->name}}</span></p>
