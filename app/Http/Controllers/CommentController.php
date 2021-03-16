@@ -47,4 +47,21 @@ class CommentController extends Controller
         return back()
                 ->with('message', 'Resposta postada');
     }
+
+    public function deleteComment($id)
+    {
+        $comment = Comment::find($id);
+
+        //$comment->delete = 1;
+        $comment->user_id = null;
+        $comment->comment = "Comentário deletado.";
+
+        //dd($user->avatar);
+
+        $comment->update();
+
+        return redirect()
+            ->back()
+            ->with('message', 'Comentário deletado com sucesso.');
+    }
 }

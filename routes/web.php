@@ -26,6 +26,8 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/cadastro-aulas', [AulasController::class, 'cadastraAula'])->name('aula.cadastra');
     Route::get('/aula/edit-aula/{id}', [AulasController::class, 'edit'])->name('aula.edit');
 });
+Route::delete('/comment/delete{id}', [CommentController::class, 'deleteComment'])->name('comment.delete');
+
 Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.add');
 Route::post('/reply/store', [CommentController::class, 'replyStore'])->name('reply.add');
 

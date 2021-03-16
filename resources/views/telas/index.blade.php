@@ -88,7 +88,7 @@
 
                    <div class="userDateView row">
                         <div class="col-8">
-                            Por <span class="aula-destaque-user">{{$aula->user->name}}</span>,
+                            Por <span class="aula-destaque-user"><?php echo mb_strimwidth("{$aula->user->name}", 0, 20, "..."); ?></span>,
                             {{ $aula->created_at->diffForHumans() }}
                         </div>
                     
@@ -99,7 +99,7 @@
                                 @php $qntComments = 0; @endphp
 
                                 @foreach ($replies as $replie)
-                                    @if ($replie->commentable_id == $aula->id)
+                                    @if ($replie->aula_id == $aula->id)
                                         @php $qntComments++ @endphp
                                     @endif
                                 @endforeach
