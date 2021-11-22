@@ -117,4 +117,8 @@
 
 </body>
 
+@push('slideForm')
+    <script src="{{asset('js/slideForm.js')}}"></script>
+@endpush
+
 </html>

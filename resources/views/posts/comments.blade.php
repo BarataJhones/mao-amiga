@@ -49,22 +49,23 @@
             <div class="form-group row">
                 @if (Auth::user()!=null)
                     <?php  $avatar = Auth::user()->avatar; ?>
-                @endif
-    
-                <div class="col-1">
-                    <img src="{{ url("storage/$avatar") }}" class="userAvatarComment">
-                </div>
-    
-                <div class="col">
-                    <textarea type="text" name="comment" class="form-control" cols="1" rows="5" placeholder="Responder..."
-                        required></textarea>
-                    <input type="hidden" name="aula_id" value="{{ $aula->id }}" />
-                    <input type="hidden" name="comment_id" value="{{ $comment->id }}" />
-                    <div class="form-group"> <br>
-                        <input type="hidden" class="btn btn-sm btn-outline-danger py-0" />
-                        <button type="submit" class="btn botaoComment" style="font-size: 0.8em;">Responder
+                
+                
+                    <div class="col-1">
+                        <img src="{{ url("storage/$avatar") }}" class="userAvatarComment">
                     </div>
-                </div>
+                
+                    <div class="col">
+                        <textarea type="text" name="comment" class="form-control" cols="1" rows="5" placeholder="Responder..."
+                            required></textarea>
+                        <input type="hidden" name="aula_id" value="{{ $aula->id }}" />
+                        <input type="hidden" name="comment_id" value="{{ $comment->id }}" />
+                        <div class="form-group"> <br>
+                            <input type="hidden" class="btn btn-sm btn-outline-danger py-0" />
+                            <button type="submit" class="btn botaoComment" style="font-size: 0.8em;">Responder
+                        </div>
+                    </div>
+                @endif
             </div>
     
         </form>

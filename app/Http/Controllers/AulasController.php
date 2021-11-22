@@ -133,7 +133,7 @@ class AulasController extends Controller
         $files = File::where('aula_id',  $aula->id)->get();
 
         $comments = Comment::where('aula_id',  $aula->id)
-                            ->orderBy('created_at', 'DESC')->paginate();
+                            ->orderBy('created_at', 'DESC')->paginate(10);
 
         $replies = Comment::where('aula_id',  $aula->id)
                             ->orderBy('created_at')->get();

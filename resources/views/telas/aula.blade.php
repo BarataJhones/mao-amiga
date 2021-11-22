@@ -152,9 +152,8 @@
                 </div>
             @else
                 <div class="facaLogin">
-                    <h5>Faça login para participar da conversa</h5>
                     <a href="{{ route('aula.userList') }}" class="nav-item nav-link" style="font-size: 1.5em">
-                        <i class="fas fa-sign-in-alt"></i> Login
+                        <h5>Clique aqui e faça <i class="fas fa-sign-in-alt"></i> login para participar da conversa</h5>
                     </a>
 
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">

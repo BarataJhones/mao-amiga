@@ -1,3 +1,10 @@
+<script src="{{asset('js/fontawesome.js')}}"></script>
+<script src="{{asset('js/fontawesome.min.js')}}"></script>
+
+<link rel="stylesheet" href="{{asset('css/fontawesome.css')}}">
+<link rel="stylesheet" href="{{asset('css/fontawesome.min.css')}}">
+<link rel="stylesheet" href="{{asset('https://use.fontawesome.com/releases/v5.0.6/css/all.css')}}">
+
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -26,7 +33,7 @@
 
             <!-- Email Address -->
             <div>
-                <x-label for="email" :value="__('Email')" />
+                <p><i class="fas fa-at" style="color: #00AEEF"></i> Email</p> 
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required 
                     autofocus />
@@ -34,7 +41,7 @@
 
             <!-- Password -->
             <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
+                <p><i class="fas fa-key" style="color: #00AEEF"></i> Senha</p>
 
                 <x-input id="password" class="block mt-1 w-full" type="password" name="password" required 
                     autocomplete="current-password" />
@@ -58,7 +65,7 @@
                 @endif
 
                 <x-button class="ml-3" style="background-color: #00AEEF">
-                    {{ __('Log in') }}
+                    <i class="fas fa-sign-in-alt"></i> {{ __('Log in') }}
                 </x-button>
             </div>
 

@@ -88,7 +88,7 @@
 
                    <div class="userDateView row">
                         <div class="col-8">
-                            Por <span class="aula-destaque-user"><?php echo mb_strimwidth("{$aula->user->name}", 0, 20, "..."); ?></span>,
+                            Por <span class="aula-destaque-user text-left"><?php echo mb_strimwidth("{$aula->user->name}", 0, 18, "..."); ?></span>,
                             {{ $aula->created_at->diffForHumans() }}
                         </div>
                     
