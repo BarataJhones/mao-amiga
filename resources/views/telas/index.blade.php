@@ -69,55 +69,58 @@
         </div>
 
         
-        @foreach($aulas as $aula)
-            <div class="row justify-content-center" style="padding: 1em;">
-                <a href="{{ route('aula.viewAula', $aula->id) }}" class="my-auto">
-                    <div class="my-auto">
-                        <img class="aula-imagem-index" src="{{ Storage::disk('s3')->url($aula->image) }}" alt="">
-                    </div>
-                </a>
-
-                <div class="col my-auto">
-                    <a href="{{ route('aula.viewAula', $aula->id) }}">
-                        <p class="aula-destaque-titulo">
-                            <?php echo mb_strimwidth("{$aula->title}", 0, 60, "..."); ?>
-                        </p>
-                    </a> <br>
-
-                    <div class="content">
-                        <?php echo mb_strimwidth("{$aula->content}", 0, 150, "..."); ?>
-                    </div>
-
-                   <div class="userDateView row">
-                        <div class="col-8">
-                            Por <span class="aula-destaque-user text-left"><?php echo mb_strimwidth("{$aula->user->name}", 0, 18, "..."); ?></span>,
-                            {{ $aula->created_at->diffForHumans() }}
+        @if ($aulas != null){
+            @foreach($aulas as $aula)
+                <div class="row justify-content-center" style="padding: 1em;">
+                    <a href="{{ route('aula.viewAula', $aula->id) }}" class="my-auto">
+                        <div class="my-auto">
+                            <img class="aula-imagem-index" src="{{ Storage::disk('s3')->url($aula->image) }}" alt="">
                         </div>
-                    
-                        <div class="col-4 text-right">
-                            <span class=""><i class="fas fa-eye" style="color:#00AEEF"></i> {{$aula->viewCount}}
-                                <i class="fa fa-comments" style="color:#00AEEF"></i> 
+                    </a>
 
-                                @php $qntComments = 0; @endphp
+                    <div class="col my-auto">
+                        <a href="{{ route('aula.viewAula', $aula->id) }}">
+                            <p class="aula-destaque-titulo">
+                                <?php echo mb_strimwidth("{$aula->title}", 0, 60, "..."); ?>
+                            </p>
+                        </a> <br>
 
-                                @foreach ($replies as $replie)
-                                    @if ($replie->aula_id == $aula->id)
-                                        @php $qntComments++ @endphp
-                                    @endif
-                                @endforeach
-                                {{ $qntComments }}                            
-                            </span>
+                        <div class="content">
+                            <?php echo mb_strimwidth("{$aula->content}", 0, 150, "..."); ?>
                         </div>
+
+                    <div class="userDateView row">
+                            <div class="col-8">
+                                Por <span class="aula-destaque-user text-left"><?php echo mb_strimwidth("{$aula->user->name}", 0, 18, "..."); ?></span>,
+                                {{ $aula->created_at->diffForHumans() }}
+                            </div>
+                        
+                            <div class="col-4 text-right">
+                                <span class=""><i class="fas fa-eye" style="color:#00AEEF"></i> {{$aula->viewCount}}
+                                    <i class="fa fa-comments" style="color:#00AEEF"></i> 
+
+                                    @php $qntComments = 0; @endphp
+
+                                    @foreach ($replies as $replie)
+                                        @if ($replie->aula_id == $aula->id)
+                                            @php $qntComments++ @endphp
+                                        @endif
+                                    @endforeach
+                                    {{ $qntComments }}                            
+                                </span>
+                            </div>
+                        </div>
+
                     </div>
 
+                    <div class="col-10 col-xl-4 col-lg-4 col-md 5 col-sm-8 embed-responsive embed-responsive-16by9 my-auto">
+                        <video src="{{ url("storage/{$aula->aulaVideo}") }}" controls></video>
+                    </div>
+                    <hr>
                 </div>
-
-                <div class="col-10 col-xl-4 col-lg-4 col-md 5 col-sm-8 embed-responsive embed-responsive-16by9 my-auto">
-                    <video src="{{ url("storage/{$aula->aulaVideo}") }}" controls></video>
-                </div>
-                <hr>
-            </div>
-        @endforeach
+            @endforeach
+        }@endif
+        
 
     </section>
 
