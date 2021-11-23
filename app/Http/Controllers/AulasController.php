@@ -21,11 +21,11 @@ class AulasController extends Controller
 
     public function listaAulasIndex()
     {
-        $aulas = Aula::orderBy('viewCount', 'DESC')->paginate(3); //Configurar paginação se precisar/Ordem invertida
+        /*$aulas = Aula::orderBy('viewCount', 'DESC')->paginate(3); //Configurar paginação se precisar/Ordem invertida
 
-        $replies = Comment::get();
+        $replies = Comment::get();*/
 
-        return view('telas.index', compact('aulas', 'replies'));
+    return view('telas.index'/*, compact('aulas', 'replies')*/);
     }
 
     public function userAulasList()
