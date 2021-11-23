@@ -24,11 +24,14 @@ class AulasController extends Controller
     public function listaAulasIndex()
     {
 
-        if (($aulas = Aula::get() != isEmpty())) {
+        $aulas = Aula::get();
+        if ((!$aulas->isEmpty())) {
 
             $aulas = Aula::orderBy('viewCount', 'DESC')->paginate(3); //Configurar paginação se precisar/Ordem invertida
-
             $replies = Comment::get();
+        } else {
+            $aulas = null;
+            $replies = null;
         }
 
         return view('telas.index', compact('aulas', 'replies'));
