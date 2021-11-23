@@ -64,7 +64,7 @@
                 <fieldset>
                     <x-label class="input-label" for="avatar" :value="__('Avatar')" /> <br>
                 
-                    <img src="{{ Storage::disk('s3')->url($avatar) }}" id="change" class="avatar">
+                    <img src="{{ Storage::disk('s3')->url($user->avatar) }}" id="change" class="avatar">
                 
                     <x-input id="avatar" class="block mt-1 w-full" type="file" name="avatar" class="avatarInput" onchange="readURL(this);" />
 
