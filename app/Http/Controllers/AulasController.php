@@ -16,13 +16,15 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
 
+use function PHPUnit\Framework\isEmpty;
+
 class AulasController extends Controller
 {
 
     public function listaAulasIndex()
     {
 
-        if ((Aula::id() != null)) {
+        if (($aulas = Aula::get() != isEmpty())) {
 
             $aulas = Aula::orderBy('viewCount', 'DESC')->paginate(3); //Configurar paginação se precisar/Ordem invertida
 
