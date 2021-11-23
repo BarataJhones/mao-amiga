@@ -155,16 +155,16 @@ class AulasController extends Controller
         if (!$aula = Aula::find($id))
             return redirect()->back();
 
-        if (Storage::exists($aula->image))
-            Storage::delete($aula->image);
+        if (Storage::disk('s3')->exists($aula->image))
+            Storage::disk('s3')->delete($aula->image);
 
-        if (Storage::exists($aula->aulaVideo))
-            Storage::delete($aula->aulaVideo);
+        if (Storage::disk('s3')->exists($aula->aulaVideo))
+            Storage::disk('s3')->delete($aula->aulaVideo);
 
         $files = File::where('aula_id',  $aula->id)->get();
 
         foreach ($files as $file) {
-            Storage::delete([$file->filePath]);
+            Storage::disk('s3')->delete([$file->filePath]);
         }
 
         $aula->delete();
@@ -202,8 +202,8 @@ class AulasController extends Controller
         $data = $request->all();
 
         if ($request->image->isValid()) {
-            if (Storage::exists($aula->image))
-                Storage::delete($aula->image);
+            if (Storage::disk('s3')->exists($aula->image))
+                Storage::disk('s3')->delete($aula->image);
 
 
             $image = $request->image->store(path: 'aulasData.image', options:'s3');
@@ -211,8 +211,8 @@ class AulasController extends Controller
         }
 
         if ($request->aulaVideo->isValid()) {
-            if (Storage::exists($aula->aulaVideo))
-                Storage::delete($aula->aulaVideo);
+            if (Storage::disk('s3')->exists($aula->aulaVideo))
+                Storage::disk('s3')->delete($aula->aulaVideo);
 
 
             $video = $request->aulaVideo->tore(path: 'aulasData.video', options:'s3');
@@ -229,7 +229,7 @@ class AulasController extends Controller
         $filesDel = File::where('aula_id',  $id)->get();
 
         foreach ($filesDel as $file) {
-            Storage::delete([$file->filePath]);
+            Storage::disk('s3')->delete([$file->filePath]);
         }
 
         File::where('aula_id',  $id)->delete();
@@ -288,6 +288,6 @@ class AulasController extends Controller
     {
 
         $dl = File::find($id);
-        return Storage::download($dl->filePath, $dl->title);
+        return Storage::disk('s3')->download($dl->filePath, $dl->title);
     }
 }

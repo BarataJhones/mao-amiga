@@ -114,7 +114,7 @@
                     </div>
 
                     <div class="col-10 col-xl-4 col-lg-4 col-md 5 col-sm-8 embed-responsive embed-responsive-16by9 my-auto">
-                        <video src="{{ url("storage/{$aula->aulaVideo}") }}" controls></video>
+                        <video src="{{ Storage::disk('s3')->url($aula->aulaVideo) }}" controls></video>
                     </div>
                     <hr>
                 </div>
