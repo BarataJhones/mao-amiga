@@ -47,7 +47,7 @@
 <body>
     <div class="bs-example">
         <nav class="navbar navbar-expand-md navbar-light">
-            <a href="{{ Storage::disk('s3')->url('mao_amiga_titulo.mp4') }}" class="navbar-brand video-popup">
+            <a href="{{ Storage::disk('s3')->url('mao_amiga_titulo.mp4') }}" autoplay class="navbar-brand video-popup">
                 <img class="logoMaoAmiga" src="{{asset('img/logo.png')}}" height="28" alt="CoolBrand">
             </a>
             <button type="button" class="navbar-toggler custom-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -107,7 +107,7 @@
                     <p class="header-frase">O portal de aprendizado acessível para surdos</p>
                 </div>
 
-                <a class="video-popup" href="{{ Storage::disk('s3')->url('mao_amiga_frase.mp4') }}">
+                <a class="video-popup" autoplay href="{{ Storage::disk('s3')->url('mao_amiga_frase.mp4') }}">
                     <div class="col-2 col-xl-1 col-lg-1 col-md-1 col-sm-2 col-xs-2 icone-video"></div>
                 </a>
 

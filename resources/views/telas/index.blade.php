@@ -46,11 +46,13 @@
                 </div>
             </div>
 
-            <div class="col-3 col-xl-1 col-lg-1 col-sm-2" style="margin-bottom: 1em;">
-                <a class="video-popup" href="video/index-texto.mp4">
-                    <div class="col-2 col-xl-1 col-lg-1 col-md-1 col-sm-2 col-xs-2 icone-video-azul"></div>
-                </a>
-            </div>
+            {{--  
+                <div class="col-3 col-xl-1 col-lg-1 col-sm-2" style="margin-bottom: 1em;">
+                    <a class="video-popup" href="video/index-texto.mp4">
+                        <div class="col-2 col-xl-1 col-lg-1 col-md-1 col-sm-2 col-xs-2 icone-video-azul"></div>
+                    </a>
+                </div>
+            --}}
 
         </div>
     </section>
