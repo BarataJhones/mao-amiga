@@ -135,7 +135,7 @@ class AulasController extends Controller
         if((Auth::id()!=null)){
             $user = auth()->user();
             $user->aulaAsHistoric()->attach($id);
-            $historic = Aula::findOrFail($id);
+            Aula::findOrFail($id);
 
         }
 

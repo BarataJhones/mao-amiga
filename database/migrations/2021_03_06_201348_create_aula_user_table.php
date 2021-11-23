@@ -16,7 +16,7 @@ class CreateAulaUserTable extends Migration
         Schema::create('aula_user', function (Blueprint $table) {
             $table->foreignId('aula_id')->constrained('aulas')->onDelete('cascade');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->timestamp('dateTime');
+            $table->timestamps();
         });
     }
 
