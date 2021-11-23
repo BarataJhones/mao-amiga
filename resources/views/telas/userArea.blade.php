@@ -164,7 +164,7 @@ visualizar as aulas ou <span style="font-weight: bold; color: #ff4e4e">deletar o
                             <td>{{Carbon\Carbon::parse($aula->created_at)->format('d/m/Y - H:i:s')}}</td>
                             <td>
                                 <a href="{{ route('aula.viewAula', $aula->id) }}">
-                                    <img class="list-aula-img" src="{{ url("storage/{$aula->image}") }}" alt="">
+                                    <img class="list-aula-img" src="{{ Storage::disk('s3')->url($aula->image) }}" alt="">
                                 </a>
                             </td>
                             <td><?php echo mb_strimwidth("{$aula->title}", 0, 40, "..."); ?></td>
@@ -233,7 +233,7 @@ visualizar as aulas ou <span style="font-weight: bold; color: #ff4e4e">deletar o
                             <td>{{Carbon\Carbon::parse($historico->dateTime)->format('d/m/Y - H:i:s')}}</td>
                             <td>
                                 <a href="{{ route('aula.viewAula', $historico->aula->id) }}">
-                                    <img class="list-aula-img" src="{{ url("storage/{$historico->aula->image}") }}" alt="">
+                                    <img class="list-aula-img" src="{{ Storage::disk('s3')->url($historico->aula->image) }}" alt="">
                                 </a>
                             </td>
                             <td><?php echo mb_strimwidth("{$historico->aula->title}", 0, 40, "..."); ?></td>
