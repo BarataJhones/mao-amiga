@@ -69,7 +69,7 @@
         </div>
 
         
-        @if ($aulas != null){
+        @if ($aulas != null)
             @foreach($aulas as $aula)
                 <div class="row justify-content-center" style="padding: 1em;">
                     <a href="{{ route('aula.viewAula', $aula->id) }}" class="my-auto">
@@ -119,8 +119,7 @@
                     <hr>
                 </div>
             @endforeach
-        }@endif
-        
+        @endif
 
     </section>
 

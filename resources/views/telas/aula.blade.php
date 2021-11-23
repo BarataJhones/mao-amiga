@@ -50,7 +50,7 @@
             <p class="aula-texto">{{ $aula->content }}</p>
 
             <div class="aula-imagem-quadro">
-                <img class="aula-imagem-principal" src="{{ url("storage/{$aula->image}") }}" alt="">
+                <img class="aula-imagem-principal" src="{{ Storage::disk('s3')->url($aula->image) }}" alt=""> 
                 <p class="aula-imagem-principal-fonte justify-content-center">Fonte: {{ $aula->imageFont }}</p>
             </div>
 
@@ -65,7 +65,7 @@
 
                 <!-- 16:9 aspect ratio -->
                 <div class="embed-responsive embed-responsive-16by9">
-                    <video src="{{ url("storage/{$aula->aulaVideo}") }}" controls></video>
+                    <video src="{{ Storage::disk('s3')->url($aula->aulaVideo) }}" controls></video>
                 </div>
                 <p class="aula-imagem-principal-fonte justify-content-center">Este vídeo é apenas uma representação genérica
                     e não corresponde ao que está escrito na aula.</p>
@@ -134,7 +134,7 @@
                             <?php  $avatar = Auth::user()->avatar; ?>
 
                             <div class="col-1">
-                                <img src="{{ url("storage/$avatar") }}" class="userAvatarComment">
+                                <img src="{{ url("storage/$avatar") }}" class="userAvatarComment"> 
                             </div>
                     
                             <div class="col">
