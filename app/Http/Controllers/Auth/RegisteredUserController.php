@@ -82,14 +82,13 @@ class RegisteredUserController extends Controller
             'avatar' => 'nullable|image',
         ]);
 
-        if ($request->hasFile('avatar')) {
-            
+        if ($request->exists('avatar'))
             if ($user->avatar !="user.png"){
                 if (Storage::exists($user->avatar))
                     Storage::delete($user->avatar);
             }
 
-            $avatar = $request->avatar->store('user.avatar');
+            $avatar = $request->avatar->store(path: 'user.avatar', options:'s3');
             $data['avatar'] = $avatar;
             
         }
