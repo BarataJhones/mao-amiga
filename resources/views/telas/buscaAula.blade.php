@@ -9,9 +9,9 @@
 @section('boxVideo')                @endsection
 
 @section('boxContent' )
-    Nesta área você pode visualizar todas as aulas criadas, ou buscar por alguma específica.
-    Para visualizar os detalhes da aula, basta clicar nasua imagem ou título.
-    Para realizar uma busca por alguma aula específica, basta escrever alguma palavra-chave no campo abaixo, e então clicar no botão
+    Nesta área você pode visualizar todas as aulas criadas, ou buscar por alguma específica. Para visualizar os detalhes da aula,
+    basta clicar na sua imagem ou título. Para realizar uma busca por alguma aula específica, basta escrever alguma palavra-chave
+    no campo abaixo, e então clicar no botão
     <i class="fas fa-search" style="color:#00AEEF"></i>. <br>
     Você pode usar o título da aula, o criador da aula, a disciplina, a área de ensino ou alguma parte do conteúdo da aula como palavra-chave.
 @endsection

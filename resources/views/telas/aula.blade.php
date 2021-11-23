@@ -9,15 +9,16 @@
 @section('boxVideo')                @endsection
 
 @section('boxContent' )
-    Caro usuário(a), está é a sessão de aula. Você pode acompanhar a aula de forma escrita ou em vídeo. Ao clicar no ícone
-    da <span style="color: #00AEEF">câmera</span> <i class="fas fa-video" style="color: #00AEEF"></i>, o vídeo em LIBRAS da
-    aula aparecerá com intérprete explicando o conteúdo. Há também imagens para visualização e, se disponibilizado,
-    apostilas ou atividades para serem baixadas e as referências usadas no conteúdo. <br>
+    Caro usuário(a), esta é a sessão de aula. Você pode acompanhar a aula de forma escrita ou em vídeo. Ao clicar no da
+    <span style="color: #00AEEF">câmera</span> <i class="fas fa-video" style="color: #00AEEF"></i>, o vídeo em LIBRAS
+    da aula aparecerá com a tradução do conteúdo. Há também imagens para visualização, se disponibilizado, apostilas ou
+    atividades para serem baixadas e as referências usadas no conteúdo.<br>
     Se você for o criador desta aula, você poderá
-    <span style="font-weight: bold; color: #eeae00">edita-la <i class="fas fa-pencil-alt"></i></span> ou
-    <span style="font-weight: bold; color: #ff4e4e">deleta-la <i class="fa fa-trash"></i></span>.<br>
-    Esperamos que essa aula ajude no seu aprendizado.<br>
+    <span style="font-weight: bold; color: #eeae00">editá-la <i class="fas fa-pencil-alt"></i></span> ou
+    <span style="font-weight: bold; color: #ff4e4e">deletá-la <i class="fa fa-trash"></i></span>.<br>
+    Esperamos que essa aula ajude no seu aprendizado. <br>
     Bons estudos!
+
 @endsection
 
 @section('content')
