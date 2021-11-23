@@ -75,7 +75,7 @@ class AulasController extends Controller
         //Imagem
         if ($request->image->isValid()) {
 
-            $image = $request->image->store(path: 'aulasData.image/', options:'s3');
+            $image = $request->image->store(path: 'aulasData.image', options:'s3');
             $data['image'] = $image;
         }
 
@@ -86,7 +86,7 @@ class AulasController extends Controller
                 'aulaVideo' => 'required|mimes:mp4,ogx,oga,ogv,ogg,webm',
             ]);
 
-            $video = $request->aulaVideo->store(path: 'aulasData.video/', options:'s3');
+            $video = $request->aulaVideo->store(path: 'aulasData.video', options:'s3');
             $data['aulaVideo'] = $video;
         }
 
@@ -104,7 +104,7 @@ class AulasController extends Controller
             foreach ($files as $file) {
                 $fileName = $file->getClientOriginalName();
 
-                $filePath = $file->store(path: 'aulasData.files/', options:'s3');
+                $filePath = $file->store(path: 'aulasData.files', options:'s3');
 
                 File::create([
                     'title' => $fileName,
@@ -206,7 +206,7 @@ class AulasController extends Controller
                 Storage::delete($aula->image);
 
 
-            $image = $request->image->store(path: 'aulasData.image/', options:'s3');
+            $image = $request->image->store(path: 'aulasData.image', options:'s3');
             $data['image'] = $image;
         }
 
@@ -215,7 +215,7 @@ class AulasController extends Controller
                 Storage::delete($aula->aulaVideo);
 
 
-            $video = $request->aulaVideo->tore(path: 'aulasData.video/', options:'s3');
+            $video = $request->aulaVideo->tore(path: 'aulasData.video', options:'s3');
             $data['aulaVideo'] = $video;
         }
 
@@ -241,7 +241,7 @@ class AulasController extends Controller
             foreach ($files as $file) {
                 $fileName = $file->getClientOriginalName();
 
-                $filePath = $file->store(path: 'aulasData.files/', options:'s3');
+                $filePath = $file->store(path: 'aulasData.files', options:'s3');
 
                 File::create([
                     'title' => $fileName,
