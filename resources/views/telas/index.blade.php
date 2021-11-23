@@ -67,7 +67,8 @@
             </div>
         </div>
 
-        @foreach($aulas as $aula)
+        
+        {{--  @foreach($aulas as $aula)
             <div class="row justify-content-center" style="padding: 1em;">
                 <a href="{{ route('aula.viewAula', $aula->id) }}" class="my-auto">
                     <div class="my-auto">
@@ -115,7 +116,7 @@
                 </div>
                 <hr>
             </div>
-        @endforeach
+        @endforeach --}}
 
     </section>
 
