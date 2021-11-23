@@ -107,7 +107,7 @@
                     <p class="header-frase">O portal de aprendizado acessível para surdos</p>
                 </div>
 
-                <a class="video-popup" href="{{ Storage::disk('s3')->url("mao_amiga_titulo.mp4") }}">
+                <a class="video-popup" href="{{ Storage::disk('s3')->url('mao_amiga_titulo.mp4') }}">
                     <div class="col-2 col-xl-1 col-lg-1 col-md-1 col-sm-2 col-xs-2 icone-video"></div>
                 </a>
 
