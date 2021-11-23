@@ -72,7 +72,7 @@
                                 $avatar = Auth::user()->avatar;
                             ?>
                 
-                            <img src="{{ url("storage/$avatar") }}" class="userAvatar">
+                            <img src="{{ Storage::disk('s3')->url($avatar) }}" class="userAvatar">
                             Bem vindo, @php echo $primeiroNome; @endphp
                 
                         </a>
