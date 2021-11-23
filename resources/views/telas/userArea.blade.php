@@ -62,7 +62,7 @@ Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-hist
         <table class="table table-hover table-striped" style="margin-top: 1em;">
             <tbody>
 
-                <img src="{{ url("storage/$user->avatar") }}" class="avatar">
+                <img src="{{ Storage::disk('s3')->url($avatar) }}" class="avatar">
                 <tr>
                     <th scope="row">Nome</th>
                     <td>

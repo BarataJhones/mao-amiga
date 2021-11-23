@@ -88,7 +88,7 @@ class RegisteredUserController extends Controller
                     Storage::delete($user->avatar);
             }
 
-            $avatar = $request->avatar->store(path: 'user.avatar', options:'s3');
+            $avatar = $request->avatar->store(path: 'user.avatar/', options:'s3');
             $data['avatar'] = $avatar;
             
         }

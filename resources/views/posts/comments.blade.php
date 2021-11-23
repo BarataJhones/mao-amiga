@@ -5,7 +5,7 @@
     @if ($comment->user_id == null )
         <div class="row" style="margin-bottom: 2em">
             <div class="col-1">
-                <img src="{{ url("storage/user.png") }}" class="userAvatarComment">
+                <img src="{{ Storage::disk('s3')->url("user.png") }}" class="userAvatarComment">
             </div>
 
             <div class="col-3 text-left deletedComment">
@@ -15,7 +15,7 @@
     @else
         <?php $avatar = $comment->user->avatar; ?>
 
-        <img src="{{ url("storage/$avatar") }}" class="userAvatarComment">
+        <img src="{{ Storage::disk('s3')->url($avatar) }}" class="userAvatarComment">
         <strong class="commentUser">{{ $comment->user->name }}</strong> {{ $comment->created_at->diffForHumans() }}
         <p class="commentContent">{{ $comment->comment }}</p>
         <a href="" id="reply"></a>
@@ -52,7 +52,7 @@
                 
                 
                     <div class="col-1">
-                        <img src="{{ url("storage/$avatar") }}" class="userAvatarComment">
+                        <img src="{{ Storage::disk('s3')->url($avatar) }}" class="userAvatarComment">
                     </div>
                 
                     <div class="col">
