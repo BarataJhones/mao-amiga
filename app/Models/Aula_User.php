@@ -14,7 +14,7 @@ class Aula_User extends Model
     protected $fillable = [
         'aula_id',
         'user_id',
-        'created_at' => 'date:D-m-y'
+        'dateTime' => 'timestamp'
     ];
 
     public function user()

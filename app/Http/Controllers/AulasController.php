@@ -119,7 +119,7 @@ class AulasController extends Controller
             ->with('message', 'Aula criada com sucesso');
     }
 
-    public function viewAula($id)
+    public function viewAula($id, Request $request)
     {
 
         if (!$aula = Aula::find($id)){
@@ -136,6 +136,7 @@ class AulasController extends Controller
             $user = auth()->user();
             $user->aulaAsHistoric()->attach($id);
             Aula::findOrFail($id);
+            //Aula_User::whereDate('dateTime',  Carbon::today()->toDateString())->get();
 
         }
 
