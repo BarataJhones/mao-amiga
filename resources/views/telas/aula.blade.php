@@ -67,8 +67,8 @@
                 <div class="embed-responsive embed-responsive-16by9">
                     <video src="{{ Storage::disk('s3')->url($aula->aulaVideo) }}" controls></video>
                 </div>
-                <p class="aula-imagem-principal-fonte justify-content-center">Este vídeo é apenas uma representação genérica
-                    e não corresponde ao que está escrito na aula.</p>
+                <!-- <p class="aula-imagem-principal-fonte justify-content-center">Este vídeo é apenas uma representação genérica
+                    e não corresponde ao que está escrito na aula.</p> -->
             </div>
 
             <div>
@@ -134,7 +134,7 @@
                             <?php  $avatar = Auth::user()->avatar; ?>
 
                             <div class="col-1">
-                                <img src="{{ url("storage/$avatar") }}" class="userAvatarComment"> 
+                                <img src="{{ Storage::disk('s3')->url($avatar) }}" class="userAvatarComment">
                             </div>
                     
                             <div class="col">
