@@ -216,7 +216,7 @@ class AulasController extends Controller
                 Storage::disk('s3')->delete($aula->aulaVideo);
 
 
-            $video = $request->aulaVideo->tore(path: 'aulasData.video', options:'s3');
+            $video = $request->aulaVideo->store(path: 'aulasData.video', options:'s3');
             $data['aulaVideo'] = $video;
         }
 
