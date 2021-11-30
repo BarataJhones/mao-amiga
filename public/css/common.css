@@ -36,6 +36,12 @@ h5 {
     display: block;
 }
 
+.icone-video-mensagem{
+    background-image: url(../img/icone-video-azul.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
 #subirTopo {
     text-decoration: none;
     background: white;

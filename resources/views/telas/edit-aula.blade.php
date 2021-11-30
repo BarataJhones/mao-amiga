@@ -1,8 +1,8 @@
 @extends('telas.common.form')
 
 @section('pageTitle') Editar aula @endsection
-@section('boxTitle') Editar a aula {{$aula->title}} @endsection
-@section('boxVideo')                @endsection
+@section('boxTitle') Editar a aula @endsection
+@section('boxVideo') {{ Storage::disk('s3')->url('editar_aula.mp4') }} @endsection
 
 @section('boxContent' )
     Nesta área você poderá editar o conteúdo da aula cadastrada. <br>
@@ -21,6 +21,7 @@
 
 @section('valueTitle') value="{{ $aula->title }}" @endsection
 @section('valueDiscipline') value="{{ $aula->discipline }}" @endsection
-@section('valueContent'){{ $aula->content }}@endsection
+@section('valueContent') value="content" @endsection
+@section('EditAula') {!! $aula->content !!} @endsection
 @section('valueImageFont') value="{{ $aula->imageFont }}" @endsection
 @section('valueReferences'){{ $aula->references }}@endsection

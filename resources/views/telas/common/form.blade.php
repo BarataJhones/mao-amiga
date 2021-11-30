@@ -21,7 +21,7 @@
         @endif
         <!-- -->
 
-        <form @yield('formDetails')>
+        <form @yield('formDetails') id="form">
             @yield('csrfMethod')
 
             <div class="form-group">
@@ -46,7 +46,18 @@
 
             <div class="form-group">
                 <label for="comment">Conteúdo da aula*</label>
-                <textarea name="content" class="form-control" rows="15" id="content">@yield('valueContent')</textarea>
+
+                {{--<!--<div class="form-group" id="editor">
+                    <textarea name="content" class="form-control" rows="15" id="content">@yield('valueContent')</textarea>
+                </div>--> --}}
+                
+                
+                <textarea name="content" class="form-control" id="content" style="display:none" @yield('valueContent')></textarea>
+                <div id="editor">
+                    @yield('EditAula')
+                    
+                </div>
+
             </div>
 
             <label>Imagem principal da aula*</label>

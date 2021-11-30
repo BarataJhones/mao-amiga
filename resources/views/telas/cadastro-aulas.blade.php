@@ -2,7 +2,7 @@
 
 @section('pageTitle') Cadastrar aula @endsection
 @section('boxTitle') Cadastrar aula @endsection
-@section('boxVideo')                @endsection
+@section('boxVideo') {{ Storage::disk('s3')->url('cadastrar_aula.mp4') }} @endsection
 
 @section('boxContent' )
     Nesta área você poderá cadastrar uma nova aula. Preencha os campos de acordo com o que é pedido. Os campos com um <b>*</b> são obrigatórios.
@@ -30,6 +30,6 @@
 
 @section('valueTitle') value="{{ old('title') }}" @endsection
 @section('valueDiscipline') value="{{ old('discipline') }}" @endsection
-@section('valueContent'){{ old('content') }}@endsection
+@section('valueContent') value="content" @endsection
 @section('valueImageFont') value="{{ old('imageFont') }}" @endsection
 @section('valueReferences'){{ old('references') }}@endsection

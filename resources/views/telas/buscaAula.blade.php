@@ -1,12 +1,12 @@
 @extends('telas.common.mainContent')
 
 @section('css')
-    {{asset('css/buscaAula.css')}}
+    {{asset('css/aulas.css')}}
 @endsection
 
 @section('pageTitle')Aulas @endsection
 @section('boxTitle')Aulas @endsection
-@section('boxVideo')                @endsection
+@section('boxVideo') {{ Storage::disk('s3')->url('aulas.mp4') }}  @endsection
 
 @section('boxContent' )
     Nesta área você pode visualizar todas as aulas criadas, ou buscar por alguma específica. Para visualizar os detalhes da aula,

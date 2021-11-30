@@ -38,11 +38,11 @@
                         disponibilizado pelos criadores do conteúdo.
                     </p>
 
-                    <a href="#">
+                    {{--<a href="#">
                         <div class="text-center">
                             <button class="btn botao-saiba-mais" type="button">Saiba mais</button>
                         </div>
-                    </a>
+                    </a>--}}
                 </div>
             </div>
 
@@ -61,10 +61,10 @@
         <div class="container" style="margin-top: 2em">
             <div class="row justify-content-center">
                 <div class="col-4 col-xl-4 col-lg-5 col-md-7 col-sm-10 col-xs-7">
-                    <p class="aulas-destaque-frase">Aulas em destaque</p>
+                    <p class="aulas-destaque-frase">Aulas em destaque </p>
                 </div>
 
-                <a class="video-popup" href="video/o-portal-acessivel.mp4">
+                <a class="video-popup" href="{{ Storage::disk('s3')->url('aulas_em_destaque.mp4') }}">
                     <div class="col-2 col-xl-1 col-lg-1 col-md-1 col-sm-2 col-xs-2 icone-video-azul"></div>
                 </a>
             </div>
@@ -88,7 +88,7 @@
                         </a> <br>
 
                         <div class="content">
-                            <?php echo mb_strimwidth("{$aula->content}", 0, 150, "..."); ?>
+                            <?php echo mb_strimwidth("-$aula->content}", 0, 150, "..."); ?>
                         </div>
 
                     <div class="userDateView row">

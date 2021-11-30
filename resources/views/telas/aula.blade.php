@@ -6,7 +6,7 @@
 
 @section('pageTitle'){{$aula->title}} por {{ $userCreator['name'] }}@endsection
 @section('boxTitle')Assistir aula @endsection
-@section('boxVideo')                @endsection
+@section('boxVideo') {{ Storage::disk('s3')->url('assistir_aula.mp4') }} @endsection 
 
 @section('boxContent' )
     Caro usuário(a), esta é a sessão de aula. Você pode acompanhar a aula de forma escrita ou em vídeo. Ao clicar no da
@@ -47,7 +47,7 @@
                 <p class="aula-data-publicacao" id="timestamp">Postada em {{ $aula->created_at->format('d/m/Y') }}</p>
             </div>
 
-            <p class="aula-texto">{{ $aula->content }}</p>
+            <p class="" > {!! $aula->content !!} </p> 
 
             <div class="aula-imagem-quadro">
                 <img class="aula-imagem-principal" src="{{ Storage::disk('s3')->url($aula->image) }}" alt=""> 

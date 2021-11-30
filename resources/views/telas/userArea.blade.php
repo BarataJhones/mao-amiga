@@ -6,22 +6,23 @@
 
 @section('pageTitle')Área do usuário @endsection
 @section('boxTitle')Área do usuário @endsection
-@section('boxVideo') @endsection
+@section('boxVideo') {{ Storage::disk('s3')->url('area_usuario.mp4') }} @endsection
 
 @section('boxContent' )
-Nesta área você pode visualizar seus dados cadastrais, suas aulas criadas e seu histórico de visualização de aulas.
-Ao clicar na seta para baixo <i class="fas fa-chevron-circle-down fa-lg"></i></h5>, a área clicada irá expandir-se e mostrar o conteúdo relacionado.<br><br>
+    Nesta área você pode visualizar seus dados cadastrais, suas aulas criadas e seu histórico de visualização de aulas.
+    Ao clicar na seta para baixo <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-chevron-circle-down fa-lg"></i></h5></span>,
+    a área clicada irá expandir-se e mostrar o conteúdo relacionado.<br><br>
 
-Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-user"></i> Meus dados</span> você pode visualizar seus dados cadastrais e 
-<span style="font-weight: bold; color: #eeae00">editá-los<i class="fas fa-pencil-alt"></i></span>. <br><br>
+    Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-user"></i> Meus dados</span> você pode visualizar seus dados cadastrais e 
+    <span style="font-weight: bold; color: #eeae00">editá-los <i class="fas fa-pencil-alt"></i></span>. <br><br>
 
-Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-video"></i> Minhas aulas</span> você pode visualizar as suas aulas criadas, 
-<span style="font-weight: bold; color: #00AEEF">criar novas aulas <i class="fas fa-plus-circle"></i></span>,
-<span style="font-weight: bold; color: #eeae00">edita-las <i class="fas fa-pencil-alt"></i></span> ou
-<span style="font-weight: bold; color: #ff4e4e">deleta-las <i class="fa fa-trash"></i></span>.<br><br>
+    Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-video"></i> Minhas aulas</span> você pode visualizar as suas aulas criadas, 
+    <span style="font-weight: bold; color: #00AEEF">criar novas aulas <i class="fas fa-plus-circle"></i></span>,
+    <span style="font-weight: bold; color: #eeae00">edita-las <i class="fas fa-pencil-alt"></i></span> ou
+    <span style="font-weight: bold; color: #ff4e4e">deleta-las <i class="fa fa-trash"></i></span>.<br><br>
 
-Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-history"></i> Meu histórico</span> você pode conferir o seu histórico de aulas assistidas,
-visualizar as aulas ou <span style="font-weight: bold; color: #ff4e4e">deletar o histórico <i class="fa fa-trash"></i></span>.
+    Na sessão <span style="font-weight: bold; color: #00AEEF"><i class="fas fa-history"></i> Meu histórico</span> você pode conferir o seu histórico de aulas assistidas,
+    visualizar as aulas ou <span style="font-weight: bold; color: #ff4e4e">deletar o histórico <i class="fa fa-trash"></i></span>.
 @endsection
 
 @section('content')
