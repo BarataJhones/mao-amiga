@@ -45,7 +45,7 @@
             </div>
 
             <div class="form-group">
-                <label for="comment">Conteúdo da aula(mínimo de 50 caractéres)*</label>
+                <label for="comment">Conteúdo da aula (mínimo de 50 caractéres)*</label>
 
                 {{--<!--<div class="form-group" id="editor">
                     <textarea name="content" class="form-control" rows="15" id="content">@yield('valueContent')</textarea>
