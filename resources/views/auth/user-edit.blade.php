@@ -116,9 +116,9 @@
                             <input class="form-control" type="text" id="birthday" name="birthday"
                             @php
                                 //Posso fazer de outra forma. Ver data de nascimento em userArea.blade.php
-                                $newDate = date("d-m-Y", strtotime($user->birthday));
+                                //$newDate = date("d-m-Y", strtotime($user->birthday));
                             @endphp
-                                :value="old('birthday')" value="{{ $newDate }}" onfocus="(this.type='date')" required>
+                                :value="old('birthday')" value="{{ $user->birthday }}" onfocus="(this.type='date')" required>
                         </div>
                     </div>
 
