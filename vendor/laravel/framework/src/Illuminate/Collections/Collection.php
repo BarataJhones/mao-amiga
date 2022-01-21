@@ -9,9 +9,9 @@ use Illuminate\Support\Traits\EnumeratesValues;
 use Illuminate\Support\Traits\Macroable;
 use stdClass;
 
-class Collection implements ArrayAccess, Enumerable
+class Collection implements ArrayAccess, CanBeEscapedWhenCastToString, Enumerable
 {
-    use CanBeEscapedWhenCastToString, EnumeratesValues, Macroable;
+    use EnumeratesValues, Macroable;
 
     /**
      * The items contained in the collection.
