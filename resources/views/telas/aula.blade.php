@@ -142,7 +142,7 @@
     
                                  <textarea type="text" name="comment" class="form-control two" cols="1" rows="5" placeholder="Entre na conversa..." required></textarea>
                                  <div class="caixa-emoji">
-                                    <button type="button" class="botao-emoji">&#128512; Emojis</button>
+                                    <button type="button" class="botao-emoji comm-emoji">&#128512; Emojis</button>
                                  </div>
                                  
 
@@ -222,23 +222,23 @@
 
 {{-- Emoji nos comentários --}}
 <script src="{{asset('js/vanillaEmojiPicker.js')}}"></script>
-    <script>
+<script>
 
-        new EmojiPicker({
-            trigger: [
-                {
-                    selector: '.first-btn',
-                    insertInto: ['.one', '.two'] // '.selector' can be used without array
-                },
-                {
-                    selector: '.botao-emoji',
-                    insertInto: '.two'
-                }
-            ],
-            closeButton: true,
-            //specialButtons: green
-        });
+    new EmojiPicker({
+        trigger: [
+            {
+                selector: '.comm-emoji',
+                insertInto: '.two' // '.selector' can be used without array
+            },
+            {
+                selector: '.rep-emoji',
+                insertInto: '.replie-comment'
+            }
+        ],
+        closeButton: true,
+        //specialButtons: green
+    });
 
-    </script>
+</script>
 
 @endsection

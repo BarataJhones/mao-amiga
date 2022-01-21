@@ -56,8 +56,11 @@
                     </div>
                 
                     <div class="col">
-                        <textarea type="text" name="comment" class="form-control" cols="1" rows="5" placeholder="Responder..."
-                            required></textarea>
+                        <textarea type="text" name="comment" class="form-control replie-comment" cols="1" rows="5" placeholder="Responder..."required></textarea>
+                        <div class="caixa-emoji">
+                            <button type="button" class="botao-emoji rep-emoji">&#128512; Emojis</button>
+                         </div>
+
                         <input type="hidden" name="aula_id" value="{{ $aula->id }}" />
                         <input type="hidden" name="comment_id" value="{{ $comment->id }}" />
                         <div class="form-group"> <br>
