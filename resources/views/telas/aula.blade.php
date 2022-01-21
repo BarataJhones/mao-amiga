@@ -142,7 +142,7 @@
     
                                  <textarea type="text" name="comment" class="form-control two" cols="1" rows="5" placeholder="Entre na conversa..." required></textarea>
                                  <div class="caixa-emoji">
-                                    <button class="botao-emoji">&#128512; Emojis</button>
+                                    <button type="button" class="botao-emoji">&#128512; Emojis</button>
                                  </div>
                                  
 
