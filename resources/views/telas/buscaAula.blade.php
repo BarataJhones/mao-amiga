@@ -5,7 +5,7 @@
 @endsection
 
 @section('pageTitle')Aulas @endsection
-@section('boxTitle')Aulas @endsection
+@section('boxTitle')<i class="fas fa-video"></i> Aulas @endsection
 @section('boxVideo') {{ Storage::disk('s3')->url('aulas.mp4') }}  @endsection
 
 @section('boxContent' )

@@ -26,7 +26,7 @@
         <div class="row justify-content-center">
 
             <div class="col-10 col-xl-5 col-lg-5 col-sm-8 embed-responsive embed-responsive-16by9">
-                <video src="{{ Storage::disk('s3')->url('mao_amiga_texto_index.mp4') }}" type="video/mp4" autoplay loop controls muted></video>
+                <video src="{{ Storage::disk('s3')->url('index.mp4') }}" type="video/mp4" autoplay loop controls muted></video>
             </div>
 
             <div class="col-10 col-xl-6 col-lg-6 col-sm-11">
@@ -35,7 +35,16 @@
                         O Portal Mão Amiga é um site em que os usuários podem compartilhar conteúdos escritos e em forma de vídeo,
                         transcritos em Língua Brasileira de Sinais (LIBRAS), permitindo o aprendizado para surdos. Os usuários poderão
                         acompanhar o conteúdo escrito ao mesmo tempo em que veem o vídeo em LIBRAS, além de poderem baixar qualquer conteúdo
-                        disponibilizado pelos criadores do conteúdo.
+                        disponibilizado pelos criadores do conteúdo. <br>
+                        Este ícone <img class="icon_svg" src="{{asset('img/svg_sinal.svg')}}" alt="Ícone do sinal do botão acessível."> exibirá em LIBRAS o conteúdo em que ele está relacionado.
+                        Você pode acessar as outras áreas do site pelos seguintes botões: <br>
+
+                        &bull;Tela inicial <img class="icon_svg" src="{{asset('img/svg_inicio.svg')}}" alt="Ícone do botão para a tela inicial"> <br>
+                        &bull;Mais sobre o Portal Mão Amiga <img class="icon_svg" src="{{asset('img/svg_sobre.svg')}}" alt="Ícone do botão para a tela de informações sobre o Mão Amiga"> <br>
+                        &bull;Área de busca de aulas <img class="icon_svg" src="{{asset('img/svg_aula.svg')}}" alt="Ícone do botão para a tela de aulas"> <br>
+                        &bull;Área do usuário<img class="icon_svg" src="{{asset('img/svg_areaUser.svg')}}" alt="Ícone do botão para a tela da área de usuário"><br>
+                        &bull;Login e cadastros de usuário <img class="icon_svg" src="{{asset('img/svg_login.svg')}}" alt="Ícone do botão para a tela de login e cadastro">.
+
                     </p>
 
                     {{--<a href="#">
@@ -87,9 +96,9 @@
                             </p>
                         </a> <br>
 
-                        <div class="content">
-                            <?php echo mb_strimwidth("-$aula->content}", 0, 150, "..."); ?>
-                        </div>
+                        {{-- <div class="content">
+                            <?php echo mb_strimwidth("-$aula->content}", 0, 150, "..."); ?> 
+                        </div>--}}
 
                     <div class="userDateView row">
                             <div class="col-8">

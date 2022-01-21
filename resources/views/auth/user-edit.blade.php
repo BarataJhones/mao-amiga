@@ -14,6 +14,14 @@
 
     <script src="{{asset('js/fontawesome.js')}}"></script>
     <script src="{{asset('js/fontawesome.min.js')}}"></script>
+    <script src="{{asset('js/all.js')}}"></script>
+
+    <!--Botão voltar -->
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -33,14 +41,17 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             
-            <div class="text-center"
-                style="font-family: 'Montserrat Alternates', sans-serif;
-                    font-size: 1em;
-                    font-weight: bold;
-                    font-style: italic;
-                    color: #00AEEF">
-                    <img src="{{asset('img/icone-site.png')}}" alt="" style="width: 5%"> <br>
-                Editar usuário
+            <div style="width: 27em">
+                <!--Botão voltar -->
+                <a class="botao-voltar" onclick="goBack()">
+                    <i class="fas fa-arrow-circle-left fa-4x">
+                    </i>
+                </a>
+            </div>
+
+            <div class="text-center logo-login">
+                <img class="logo" src="{{asset('img/svg_logo_azul.svg')}}" alt=""> <br>
+                <i class="fas fa-pencil-alt"></i> <span style="font-size: 1.2em">Editar usuário</span>
             </div>
             
             <x-auth-validation-errors class="mb-4" :errors="$errors" />
@@ -53,15 +64,16 @@
                     <li class="active">Avatar</li>
                     <li>Nome</li>
                     <li>Data de nascimento</li>
-                    <li>Gênero</li>
+                    <!--<li>Gênero</li>-->
                     <li>Surdez</li>
-                    <li>Instituição</li>
-                    <li>Área de ensino</li>
+                    <!--<li>Instituição</li>
+                    <li>Área de ensino</li>-->
                 </ul>
                 <!-- fieldsets -->
 
                 <!-- Image -->
                 <fieldset>
+                    <i class="fas fa-camera fa-2x"></i> &nbsp;
                     <x-label class="input-label" for="avatar" :value="__('Avatar')" /> <br>
                 
                     <img src="{{ Storage::disk('s3')->url($user->avatar) }}" id="change" class="avatar">
@@ -76,8 +88,11 @@
 
                 <!-- Name -->
                 <fieldset>
-                    <img class="form-img" src="{{asset('img/form-sinais/nome.jpg')}}" alt=""> <br>
+                    <img class="form-gif" src="{{asset('img/form-sinais/gif_nome.gif')}}" alt="Imagem animada com os sinais em LIBRAS para 'Nome'"> <br>
+
+                    <i class="fas fa-signature fa-2x"></i> &nbsp;
                     <x-label class="input-label" for="name" :value="__('Nome')" /> <br>
+
                     <input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" value="{{ $user->name }}" required autofocus />
 
                     <button type="button" name="previous" class="previous action-button-previous">
@@ -91,12 +106,19 @@
 
                 <!-- Birthday -->
                 <fieldset>
-                    <img class="form-img img-nascimento" src="{{asset('img/form-sinais/nascimento.jpg')}}" alt=""> <br>
+                    <img class="form-gif" src="{{asset('img/form-sinais/gif_data_nascimento.gif')}}" alt="Imagem animada com os sinais em LIBRAS para 'Data de nascimento'"> <br>
+
+                    <i class="fas fa-birthday-cake fa-2x"></i> &nbsp;
                     <x-label class="input-label" for="birthday" :value="__('Data de nascimento')" /> <br>
+
                     <div class="form-group row" >
                         <div class="col-10">
                             <input class="form-control" type="text" id="birthday" name="birthday"
-                                :value="old('birthday')" value="{{ $user->birthday }}" onfocus="(this.type='date')" required>
+                            @php
+                                //Posso fazer de outra forma. Ver data de nascimento em userArea.blade.php
+                                $newDate = date("d-m-Y", strtotime($user->birthday));
+                            @endphp
+                                :value="old('birthday')" value="{{ $newDate }}" onfocus="(this.type='date')" required>
                         </div>
                     </div>
 
@@ -110,7 +132,7 @@
                 </fieldset>
 
                 <!-- Gender -->
-                <fieldset>
+                <!-- <fieldset>
                     <img class="form-img" src="{{asset('img/form-sinais/genero.jpg')}}" alt=""> <br>
                     <x-label class="input-label" for="gender" :value="__('Gênero')" />
 
@@ -143,11 +165,13 @@
                     <button type="button" name="next" class="next action-button">
                         Avançar <i class="fas fa-angle-right"></i>
                     </button>
-                </fieldset>
+                </fieldset> -->
 
                 <!-- Deaf -->
                 <fieldset>
-                    <img class="form-img" src="{{asset('img/form-sinais/surdo.jpg')}}" alt=""> <br>
+                    <img class="form-gif" src="{{asset('img/form-sinais/gif_voce_surdo.gif')}}" alt="Imagem animada com os sinais em LIBRAS para 'Você é surdo?'"> <br>
+
+                    <i class="fas fa-deaf fa-2x"></i> &nbsp;
                     <x-label class="input-label" for="deaf" :value="__('Você é surdo?*')" />
 
                     <div class="form-check">
@@ -166,13 +190,16 @@
                         <i class="fas fa-angle-left"></i> Voltar
                     </button>
 
-                    <button type="button" name="next" class="next action-button">
-                        Avançar <i class="fas fa-angle-right"></i>
-                    </button>
+                    <div>
+                        <x-button class="action-button" style="background-color: #00da6d">
+                            <i class="fas fa-check"></i> {{ __('Atualizar') }}
+                        </x-button>
+                    </div>
+
                 </fieldset>
 
                 <!-- Institution -->
-                <fieldset>
+                <!-- <fieldset>
                     <img class="form-img img-nascimento" src="{{asset('img/form-sinais/instituicao.jpg')}}" alt=""> <br>
                     <x-label class="input-label" for="intitution" :value="__('Instituição de ensino')" /> <br>
 
@@ -184,10 +211,10 @@
                     <button type="button" name="next" class="next action-button">
                         Avançar <i class="fas fa-angle-right"></i>
                     </button>
-                </fieldset>
+                </fieldset> -->
 
                 <!-- Grade -->
-                <fieldset>
+                <!-- <fieldset>
                     <img class="form-img" src="{{asset('img/form-sinais/nivel.jpg')}}" alt=""> <br>
                     <x-label class="input-label" for="grade" :value="__('Qual área de ensino você está atualmente?')" /> <br>
 
@@ -213,7 +240,7 @@
                         </x-button>
                     </div>
                     
-                </fieldset>
+                </fieldset> -->
 
             </form>
 

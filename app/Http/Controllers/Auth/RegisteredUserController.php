@@ -46,10 +46,10 @@ class RegisteredUserController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|confirmed|min:8',
             'birthday' => 'required|date',
-            'gender' => 'required|string',
+            //'gender' => 'required|string',
             'deaf' => 'required|string',
-            'institution'=> 'nullable|string',
-            'grade'=> 'required|string',
+            //'institution'=> 'nullable|string',
+            //'grade'=> 'required|string',
         ]);
 
         Auth::login($user = User::create([
@@ -57,10 +57,10 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'birthday' => $request->birthday,
-            'gender' => $request->gender,
+            //'gender' => $request->gender,
             'deaf' => $request->deaf,
-            'institution' => $request->institution,
-            'grade' => $request->grade,
+            //'institution' => $request->institution,
+            //'grade' => $request->grade,
         ]));
 
         event(new Registered($user));

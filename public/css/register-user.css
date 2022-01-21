@@ -178,19 +178,44 @@ body {
     color: white;
 }
 
-.input-label{font-size: 2em;}
-
-.form-img{
-    width: 40%;
-    margin-bottom: 1em;
+.botao-voltar {
+    color: #00AEEF;
+    float: left;
 }
 
-.img-nascimento{
-    width: 100%;
+.botao-voltar:hover {
+    color: #23527d;
+  }
+
+.input-label{font-size: 2em;}
+
+.logo-login{
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    font-style: italic;
+    color: #00AEEF;
+}
+
+.logo{
+    width:23%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em
+}
+
+.form-gif{
+    width: 47%;
+    margin-bottom: 1em;
 }
 
 select{
     font-size: 1.5em;
+}
+
+.botao-voltar {
+    color: #00AEEF;
+    margin-right: 0.2em;
 }
 /*Edit User*/
 

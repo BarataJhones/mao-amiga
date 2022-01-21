@@ -20,7 +20,7 @@ class CommentController extends Controller
 
         $aula = Aula::find($request->aula_id);
 
-        //dd($comment->parent_id);
+        //dd($comment);
 
         $aula->comments()->save($comment);
 

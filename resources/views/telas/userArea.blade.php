@@ -5,7 +5,7 @@
 @endsection
 
 @section('pageTitle')Área do usuário @endsection
-@section('boxTitle')Área do usuário @endsection
+@section('boxTitle')<i class="fas fa-user"></i> Área do usuário @endsection
 @section('boxVideo') {{ Storage::disk('s3')->url('area_usuario.mp4') }} @endsection
 
 @section('boxContent' )
@@ -65,7 +65,7 @@
 
                 <img src="{{ Storage::disk('s3')->url($user->avatar) }}" class="avatar">
                 <tr>
-                    <th scope="row">Nome</th>
+                    <th scope="row"><i class="fas fa-signature"></i> Nome</th>
                     <td>
                         @php
                              echo $user->name;
@@ -74,7 +74,7 @@
                 </tr>
 
                 <tr>
-                    <th scope="row">Email</th>
+                    <th scope="row"><i class="fas fa-at"></i> Email</th>
                     <td>
                         @php
                              echo $user->email;
@@ -83,48 +83,58 @@
                 </tr>
 
                 <tr>
-                    <th scope="row">Nascimento</th>
+                    <th scope="row"><i class="fas fa-birthday-cake"></i> Data de nascimento</th>
                     <td>
                         @php
+                            //Posso fazer de outra forma. Ver data de nascimento em user-edit.blade.php
                              echo Carbon\Carbon::parse($user->birthday)->format('d/m/Y');
                         @endphp
                     </td>
                 </tr>
 
-                <tr>
+                <!-- <tr>
                     <th scope="row">Sexo</th>
                     <td>
                         @php
                              echo $user->gender;
                         @endphp
                     </td>
-                </tr>
+                </tr> -->
 
                 <tr>
-                    <th scope="row">Surdez</th>
+                    <th scope="row"><i class="fas fa-deaf"></i> Surdez</th>
                     <td>
                         @php
                              echo $user->deaf;
                         @endphp
+
+                       @switch($user->deaf)
+                           @case("Não")
+                                <i class="fas fa-thumbs-down"></i>
+                               @break
+                           @case("Sim")
+                                <i class="fas fa-thumbs-up"></i>
+                               @break
+                       @endswitch
                     </td>
                 </tr>
 
-                <tr>
+                <!-- <tr>
                     <th scope="row">Instituição que frequenta</th>
                     <td>
                         @php
                              echo $user->institution;
                         @endphp
                     </td>
-                </tr>
+                </tr> -->
 
-                <tr>
+                <!-- <tr>
                     <th scope="row">Área de ensino atual</th>
                     <td>
                         @php
                              echo $user->grade;
                         @endphp
-                    </td>
+                    </td> -->
                 </tr>
 
             </tbody>

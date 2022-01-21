@@ -16,7 +16,7 @@
 
         <?php $avatar = $replie->user->avatar; ?>
 
-        <img src="{{ url("storage/$avatar") }}" class="userAvatarComment">
+        <img src="{{ Storage::disk('s3')->url($avatar) }}" class="userAvatarComment">
         <strong class="commentUser">{{ $replie->user->name }}</strong> {{ $replie->created_at->diffForHumans() }} respondeu
         <p class="commentContent">{{ $replie->comment }}</p>
 

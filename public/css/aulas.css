@@ -149,8 +149,15 @@ a{text-decoration: none !important;}
     font-size: 1.2em;
 }
 .commentSession{background-color: #f4faff; padding: 1em;}
-.botaoComment{
 
+.userAvatarComment{
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.botaoComment{
     background-color: #00AEEF !important;
     color: white;
 }
@@ -158,4 +165,8 @@ a{text-decoration: none !important;}
 .facaLogin{font-family: 'Montserrat Alternates', sans-serif;
     font-style: italic;
     text-align: center;
+}
+
+.aula_gif{
+    width: 20%;
 }

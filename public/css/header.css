@@ -29,7 +29,8 @@
     object-fit: cover;
 }
 
-.dropdown-menu a{ color: #00AEEF !important;}
+.dropdown-menu a{
+    color: #00AEEF !important;}
 .dropdown-item{font-size: 1em !important;}
 
 /*Customização do botão navibar mobile*/
@@ -44,9 +45,21 @@
 }
 
 .icone-video{
-    background-image: url(../img/icone-video-branco.png);
+    background-image: url(../img/svg_sinalBranco.svg);
     background-repeat: no-repeat;
     display: block;
+    animation: zoom 1s infinite ;
+}
+@keyframes zoom {
+    0% {
+        transform: scale(1,1);
+    }
+    50% {
+        transform: scale(1.2,1.2);
+    }
+    100% {
+        transform: scale(1,1);
+    }
 }
 
 @media (min-width: 1200px){

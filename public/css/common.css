@@ -30,6 +30,10 @@ h5 {
     margin-right: 0.2em;
 }
 
+.botao-voltar:hover {
+    color: #23527d;
+  }
+
 .icone-voltar{
     background-image: url(../img/icone-voltar.png);
     background-repeat: no-repeat;
@@ -37,9 +41,10 @@ h5 {
 }
 
 .icone-video-mensagem{
-    background-image: url(../img/icone-video-azul.png);
+    background-image: url(../img/svg_sinal.svg);
     background-repeat: no-repeat;
     display: block;
+    animation: zoom 1s infinite ;
 }
 
 #subirTopo {

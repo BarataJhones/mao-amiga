@@ -25,11 +25,11 @@
             @yield('csrfMethod')
 
             <div class="form-group">
-                <label for="comment">Título da aula*</label>
+                <label for="comment">1 - Título da aula*</label>
                 <input type="text" name="title" class="form-control" rows="1" id="title" @yield('valueTitle')>
             </div>
 
-            <label for="comment">Área de Ensino*</label> <br>
+            <label for="comment">2 - Área de Ensino*</label> <br>
             <select name="grade" class="form-select" aria-label="Default select example" id="grade">
                 <option value="Infantil">Infantil</option>
                 <option value="Fundamental">Fundamental</option>
@@ -39,13 +39,42 @@
             </select><br><br>
 
             <div class="form-group">
-                <label for="comment">Disciplina*</label>
+                <label for="comment">3 - Disciplina*</label>
                 <input type="text" name="discipline" class="form-control" rows="1" id="discipline"
                     @yield('valueDiscipline')>
             </div>
 
             <div class="form-group">
-                <label for="comment">Conteúdo da aula (mínimo de 50 caractéres)*</label>
+                <?php $userName = Auth::user()->name; ?>
+
+                <label for="comment"> 4 - Criador por
+                    <span style="color: #00AEEF;">{{$userName }}</span>
+                </label>
+            </div>
+
+            <div class="form-group">
+                <?php $userName = Auth::user()->name; ?>
+
+                <label for="comment"> 5 - Postado em
+                    @php $date = date('d/m/Y') @endphp
+                    <span style="color: #00AEEF;">{{ $date }}</span>
+                </label>
+            </div>
+
+            <label>6 - Vídeo em LIBRAS da aula (clique na seta azul para subir o vídeo)*</label>
+            <div id="video-demo-container">
+                <button class="btn" type="button" id="upload-button">
+                    <i class="fas fa-upload fa-3x"></i>
+                </button>
+                <input type="file" name="aulaVideo" id="aulaVideo" style="display:none">
+                <video id="main-video" controls>
+                    <source type="video/mp4">
+                </video>
+                <canvas id="video-canvas"></canvas>
+            </div> <br>
+
+            <div class="form-group">
+                <label for="comment">7 - Conteúdo da aula (mínimo de 50 caractéres)*</label>
 
                 {{--<!--<div class="form-group" id="editor">
                     <textarea name="content" class="form-control" rows="15" id="content">@yield('valueContent')</textarea>
@@ -54,13 +83,12 @@
                 
                 <textarea name="content" class="form-control" id="content" style="display:none" @yield('valueContent')></textarea>
                 <div id="editor">
-                    @yield('EditAula')
-                    
+                    @yield('EditAula')   
                 </div>
 
             </div>
 
-            <label>Imagem principal da aula*</label>
+            <label>8 - Imagem principal da aula*</label>
             <div class="col-md-6">
                 <div class="form-group">
                     <div class="input-group">
@@ -77,29 +105,17 @@
             </div>
 
             <div class="form-group">
-                <label for="comment">Fonte da imagem principal da aula</label>
+                <label for="comment">9 - Fonte da imagem principal da aula</label>
                 <input type="text" name="imageFont" class="form-control" rows="1" id="imageFont" @yield('valueImageFont')>
             </div>
 
             <div class="form-group">
-                <label for="comment">Referências</label>
+                <label for="comment">10 - Referências</label>
                 <textarea type="text" name="references" class="form-control" rows="5"
                     id="references">@yield('valueReferences')</textarea>
             </div>
 
-            <label>Subir vídeo*</label>
-            <div id="video-demo-container">
-                <button class="btn" type="button" id="upload-button">
-                    <i class="fas fa-upload fa-3x"></i>
-                </button>
-                <input type="file" name="aulaVideo" id="aulaVideo" style="display:none">
-                <video id="main-video" controls>
-                    <source type="video/mp4">
-                </video>
-                <canvas id="video-canvas"></canvas>
-            </div> <br>
-
-            <label>Conteúdo para baixar</label>
+            <label>11 - Conteúdo para baixar</label>
             
             <!-- <div class="custom-file">
                 <input type="file" name="aulaFiles" class="custom-file-input" id="chooseFile" multiple>

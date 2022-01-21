@@ -1,7 +1,7 @@
 @extends('telas.common.form')
 
 @section('pageTitle') Editar aula @endsection
-@section('boxTitle') Editar a aula @endsection
+@section('boxTitle')<i class="fas fa-pencil-alt"></i> Editar a aula @endsection
 @section('boxVideo') {{ Storage::disk('s3')->url('editar_aula.mp4') }} @endsection
 
 @section('boxContent' )

@@ -48,7 +48,7 @@
     <div class="bs-example">
         <nav class="navbar navbar-expand-md navbar-light">
             <a href="{{ Storage::disk('s3')->url('mao_amiga_titulo.mp4') }}" class="navbar-brand video-popup">
-                <img class="logoMaoAmiga" src="{{asset('img/logo.png')}}" height="28" alt="CoolBrand">
+                <img class="logoMaoAmiga" src="{{asset('img/svg_logo_branco.svg')}}" height="28" alt="CoolBrand">
             </a>
             <button type="button" class="navbar-toggler custom-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <i class="fas fa-bars"></i>
@@ -73,10 +73,10 @@
                             ?>
                 
                             <img src="{{ Storage::disk('s3')->url($avatar) }}" class="userAvatar">
-                            Bem vindo, @php echo $primeiroNome; @endphp
+                            @php echo $primeiroNome; @endphp
                 
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 
                             <a class="dropdown-item"
                                 href="{{ route('aula.userList') }}">
@@ -93,7 +93,7 @@
                         </div>
                     @else
                         <a href="{{ route('aula.userList') }}" class="nav-item nav-link" style="font-size: 1.5em">
-                            <i class="fas fa-sign-in-alt"></i> Login
+                            <i class="fas fa-sign-in-alt"></i> Fazer login
                         </a>
                     @endif
                 </div>
@@ -107,7 +107,7 @@
                     <p class="header-frase">O portal de aprendizado acessível para surdos</p>
                 </div>
 
-                <a class="video-popup" href="{{ Storage::disk('s3')->url('mao_amiga_frase.mp4') }}">
+                <a class="video-popup" autoplay="autoplay" href="{{ Storage::disk('s3')->url('mao_amiga_frase.mp4') }}">
                     <div class="col-2 col-xl-1 col-lg-1 col-md-1 col-sm-2 col-xs-2 icone-video"></div>
                 </a>
 
