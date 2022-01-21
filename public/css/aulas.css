@@ -170,3 +170,21 @@ a{text-decoration: none !important;}
 .aula_gif{
     width: 20%;
 }
+
+.caixa-emoji{
+    height: 11%;
+    background-color: #f1f1f1;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.botao-emoji{
+    margin-bottom: 1em;
+    font-size: 1em;
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 2;
+	cursor: pointer;
+	outline: inherit;
+}

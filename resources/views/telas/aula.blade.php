@@ -139,17 +139,17 @@
                             </div>
                     
                             <div class="col">
-
-                                 <textarea type="text" name="comment" class="form-control" cols="1" rows="5" placeholder="Entre na conversa..." required>
-                                </textarea>
-
-                                <!--<textarea name="comment" class="form-control" id="comment" style="display:none" value="comment"></textarea>
-                                <div id="editorComment"></div>-->
+    
+                                 <textarea type="text" name="comment" class="form-control two" cols="1" rows="5" placeholder="Entre na conversa..." required></textarea>
+                                 <div class="caixa-emoji">
+                                    <button class="botao-emoji">&#128512; Emojis</button>
+                                 </div>
+                                 
 
                                 <input type="hidden" name="aula_id" value="{{ $aula->id }}" /> <br>
                                 <div class="form-group">
                                     <input type="hidden" class="btn btn-sm btn-outline-danger py-0" />
-                                    <button type="submit" class="btn botaoComment">Comentar
+                                    <button type="submit" class="btn botaoComment"><i class="fas fa-comments"></i> Comentar
                                 </div>
                             </div>
                         </div>
@@ -220,45 +220,25 @@
 
 <script type="text/javascript" src="{{asset('js/scrolling-pagination.js')}}"></script>
 
-<!--<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>-->
+{{-- Emoji nos comentários --}}
+<script src="{{asset('js/vanillaEmojiPicker.js')}}"></script>
+    <script>
 
-<!-- Quill - pegar formatação do textarea -->
-<!-- <script>
+        new EmojiPicker({
+            trigger: [
+                {
+                    selector: '.first-btn',
+                    insertInto: ['.one', '.two'] // '.selector' can be used without array
+                },
+                {
+                    selector: '.botao-emoji',
+                    insertInto: '.two'
+                }
+            ],
+            closeButton: true,
+            //specialButtons: green
+        });
 
-    var SizeComment = Quill.import('attributors/style/size');
-    SizeComment.whitelist = ['10px', '12px', '25px'];
-    Quill.register(SizeComment, true);
-
-    var AlignComment = Quill.import('attributors/style/align');
-    AlignComment.whitelist = ['', 'center', 'justify', 'right'];
-    Quill.register(AlignComment, true);
-
-    quillComment = new Quill('#editorComment', {
-        modules: {
-            toolbar: [
-                [{ 'font': [] }, { 'size': ['10px', '12px', '25px'] }],
-                [ 'bold', 'italic', 'underline', 'strike' ],
-                [{ 'color': [] }, { 'background': [] }],
-                [{ 'script': 'super' }, { 'script': 'sub' }],
-                [{ 'header': '1' }, { 'header': '2' }, 'blockquote', 'code-block' ],
-                [{ 'list': 'ordered' }, { 'list': 'bullet'}, { 'indent': '-1' }, { 'indent': '+1' }],
-                [ 'direction', { 'align': ['', 'center', 'justify', 'right'] }],
-                [ 'clean' ]
-            ]
-        },
-
-    placeholder: 'Escreva seu comentário...',
-    theme: 'snow'
-    });
-
-    var formComment = document.querySelector('#formComment')
-
-    formComment.onsubmit = function() { // onsubmit do this first
-        var nameComment = document.getElementById("comment"); // set name input var
-        nameComment.value = quill.root.innerHTML; // populate name input with quill data
-        return true; // submit form
-    }
-
-</script> -->
+    </script>
 
 @endsection
