@@ -65,7 +65,7 @@
                         <input type="hidden" name="comment_id" value="{{ $comment->id }}" />
                         <div class="form-group"> <br>
                             <input type="hidden" class="btn btn-sm btn-outline-danger py-0" />
-                            <button type="submit" class="btn botaoComment" style="font-size: 0.8em;">Responder
+                            <button type="submit" class="btn botaoComment" style="font-size: 0.8em;"> <i class="fas fa-comments"></i> Comentar
                         </div>
                     </div>
                 @endif
