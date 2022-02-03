@@ -167,7 +167,7 @@
                     <img class="form-gif" src="{{asset('img/form-sinais/gif_voce_surdo.gif')}}" alt="Imagem animada com os sinais em LIBRAS para 'Você é surdo?'"> <br>
 
                     <i class="fas fa-deaf fa-2x"></i> &nbsp;
-                    <x-label class="input-label" for="deaf" :value="__('Você é surdo?*')" />
+                    <x-label class="input-label" for="deaf" :value="__('Você é surdo?')" />
 
                     <div class="form-check">
                         <label class="form-check-label" style="margin: 0.5em">
@@ -233,6 +233,7 @@
 
                     <i class="fas fa-key fa-2x"></i> &nbsp;
                     <x-label class="input-label" for="password" :value="__('Senha')" /> <br>
+                    Mínimo de 8 caractéres
                     
                     <input id="password" class="block mt-1 w-full" type="password" name="password" placeholder="Digite sua senha*" required autocomplete="new-password" />
 
@@ -257,12 +258,11 @@
                     <button type="button" name="previous" class="previous action-button-previous">
                         <i class="fas fa-angle-left"></i> Voltar
                     </button>
-                    
-                    <div>
-                        <x-button class="action-button" style="background-color: #00da6d">
-                            <i class="fas fa-check"></i> {{ __('Cadastrar') }}
-                        </x-button>
-                    </div>
+
+                    <x-button class="action-button" style="background-color: #00da6d">
+                        <i class="fas fa-check"></i> {{ __('Cadastrar') }}
+                    </x-button>
+
                 </fieldset>
 
                 <!-- <div class="flex items-center justify-end mt-4">
