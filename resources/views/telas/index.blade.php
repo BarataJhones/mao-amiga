@@ -92,12 +92,16 @@
                     <div class="col my-auto">
                         <a href="{{ route('aula.viewAula', $aula->id) }}">
                             <p class="aula-destaque-titulo">
-                                <?php echo mb_strimwidth("{$aula->title}", 0, 60, "..."); ?>
+                                @php
+                                     echo mb_strimwidth("{$aula->title}", 0, 60, "...");
+                                @endphp
                             </p>
                         </a> <br>
-
+                        
                         {{-- <div class="content">
-                            <?php echo mb_strimwidth("-$aula->content}", 0, 150, "..."); ?> 
+                            @php
+                                echo mb_strimwidth("-$aula->content}", 0, 150, "...");
+                            @endphp
                         </div>--}}
 
                     <div class="userDateView row">
