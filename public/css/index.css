@@ -1,10 +1,22 @@
 .quadro-mensagem{border: 0.2em solid #00AEEF; border-radius: 1em; margin-top: 1em;}
 .index-mensagem{text-align: justify; font-family: 'Montserrat Alternates', sans-serif;}
 .icone-video-azul{
-    background-image: url(../img/icone-aces-azul.png);
+    background-image: url(../img/svg_sinal.svg);
     background-repeat: no-repeat;
     display: block;
     margin-top: 1em;
+    animation: zoom 1s infinite ;
+}
+@keyframes zoom {
+    0% {
+        transform: scale(1,1);
+    }
+    50% {
+        transform: scale(1.2,1.2);
+    }
+    100% {
+        transform: scale(1,1);
+    }
 }
 
 .icon_svg{
