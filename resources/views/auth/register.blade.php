@@ -229,7 +229,7 @@
 
                 <!-- Password -->
                 <fieldset>
-                    <img class="form-gif" src="{{asset('img/form-sinais/gif_senha.gif')}}" alt="Imagem animada com os sinais em LIBRAS para 'Senha'"> <br>
+                    <img class="form-gif" src="{{asset('img/form-sinais/gif_senha_8_caracteres.gif')}}" alt="Imagem animada com os sinais em LIBRAS para 'Senha'"> <br>
 
                     <i class="fas fa-key fa-2x"></i> &nbsp;
                     <x-label class="input-label" for="password" :value="__('Senha')" /> <br>

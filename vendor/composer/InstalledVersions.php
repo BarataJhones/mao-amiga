@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '1bdd98a691c56f5f69b4651d210b2695b3ac53cb',
+    'reference' => 'fe63940393c4400f28b98072e48ac5ca51b3484e',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -472,6 +472,15 @@ private static $installed = array (
         0 => 'v8.80.0',
       ),
     ),
+    'kevincobain2000/laravel-erd' => 
+    array (
+      'pretty_version' => '1.6',
+      'version' => '1.6.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'c3cdb941977dee18518590de260df54525cbf985',
+    ),
     'kodova/hamcrest-php' => 
     array (
       'replaced' => 
@@ -504,7 +513,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '1bdd98a691c56f5f69b4651d210b2695b3ac53cb',
+      'reference' => 'fe63940393c4400f28b98072e48ac5ca51b3484e',
     ),
     'laravel/sail' => 
     array (
@@ -1149,6 +1158,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '3dd4319c3d42a9db2bae30582844528799bb22d2',
+    ),
+    'spatie/laravel-package-tools' => 
+    array (
+      'pretty_version' => '1.11.0',
+      'version' => '1.11.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'fd75af77d0bbf221f33369186df16da704bebebd',
     ),
     'swiftmailer/swiftmailer' => 
     array (

@@ -24,6 +24,17 @@
       0 => 'Fruitcake\\Cors\\CorsServiceProvider',
     ),
   ),
+  'kevincobain2000/laravel-erd' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Kevincobain2000\\LaravelERD\\LaravelERDServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'LaravelERD' => 'Kevincobain2000\\LaravelERD\\LaravelERDFacade',
+    ),
+  ),
   'laravel/breeze' => 
   array (
     'providers' => 

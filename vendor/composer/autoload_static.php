@@ -89,6 +89,7 @@ class ComposerStaticInit36b34b6dff8eef00fb4775ffd600dd7d
             'Symfony\\Component\\ErrorHandler\\' => 31,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Spatie\\LaravelPackageTools\\' => 27,
             'Spatie\\Honeypot\\' => 16,
         ),
         'R' => 
@@ -136,6 +137,10 @@ class ComposerStaticInit36b34b6dff8eef00fb4775ffd600dd7d
             'Laravel\\SerializableClosure\\' => 28,
             'Laravel\\Sail\\' => 13,
             'Laravel\\Breeze\\' => 15,
+        ),
+        'K' => 
+        array (
+            'Kevincobain2000\\LaravelERD\\' => 27,
         ),
         'J' => 
         array (
@@ -329,6 +334,10 @@ class ComposerStaticInit36b34b6dff8eef00fb4775ffd600dd7d
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Spatie\\LaravelPackageTools\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-package-tools/src',
+        ),
         'Spatie\\Honeypot\\' => 
         array (
             0 => __DIR__ . '/..' . '/spatie/laravel-honeypot/src',
@@ -445,6 +454,10 @@ class ComposerStaticInit36b34b6dff8eef00fb4775ffd600dd7d
         'Laravel\\Breeze\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/breeze/src',
+        ),
+        'Kevincobain2000\\LaravelERD\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kevincobain2000/laravel-erd/src',
         ),
         'JmesPath\\' => 
         array (
@@ -3641,6 +3654,11 @@ class ComposerStaticInit36b34b6dff8eef00fb4775ffd600dd7d
         'JmesPath\\TreeInterpreter' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/TreeInterpreter.php',
         'JmesPath\\Utils' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/Utils.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'Kevincobain2000\\LaravelERD\\Commands\\LaravelERDCommand' => __DIR__ . '/..' . '/kevincobain2000/laravel-erd/src/Commands/LaravelERDCommand.php',
+        'Kevincobain2000\\LaravelERD\\Controllers\\LaravelERDController' => __DIR__ . '/..' . '/kevincobain2000/laravel-erd/src/Controllers/LaravelERDController.php',
+        'Kevincobain2000\\LaravelERD\\LaravelERD' => __DIR__ . '/..' . '/kevincobain2000/laravel-erd/src/LaravelERD.php',
+        'Kevincobain2000\\LaravelERD\\LaravelERDFacade' => __DIR__ . '/..' . '/kevincobain2000/laravel-erd/src/LaravelERDFacade.php',
+        'Kevincobain2000\\LaravelERD\\LaravelERDServiceProvider' => __DIR__ . '/..' . '/kevincobain2000/laravel-erd/src/LaravelERDServiceProvider.php',
         'Laravel\\Breeze\\BreezeServiceProvider' => __DIR__ . '/..' . '/laravel/breeze/src/BreezeServiceProvider.php',
         'Laravel\\Breeze\\Console\\InstallCommand' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallCommand.php',
         'Laravel\\Breeze\\Console\\InstallsApiStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsApiStack.php',
@@ -5617,6 +5635,9 @@ class ComposerStaticInit36b34b6dff8eef00fb4775ffd600dd7d
         'Spatie\\Honeypot\\SpamResponder\\SpamResponder' => __DIR__ . '/..' . '/spatie/laravel-honeypot/src/SpamResponder/SpamResponder.php',
         'Spatie\\Honeypot\\View\\HoneypotComponent' => __DIR__ . '/..' . '/spatie/laravel-honeypot/src/View/HoneypotComponent.php',
         'Spatie\\Honeypot\\View\\HoneypotViewComposer' => __DIR__ . '/..' . '/spatie/laravel-honeypot/src/View/HoneypotViewComposer.php',
+        'Spatie\\LaravelPackageTools\\Exceptions\\InvalidPackage' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Exceptions/InvalidPackage.php',
+        'Spatie\\LaravelPackageTools\\Package' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Package.php',
+        'Spatie\\LaravelPackageTools\\PackageServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/PackageServiceProvider.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\Attribute\\AsCommand' => __DIR__ . '/..' . '/symfony/console/Attribute/AsCommand.php',

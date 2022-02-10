@@ -190,10 +190,9 @@
                         <i class="fas fa-angle-left"></i> Voltar
                     </button>
 
-                    <div>
-                        <x-button class="action-button" style="background-color: #00da6d">
-                            <i class="fas fa-check"></i> {{ __('Atualizar') }}
-                        </x-button>
+                    <x-button class="action-button" style="background-color: #00da6d">
+                        <i class="fas fa-check"></i> {{ __('Atualizar') }}
+                    </x-button>
                     </div>
 
                 </fieldset>
