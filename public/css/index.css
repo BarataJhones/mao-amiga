@@ -79,7 +79,10 @@ h5 {
     margin-bottom: 2em;
 }
 
-.userDateView{font-size: 0.8em;}
+.userDateView{
+    font-size: 0.8em;
+    text-align: left;
+}
 
 hr {
     border: 0;

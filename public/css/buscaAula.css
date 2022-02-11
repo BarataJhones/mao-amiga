@@ -7,7 +7,7 @@
 
 .quadro-geral{margin-bottom: 2em; position: relative !important; z-index: 0;}
 
-.aula-imagem-index{
+.aula-imagem-busca{
     width: 20em;
     height: 10em;
     object-fit: cover;
@@ -35,7 +35,10 @@ a{text-decoration: none !important;}
     background-color: white;
 }
 
-.aula-data-publicacao{font-family: 'Montserrat Alternates', sans-serif; text-align: center;}
+.aula-data-publicacao{
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 0.8em;
+    text-align: center;}
 
 h5 {
     text-align: center;
@@ -47,7 +50,16 @@ h5 {
     margin-top: 1em !important; 
 }
 
-.aula-destaque-user{color: #00AEEF !important;}
+.aula-destaque-user{
+    color: #00AEEF !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.text-center{
+    margin: 0 !important;
+    padding: 0 !important;
+}
 
 hr {
     border: 0;

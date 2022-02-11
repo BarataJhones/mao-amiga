@@ -1,7 +1,7 @@
 
 
 <?php $__env->startSection('css'); ?>
-    <?php echo e(asset('css/aulas.css')); ?>
+    <?php echo e(asset('css/buscaAula.css')); ?>
 
 <?php $__env->stopSection(); ?>
 
@@ -53,9 +53,9 @@
 
                 <div class="col-4 quadro-geral">
                     <a href="<?php echo e(route('aula.viewAula', $aula->id)); ?>" class="my-auto">
-                        <img class="aula-imagem-index" src="<?php echo e(Storage::disk('s3')->url($aula->image)); ?>" alt="">
+                        <img class="aula-imagem-busca" src="<?php echo e(Storage::disk('s3')->url($aula->image)); ?>" alt="">
         
-                        <p class="aula-destaque-titulo text-center"><?php echo mb_strimwidth("{$aula->title}", 0, 35, "..."); ?></p> 
+                        <p class="aula-destaque-titulo text-center"><?php echo mb_strimwidth("{$aula->title}", 0, 28, "..."); ?></p> 
                     </a>
         
                     <p class="text-center"> Por <span class="aula-destaque-user"><?php echo e($aula->user->name); ?></span></p>

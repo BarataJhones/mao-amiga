@@ -104,14 +104,11 @@
                             @endphp
                         </div>--}}
 
-                    <div class="userDateView row">
-                            <div class="col-8">
-                                Por <span class="aula-destaque-user text-left"><?php echo mb_strimwidth("{$aula->user->name}", 0, 18, "..."); ?></span>,
-                                {{ $aula->created_at->diffForHumans() }}
-                            </div>
-                        
-                            <div class="col-4 text-right">
-                                <span class=""><i class="fas fa-eye" style="color:#00AEEF"></i> {{$aula->viewCount}}
+                        <div class="userDateView row">
+                            <div class="col-8 ">
+                                Por <span class="aula-destaque-user text-left"><?php echo mb_strimwidth("{$aula->user->name}", 0, 18, "..."); ?></span> <br>
+
+                                <span class=""><i class="fas fa-eye" style="color:#00AEEF"></i> &#8226 {{$aula->viewCount}}
                                     <i class="fa fa-comments" style="color:#00AEEF"></i> 
 
                                     @php $qntComments = 0; @endphp
@@ -123,9 +120,9 @@
                                     @endforeach
                                     {{ $qntComments }}                            
                                 </span>
+                                {{ $aula->created_at->diffForHumans() }}
                             </div>
                         </div>
-
                     </div>
 
                     <div class="col-10 col-xl-4 col-lg-4 col-md 5 col-sm-8 embed-responsive embed-responsive-16by9 my-auto">

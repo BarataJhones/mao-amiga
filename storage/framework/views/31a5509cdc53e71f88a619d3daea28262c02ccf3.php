@@ -91,15 +91,11 @@
                         
                         
 
-                    <div class="userDateView row">
-                            <div class="col-8">
-                                Por <span class="aula-destaque-user text-left"><?php echo mb_strimwidth("{$aula->user->name}", 0, 18, "..."); ?></span>,
-                                <?php echo e($aula->created_at->diffForHumans()); ?>
+                        <div class="userDateView row align-items-start">
+                            <div class="col-8 ">
+                                Por <span class="aula-destaque-user text-left"><?php echo mb_strimwidth("{$aula->user->name}", 0, 18, "..."); ?></span> <br>
 
-                            </div>
-                        
-                            <div class="col-4 text-right">
-                                <span class=""><i class="fas fa-eye" style="color:#00AEEF"></i> <?php echo e($aula->viewCount); ?>
+                                <span class=""><i class="fas fa-eye" style="color:#00AEEF"></i> &#8226 <?php echo e($aula->viewCount); ?>
 
                                     <i class="fa fa-comments" style="color:#00AEEF"></i> 
 
@@ -112,9 +108,10 @@
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     <?php echo e($qntComments); ?>                            
                                 </span>
+                                <?php echo e($aula->created_at->diffForHumans()); ?>
+
                             </div>
                         </div>
-
                     </div>
 
                     <div class="col-10 col-xl-4 col-lg-4 col-md 5 col-sm-8 embed-responsive embed-responsive-16by9 my-auto">

@@ -1,7 +1,7 @@
 @extends('telas.common.mainContent')
 
 @section('css')
-    {{asset('css/aulas.css')}}
+    {{asset('css/buscaAula.css')}}
 @endsection
 
 @section('pageTitle')Aulas @endsection
@@ -51,9 +51,9 @@
 
                 <div class="col-4 quadro-geral">
                     <a href="{{ route('aula.viewAula', $aula->id) }}" class="my-auto">
-                        <img class="aula-imagem-index" src="{{ Storage::disk('s3')->url($aula->image) }}" alt="">
+                        <img class="aula-imagem-busca" src="{{ Storage::disk('s3')->url($aula->image) }}" alt="">
         
-                        <p class="aula-destaque-titulo text-center"><?php echo mb_strimwidth("{$aula->title}", 0, 35, "..."); ?></p> 
+                        <p class="aula-destaque-titulo text-center"><?php echo mb_strimwidth("{$aula->title}", 0, 28, "..."); ?></p> 
                     </a>
         
                     <p class="text-center"> Por <span class="aula-destaque-user">{{$aula->user->name}}</span></p>
