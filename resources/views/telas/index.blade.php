@@ -108,7 +108,9 @@
                             <div class="col-8 ">
                                 Por <span class="aula-destaque-user text-left"><?php echo mb_strimwidth("{$aula->user->name}", 0, 18, "..."); ?></span> <br>
 
-                                <span class=""><i class="fas fa-eye" style="color:#00AEEF"></i> &#8226 {{$aula->viewCount}}
+                                <span class=""><i class="fas fa-eye" style="color:#00AEEF">
+                                    </i> {{$aula->viewCount}} &#8226 
+
                                     <i class="fa fa-comments" style="color:#00AEEF"></i> 
 
                                     @php $qntComments = 0; @endphp
@@ -118,8 +120,10 @@
                                             @php $qntComments++ @endphp
                                         @endif
                                     @endforeach
+
                                     {{ $qntComments }}                            
-                                </span>
+                                </span> &#8226  
+                                
                                 {{ $aula->created_at->diffForHumans() }}
                             </div>
                         </div>
